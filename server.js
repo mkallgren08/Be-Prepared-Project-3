@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 // Serve up static assets
 app.use(express.static("client/build"));
 // Add routes, both API and view
+var expressAuth0Simple = require('express-auth0-simple');
 //app.use(routes);
 
 // Set up promises with mongoose
