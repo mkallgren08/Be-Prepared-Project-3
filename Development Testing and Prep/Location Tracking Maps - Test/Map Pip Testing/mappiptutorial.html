@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h3>My Google Maps Demo</h3>
+  <div id="map"></div>
+  <script>
+    var positionArray = [
+      {
+        position: {
+          lat: -24.363,
+          lng: 130.044
+        },
+        name: "Michael",
+        safe: "safe",
+        needs: {
+          category: "none",
+          specifics: "none"
+        }
+      },
+      {
+        position: {
+          lat: -26.363,
+          lng: 132.044
+        },
+        name: "Renee",
+        safe: "",
+        needs: {
+          category: "medical",
+          specifics: "insulin"
+        }
+      },
+      {
+        position: {
+          lat: -25.363,
+          lng: 131.044
+        },
+        name: "Brian",
+        safe: "",
+        needs: {
+          category: "medical assistance",
+          specifics: "tree limb fell on family member"
+        }
+      },
+      {
+        position: {
+          lat: -20.363,
+          lng: 131.044
+        },
+        name: "David",
+        safe: "",
+        needs: {
+          category: "food",
+          specifics: "only 1 day's supply left"
+        },
+      },
+      {
+        position: {
+          lat: -22.363,
+          lng: 134.044
+        },
+        name: "David",
+        safe: "",
+        needs: {
+          category: "childcare",
+          specifics: "running out of baby formula"
+        }
+      }
+    ]
+
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 5,
+        center: positionArray[0].position
+      });
+
+
+
+      var infoWindow = new google.maps.InfoWindow({
+        content: "Test"
+      });
+
+      var markers = [];
+
+      function addClickListener(location, marker) {
+        marker.addListener('click', function () {
+          infoWindow.close();
+          infoWindow.setContent(location.needs.category + " : " + location.needs.specifics);
+          map.panTo(marker.position);
+          infoWindow.open(map, marker);
+        });
+      }
+
+      function getPipColor(needs) {
+        switch (needs) {
+          case "none" || "unknown":
+            console.log("Needs = None")
+            return "./pips/ltblue-dot.png"
+            break;
+
+          case "medical assistance":
+            return "./pips/red-dot.png"
+            break;
+
+          case "medical":
+            return "./pips/orange-dot.png"
+            break;
+
+          case "childcare":
+            return "./pips/yellow-dot.png"
+            break;
+
+          case "food":
+            return "./pips/green-dot.png"
+            break;
+        }
+
+      }
+
+      for (var i = 0; i < positionArray.length; i++) {
+        if (positionArray[i].safe !== "safe") {
+          var marker = new google.maps.Marker({
+            position: positionArray[i].position,
+            map: map,
+            title: positionArray[i].name,
+            icon: getPipColor(positionArray[i].needs.category),
+            name: "marker" + i
+          });
+          // See http://tobyho.com/2011/11/02/callbacks-in-loops/
+          addClickListener(positionArray[i], marker);
+
+          markers.push(marker);
+        }
+
+      };
+
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSVPml2LiPI1j8QyHWFKF-33sRFZn7nbM&callback=initMap">
+
+  </script>
+  <!-- &callback=initMap -->
+</body>
+
+</html>
