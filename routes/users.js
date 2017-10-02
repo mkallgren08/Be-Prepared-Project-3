@@ -9,5 +9,7 @@ router.get('/profile', function(req, res) {
   res.render('profile');
 });
 
+router.post('/profile');
+
 
 module.exports = router;

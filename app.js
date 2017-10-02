@@ -8,8 +8,12 @@ const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const index = require('./routes/index');
 const users = require('./routes/users');
+const db = require('./model/dbconnect.js');
 
 const app = express();
+
+//using Database files
+const userProfile = require('./model/users');
 
 // Use `.hbs` for extensions and find partials in `views/partials`.
 app.engine('hbs', hbs.express4({
