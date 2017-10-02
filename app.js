@@ -1,19 +1,22 @@
 const express = require('express');
+const hbs = require('express-hbs');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const db = require('./models');
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 const index = require('./routes/index');
 const users = require('./routes/users');
 
 const app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
+// Use `.hbs` for extensions and find partials in `views/partials`.
+app.engine('hbs', hbs.express4({
+  partialsDir: __dirname + '/views/partials'}));
 app.set('view engine', 'hbs');
+app.set('views', __dirname + '/views');
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -52,11 +55,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-//Configuring the database sync and logging success
-db.sequelize.sync().then(function () {
-  app.listen(PORT, function() {
-    console.log(`🌎 ==> Server now on port ${PORT}!`);
-  });
+
+app.listen(PORT, function() {
+  console.log('listening on port' + PORT);
 });
 
 module.exports = app;
