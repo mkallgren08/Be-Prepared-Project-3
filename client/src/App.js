@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -28,4 +25,3 @@ const App = () =>
   </Router>;
 
 export default App;
->>>>>>> fe53908dff47c858ac3130ff2ab55b435792d937
