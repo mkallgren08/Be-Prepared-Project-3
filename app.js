@@ -54,6 +54,7 @@ app.use('/user', userdata);
 
 app.get('/', function (req, res) {
   res.render('index');
+
 });
 
 /* Send every request to the React app
