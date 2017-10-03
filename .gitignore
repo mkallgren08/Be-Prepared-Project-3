@@ -1,3 +1,5 @@
+# Created by .ignore support plugin (hsz.mobi)
+/node_modules/
 # Logs
 logs
 *.log
@@ -56,4 +58,7 @@ typings/
 
 # dotenv environment variables file
 .env
+
+#Ignore node_modules
+node_modules
 
