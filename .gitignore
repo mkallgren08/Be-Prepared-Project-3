@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 # Created by .ignore support plugin (hsz.mobi)
 /node_modules/
-=======
 # Logs
 logs
 *.log
@@ -61,4 +59,6 @@ typings/
 # dotenv environment variables file
 .env
 
->>>>>>> 247733144ba8fb1446230f92639a78b623b18e22
+#Ignore node_modules
+node_modules
+
