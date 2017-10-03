@@ -1,6 +1,7 @@
 body{
-    background: URL("./images/polaris.jpg") no-repeat center center fixed;
-    background-size: cover;
+    background: black;
+   {/*} background: URL("./images/polaris.jpg") no-repeat center center fixed;
+    background-size: cover;*/}
 }
 h1 {
     text-align: center;

@@ -1,12 +1,9 @@
 import React from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import "./Home.css";
-{/*import {Hero} from "../../components/Hero";*/}
 
 const Home = () =>
     <div>
-        {/*<Hero backgroundimage="image/polaris.jpg">
-        </Hero>*/}
         <Container fluid> 
             <h1>Polaris</h1>
             <Row>

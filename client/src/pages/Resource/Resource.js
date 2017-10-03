@@ -1,14 +1,10 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import "./Resource.css";
-{/*import {Hero} from "../../components/Hero";*/}
 
 
 const Resource = () =>
     <div>
-        {/*<Hero backgroundimage="image/polaris.jpg">
-        </Hero>*/}
         <Container fluid>
             <h1>Resource Sharing</h1>
             <Row>
