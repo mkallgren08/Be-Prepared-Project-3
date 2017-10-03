@@ -14,8 +14,9 @@ class Drone extends Component {
         </Hero>*/}
                 <Container fluid>
                     <h1>Drones</h1>
-                    <button className="btn btn-default btn-lg">Add Your Drone to List</button>
-
+                    <div className="wrapper">
+                         <button className="btn btn-default btn-lg">Add Your Drone to List</button>
+                    </div>
                     <Row>
                         <Col size="md-3"/>
                         <Col size="md-6">

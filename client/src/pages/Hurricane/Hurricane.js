@@ -2,22 +2,21 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { List, ListItem } from "../../components/List";
 import { Col, Row, Container } from "../../components/Grid";
-{/*import {Hero} from "../../components/Hero";*/}
+import "./Hurricane.css";
 
 class Hurricane extends Component{
 
     render(){
         return(
             <div>
-        {/*<Hero backgroundimage="image/polaris.jpg">
-        </Hero>*/}
                 <Container fluid>
-                    <h1>Hurricane Prep</h1>
-                    <button className="btn btn-default btn-lg">Add Your Post</button>
-
+                    <h1>Hurricane Prep</h1><br/>
+                    <div className="wrapper">
+                        <button className="btn btn-default btn-lg">Add Your Post</button><br/>
+                    </div>
                     <Row>
-                        <Col size="md-3"/>
-                        <Col size="md-6">
+                        <Col size="md-2"/>
+                        <Col size="md-8">
                             <div className="panel panel-default panel-primary">
                                 <div className="panel-heading">
                                     <h3 className="panel-title">Hurricanes</h3>
@@ -27,7 +26,7 @@ class Hurricane extends Component{
                                 </div>
                             </div>
                         </Col>
-                        <Col size="md-3"/>
+                        <Col size="md-2"/>
                     </Row>
                 </Container>
             </div>
