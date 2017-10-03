@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.route('/add/post').post(function (req, res) {
+router.route('/post').post(function (req, res) {
   const users = new Users(req.body);
   users.save()
   .then(users => {
