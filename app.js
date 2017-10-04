@@ -7,13 +7,6 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-<<<<<<< HEAD
-const PORT = process.env.PORT || 3001;
-const index = require('./routes/index');
-const users = require('./routes/users');
-const db = require('./model/dbconnect.js');
-=======
->>>>>>> b115df583539bdfbce8ae0254488c8e62f3b231d
 
 const PORT = process.env.PORT || 3001;
 
