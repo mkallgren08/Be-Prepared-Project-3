@@ -13,30 +13,30 @@ const Blog = () =>
             <h1>Emergency Prep Blog</h1>
             <Row>
                 <Col size="md-3">
-                    <a href="/hurricane"><img src="./images/hurricane.jpg" alt="Hurricane" /><br />Hurricane</a>
+                    <a href="/hurricane"><img className="blogImg" src="./images/hurricane.jpg" alt="Hurricane" /><br />Hurricane</a>
                 </Col>
                 <Col size="md-3">
-                    <a href="#"><img src="./images/tornado.jpg" alt="Tornado" /><br />Tornado</a>
+                    <a href="#"><img className="blogImg" src="./images/tornado.jpg" alt="Tornado" /><br />Tornado</a>
                 </Col>
                 <Col size="md-3">
-                    <a href="#"><img src="./images/blizzard.jpg" alt="blizzard" /><br />Blizzard</a>
+                    <a href="#"><img className="blogImg" src="./images/blizzard.jpg" alt="blizzard" /><br />Blizzard</a>
                 </Col>
                 <Col size="md-3">
-                    <a href="#"><img src="./images/earthquake.jpg" alt="earthquake" /><br />Earthquake</a>
+                    <a href="#"><img className="blogImg" src="./images/earthquake.jpg" alt="earthquake" /><br />Earthquake</a>
                 </Col>
             </Row>
             <Row>
                 <Col size="md-3">
-                    <a href="#"><img src="./images/tsunami.jpg" alt="tsunami" /><br />Tsunami</a>
+                    <a href="#"><img className="blogImg" src="./images/tsunami.jpg" alt="tsunami" /><br />Tsunami</a>
                 </Col>
                 <Col size="md-3">
-                    <a href="#"><img src="./images/fire.jpg" alt="wild fire" /><br />Wild Fire</a>
+                    <a href="#"><img className="blogImg" src="./images/fire.jpg" alt="wild fire" /><br />Wild Fire</a>
                 </Col>
                 <Col size="md-3">
-                    <a href="#"><img src="./images/volcano.jpg" alt="volcano" /><br />Volcanic Eruption</a>
+                    <a href="#"><img className="blogImg" src="./images/volcano.jpg" alt="volcano" /><br />Volcanic Eruption</a>
                 </Col>
                 <Col size="md-3">
-                    <a href="#"><img src="./images/flood.jpg" alt="flood" /><br />Flood</a>
+                    <a href="#"><img className="blogImg" src="./images/flood.jpg" alt="flood" /><br />Flood</a>
                 </Col>
             </Row>
         </Container>

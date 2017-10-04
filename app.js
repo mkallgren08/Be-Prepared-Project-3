@@ -7,7 +7,9 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+
 const PORT = process.env.PORT || 3001;
+
 
 //Configuring database models
 const Users = require('./models/Users.js');
