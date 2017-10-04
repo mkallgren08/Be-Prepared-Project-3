@@ -1,0 +1,18 @@
+//Configuring model/schema for user collection
+const mongoose = require('mongoose');
+
+//Define the schema
+const UsersSchema = new mongoose.Schema({
+  username: {type: String, unique: true},
+  password: 'String',
+  name: 'String',
+  address: 'String',
+  city: 'String',
+  state: 'String',
+  zipcode: 'Number',
+  phone: 'String'
+});
+
+module.exports = mongoose.model('Users', UsersSchema);
+
+
