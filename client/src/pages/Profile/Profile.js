@@ -1,16 +1,63 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import API from "../../utils/API";
 import { List, ListItem } from "../../components/List";
 import { Col, Row, Container } from "../../components/Grid";
+import { Input, FormBtn } from "../../components/Form";
 import "./Profile.css";
 
 
 class Profile extends Component {
     
+    state = {
+        User: [],
+        name: "",
+        address:"",
+        city: "",
+        state: "",
+        zipCode: "",
+        phoneNumber: "",
+    }
+
+    componentDidMount() {
+        this.loadUser();
+    }
+
+    loadUser = () => {
+        API.getUser()
+        .then(res =>
+            this.setState({ User: res.data, name: "", address: "", city:"", state:"", zipCode:"", phoneNumber: "" })
+        )
+        .catch(err => console.log(err));
+    };
+
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        if (this.state.name && this.state.address && this.state.city && this.state.state && this.state.zipCode && this.state.phoneNumber) {
+            API.saveUser({
+                name: this.state.name,
+                address: this.state.address,
+                city: this.state.city,
+                state: this.state.state,
+                zipCode: this.state.zipCode,
+                phoneNumber: this.state.phoneNumber
+            }).then(res => this.loadUser())
+            .catch(err => console.log(err));
+        }
+    }
+
     render(){
         return(
             <div>
                 <Container fluid>
+                <br /> <br /> 
                     <Row>
                         <Col size="md-5">
                             <div className="panel panel-default panel-primary">
@@ -23,14 +70,47 @@ class Profile extends Component {
                             </div>
                         </Col>
                         <Col size="md-2">
-                            <h4>Name</h4>
-                            <h4>Location</h4>
-                            <h4>Email</h4>
-                            <h4>Phone Number</h4>
-
-                            <h4>Safe/Help</h4>
-                            <input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger" />
-
+                        <form>
+                                <Input
+                                name="name"
+                                value={this.state.name}
+                                onChange={this.handleInputChange}
+                                placeholder="Name (required)"
+                                />
+                                <Input
+                                name="address"
+                                value={this.state.address}
+                                onChange={this.handleInputChange}
+                                placeholder="Address (required)"
+                                />
+                                <Input
+                                name="city"
+                                value={this.state.city}
+                                onChange={this.handleInputChange}
+                                placeholder="City (required)"
+                                />
+                                <Input
+                                name="state"
+                                value={this.state.state}
+                                onChange={this.handleInputChange}
+                                placeholder="State (required)"
+                                />
+                                <Input
+                                name="zipCode"
+                                value={this.state.zipCode}
+                                onChange={this.handleInputChange}
+                                placeholder="Zip Code (required)"
+                                />
+                                <Input
+                                name="phoneNumber"
+                                value={this.state.phoneNumber}
+                                onChange={this.handleInputChange}
+                                placeholder="Phone Number (required)"
+                                /> 
+                                <div className="wrapper">
+                                    <FormBtn disabled={!this.state.name && this.state.address && this.state.city && this.state.state && this.state.zipCode && this.state.phoneNumber} onClick={this.handleFormSubmit}>Submit</FormBtn>
+                                </div>
+                            </form> 
                         </Col>
                         <Col size="md-5">
                             <div className="panel panel-default panel-primary">
@@ -44,7 +124,22 @@ class Profile extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <img src="http://via.placeholder.com/600x600" alt="googleMap" />
+                        <Col size="md-4" />
+                        <Col size="md-4">
+                            <h4>{this.state.name}</h4>
+                            <h4>{this.state.address}</h4>
+                            <h4>{this.state.city}</h4>
+                            <h4>{this.state.state}</h4>
+                            <h4>{this.state.zipCode}</h4>
+                            <h4>{this.state.phoneNumber}</h4>
+                        </Col>
+                        <Col size="md-4" />
+                    </Row>    
+                    <Row>
+                        <div className="wrapper">
+                            <img src="http://via.placeholder.com/800x600" alt="googleMap" />
+                        </div>   
+                        <br /> <br /> <br /> 
                     </Row>
                 </Container>
             </div>
