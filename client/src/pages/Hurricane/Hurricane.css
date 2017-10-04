@@ -14,3 +14,11 @@ h1{
 button{
     background: red;
 }
+
+.modal-container {
+    position: relative;
+}
+
+.modal-container .modal, .modal-container .modal-backdrop {
+    position: absolute;
+}

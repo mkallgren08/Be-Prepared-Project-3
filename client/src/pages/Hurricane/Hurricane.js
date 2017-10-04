@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
 import "./Hurricane.css";
+import BlogModal from "../../components/BlogModal";
 
 class Hurricane extends Component{
 
@@ -34,12 +35,12 @@ class Hurricane extends Component{
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if(this.state.title && this.state.author && this.state.body) {
+        if(this.state.title && this.state.author && this.state.link) {
             API.saveHurricane({
                 title: this.state.title,
                 author: this.state.author,
                 link: this.state.link,
-                author: this.state.author
+                body: this.state.body
             }).then(res => this.loadDrone())
             .catch(err => console.log(err));
         }
@@ -50,9 +51,7 @@ class Hurricane extends Component{
             <div>
                 <Container fluid>
                     <h1>Hurricane Prep</h1>
-                    <div className="wrapper">
-                        <FormBtn className="btn btn-default btn-lg">Add Your Post</FormBtn>
-                    </div>
+                    <div id="insertBlogModal" />
                     <br/> <br/> <br/>
                     <Row>
                         <Col size="md-2"/>
