@@ -1,4 +1,6 @@
-
+.wrapper{
+    text-align: center;
+}
 .scroll {
     height: 275px;
     overflow-y: auto;
@@ -6,8 +8,6 @@
 
 h3, h4 {
     text-align: center;
+    color: white;
 }
 
-img {
-    margin: 30px, 180px, 30px, 180px;
-}

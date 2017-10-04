@@ -1,19 +1,27 @@
 const express = require('express');
 const hbs = require('express-hbs');
 const path = require('path');
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+<<<<<<< HEAD
 const PORT = process.env.PORT || 3001;
 const index = require('./routes/index');
 const users = require('./routes/users');
 const db = require('./model/dbconnect.js');
+=======
+>>>>>>> b115df583539bdfbce8ae0254488c8e62f3b231d
+
+const PORT = process.env.PORT || 3001;
+
+
+//Configuring database models
+const Users = require('./models/Users.js');
 
 const app = express();
-
-//using Database files
-const userProfile = require('./model/users');
 
 // Use `.hbs` for extensions and find partials in `views/partials`.
 app.engine('hbs', hbs.express4({
@@ -30,11 +38,36 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//configuring database connection
+mongoose.connect('mongodb://proj3:ClassProject@ds147544.mlab.com:47544/prepared_db', {
+  useMongoClient: true
+});
+  // When successfully connected
+  mongoose.connection.on('connected', function() {
+    console.log('Mongoose connection open');
+  });
+
+// If the connection throws an error
+  mongoose.connection.on('error', function(err) {
+    console.log('Mongoose connection error: ' + err);
+  });
+
+
+//Requiring routes
+const index = require('./routes/index');
+const userdata = require('./routes/userdata');
+
+//Configuring routes
 app.use('/', index);
-app.use('/users', users);
+app.use('/user', userdata);
+
+app.get('/', function (req, res) {
+  res.render('index');
+
+});
 
 /* Send every request to the React app
-// Define any API routes before this runs
+// Define any API routes before this run
 
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
