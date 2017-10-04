@@ -29,6 +29,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use
 
 //configuring database connection
 mongoose.connect('mongodb://proj3:ClassProject@ds147544.mlab.com:47544/prepared_db', {
