@@ -9,30 +9,30 @@ const Resource = () =>
             <h1>Resource Sharing</h1>
             <Row>
                 <Col size="md-3">
-                    <img src="#" alt="drone" />
+                    <a href="/drone"><img className="resourceImg" src="./images/drone.jpg" alt="drone" /><br />Drones</a>
                 </Col>
                 <Col size="md-3">
-                    <img src="#" alt="#" />
+                    <img className="resourceImg" src="http://via.placeholder.com/150x150" alt="placeholder" />
                 </Col>
                 <Col size="md-3">
-                    <img src="#" alt="#" />
+                    <img className="resourceImg" src="http://via.placeholder.com/150x150" alt="placeholder" />
                 </Col>
                 <Col size="md-3">
-                    <img src="#" alt="#" />
+                    <img className="resourceImg" src="http://via.placeholder.com/150x150" alt="placeholder" />
                 </Col>
             </Row>
             <Row>
                 <Col size="md-3">
-                    <img src="#" alt="#" />
+                    <img className="resourceImg" src="http://via.placeholder.com/150x150" alt="placeholder" />
                 </Col>
                 <Col size="md-3">
-                    <img src="#" alt="#" />
+                    <img className="resourceImg" src="http://via.placeholder.com/150x150" alt="placeholder" />
                 </Col>
                 <Col size="md-3">
-                    <img src="#" alt="#" />
+                    <img className="resourceImg" src="http://via.placeholder.com/150x150" alt="placeholder" />
                 </Col>
                 <Col size="md-3">
-                    <img src="#" alt="#" />
+                    <img className="resourceImg" src="http://via.placeholder.com/150x150" alt="placeholder" />
                 </Col>
             </Row>
         </Container>
