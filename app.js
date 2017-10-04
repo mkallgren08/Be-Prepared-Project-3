@@ -9,10 +9,6 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 3001;
-const index = require('./routes/index');
-const users = require('./routes/users');
-const db = require('./model/dbconnect.js');
-
 
 
 //Configuring database models
