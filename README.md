@@ -2,7 +2,6 @@
 #### By Renee Geffre, David Goodrich, Michael Kallgren, Brian Martin
 
 ## Quick Overview
-<<<<<<< HEAD
 ### What this app is for
 
 ### Why we did it
@@ -80,8 +79,3 @@ Current limitations
  How to contribute 
  
  Places you can go to get general information about emergency preparedness
-=======
-###
-
-###
->>>>>>> b33083a1775ad7f27e95bca162f0b795020527dd
