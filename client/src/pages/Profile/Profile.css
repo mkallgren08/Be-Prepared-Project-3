@@ -11,10 +11,3 @@ h3, h4 {
     color: white;
 }
 
-.modal-container {
-    position: relative;
-}
-
-.modal-container .modal, .modal-container .modal-backdrop {
-    position: absolute;
-}

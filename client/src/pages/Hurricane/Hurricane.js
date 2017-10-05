@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
-import { Input } from "../../components/Form";
+import { Input, FormBtn } from "../../components/Form";
 import "./Hurricane.css";
 
 class Hurricane extends Component{
@@ -34,12 +34,12 @@ class Hurricane extends Component{
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if(this.state.title && this.state.author && this.state.link) {
+        if(this.state.title && this.state.author && this.state.body) {
             API.saveHurricane({
                 title: this.state.title,
                 author: this.state.author,
                 link: this.state.link,
-                body: this.state.body
+                author: this.state.author
             }).then(res => this.loadDrone())
             .catch(err => console.log(err));
         }
@@ -50,7 +50,9 @@ class Hurricane extends Component{
             <div>
                 <Container fluid>
                     <h1>Hurricane Prep</h1>
-   
+                    <div className="wrapper">
+                        <FormBtn className="btn btn-default btn-lg">Add Your Post</FormBtn>
+                    </div>
                     <br/> <br/> <br/>
                     <Row>
                         <Col size="md-2"/>

@@ -3,7 +3,6 @@ import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
 import "./Drone.css";
-import Modal from "../../components/Modal";
 
 class Drone extends Component {
     
@@ -20,10 +19,10 @@ class Drone extends Component {
    }
 
    loadDrone = () => {
-       API.getDrone()
-       .then(res =>
-        this.setState({ Drone: res.data, name: "", zipCode: "", phoneNumber: "", comment:"" })
-    ).catch(err => console.log(err));
+    //    API.getDrone()
+    //    .then(res =>
+    //     this.setState({ Drone: res.data, name: "", zipCode: "", phoneNumber: "", comment:"" })
+    // ).catch(err => console.log(err));
    };
 
    handleInputChange = event => {
@@ -35,15 +34,15 @@ class Drone extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if (this.state.name && this.state.zipCode && this.state.phoneNumber && this.state.comment) {
-            API.saveDrone({
-                name: this.state.name,
-                zipCode: this.state.zipCode,
-                phoneNumber: this.state.phoneNumber,
-                comment: this.state.comment
-            }).then(res => this.loadDrone())
-            .catch(err => console.log(err));
-        }
+        // if (this.state.name && this.state.zipCode && this.state.phoneNumber && this.state.comment) {
+        //     API.saveDrone({
+        //         name: this.state.name,
+        //         zipCode: this.state.zipCode,
+        //         phoneNumber: this.state.phoneNumber,
+        //         comment: this.state.comment
+        //     }).then(res => this.loadDrone())
+        //     .catch(err => console.log(err));
+        // }
     }
 
     render(){
@@ -54,7 +53,7 @@ class Drone extends Component {
                     <h1>Drones</h1>
                     <div className="wrapper">
                          <FormBtn className="btn btn-default btn-lg">Add Your Drone to List</FormBtn>
-                    </div>  
+                    </div>
                     <br /> <br /> <br />
                     <Row>
                         <Col size="md-2"/>
