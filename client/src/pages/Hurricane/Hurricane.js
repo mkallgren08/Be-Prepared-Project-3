@@ -39,7 +39,6 @@ class Hurricane extends Component{
                 title: this.state.title,
                 author: this.state.author,
                 link: this.state.link,
-                author: this.state.author
             }).then(res => this.loadDrone())
             .catch(err => console.log(err));
         }
