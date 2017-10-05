@@ -7,6 +7,7 @@ import Resource from "./pages/Resource";
 //import Drone from "./pages/Drone";
 import Hurricane from "./pages/Hurricane";
 import Nav from "./components/Nav";
+import EmergencyForm from "./pages/EmergencyForm";
 
 
 
@@ -19,7 +20,7 @@ const App = () =>
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/resource" component={Resource} />
         <Route exact path="/hurricane" component={Hurricane} />
-
+        <Route exact path="/emergencyform" component={EmergencyForm} />
     </div>
   </Router>;
 

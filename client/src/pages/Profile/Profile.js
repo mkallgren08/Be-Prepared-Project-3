@@ -4,6 +4,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
 import "./Profile.css";
 import InputModal from "../../components/Modal/inputModal";
+import {Button} from "react-bootstrap";
 
 class Profile extends Component {
     
@@ -106,14 +107,16 @@ class Profile extends Component {
                                 onChange={this.handleInputChange}
                                 placeholder="Phone Number (required)"
                                 /> 
-                            </InputModal> 
+                        </InputModal> 
 
+                        <div>
                             <h4>{this.state.name}</h4>
                             <h4>{this.state.address}</h4>
                             <h4>{this.state.city}</h4>
                             <h4>{this.state.state}</h4>
                             <h4>{this.state.zipCode}</h4>
                             <h4>{this.state.phoneNumber}</h4>    
+                        </div>    
 
                         </Col>
                         <Col size="md-5">
@@ -127,13 +130,9 @@ class Profile extends Component {
                             </div>
                         </Col>
                     </Row>
-   
                     <Row>
-                        <div className="wrapper">
-                            <img src="http://via.placeholder.com/800x600" alt="googleMap" />
-                        </div>   
-                        <br /> <br /> <br /> 
-                    </Row>
+                        <a href="/emergencyform"><Button>Emergency Status Form</Button></a>
+                    </Row>    
                 </Container>
             </div>
         );
