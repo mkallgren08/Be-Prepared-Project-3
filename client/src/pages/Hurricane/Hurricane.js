@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
+import { Modal } from 'react-bootstrap';
+import { Button, ButtonToolbar} from 'react-bootstrap';
 import "./Hurricane.css";
+import InputModal from "../../components/Modal/inputModal";
 
 class Hurricane extends Component{
 
@@ -39,6 +42,7 @@ class Hurricane extends Component{
                 title: this.state.title,
                 author: this.state.author,
                 link: this.state.link,
+                body: this.state.body
             }).then(res => this.loadDrone())
             .catch(err => console.log(err));
         }
@@ -49,9 +53,33 @@ class Hurricane extends Component{
             <div>
                 <Container fluid>
                     <h1>Hurricane Prep</h1>
-                    <div className="wrapper">
-                        <FormBtn className="btn btn-default btn-lg">Add Your Post</FormBtn>
-                    </div>
+                        <InputModal>
+                        <Modal.Title>Add a Blog Post</Modal.Title>
+                            <Input
+                                name="title"
+                                value={this.state.title}
+                                onChange={this.handleInputChange}
+                                placeholder="Title (required)"
+                            />
+                            <Input
+                                name="author"
+                                value={this.state.author}
+                                onChange={this.handleInputChange}
+                                placeholder="Author (required)"
+                            />
+                            <Input
+                                name="link"
+                                value={this.state.link}
+                                onChange={this.handleInputChange}
+                                placeholder="Link (required)"
+                            />
+                            <Input
+                                name="body"
+                                value={this.state.body}
+                                onChange={this.handleInputChange}
+                                placeholder="Post"
+                            /> 
+                        </InputModal>    
                     <br/> <br/> <br/>
                     <Row>
                         <Col size="md-2"/>
