@@ -1,1 +1,4 @@
-# Be-Prepared-Project-3
+# Polaris Emergency Preparation
+#### By Renee Geffre, David Goodrich, Michael Kallgren, Brian Martin
+
+* 

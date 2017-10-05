@@ -6,13 +6,21 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-
 const PORT = process.env.PORT || 3001;
+const index = require('./routes/index');
+//const db = require('./model/dbconnect.js');
 
 //Configuring database models
 const Users = require('./models/Users.js');
 
 const app = express();
+
+
+// Use `.hbs` for extensions and find partials in `views/partials`.
+// app.engine('hbs', hbs.express4({
+//   partialsDir: __dirname + '/views/partials'}));
+// app.set('view engine', 'hbs');
+// app.set('views', __dirname + '/views');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -36,10 +44,6 @@ mongoose.connect('mongodb://proj3:ClassProject@ds147544.mlab.com:47544/prepared_
   mongoose.connection.on('error', function(err) {
     console.log('Mongoose connection error: ' + err);
   });
-
-
-//Requiring routes
-const index = require('./routes/index');
 const userdata = require('./routes/userdata');
 
 //Configuring routes
