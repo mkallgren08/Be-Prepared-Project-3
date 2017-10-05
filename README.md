@@ -11,11 +11,14 @@
 
 
 
-## Table of Contents
+# Table of Contents
 1. [Site Features](#features)
 2. [How to use](#howToUse)
     1. [Sign Up Process](#signup)
-    2. []
+    2. [Creation of Emergency Profile](#makingEmergencyProfile)
+    3. [Searching Articles](#searchArticles)
+    4. [Writing Articles](#writeArticles)
+        * [Why Article Vetting is So Important](#whyVetting)
 3. [Technical Data](#techdata)
     1. [Dependencies](#dependencies)
     2. [User Authentication](#userAuth)
