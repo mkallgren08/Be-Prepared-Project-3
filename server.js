@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 //setting port
+
 const PORT = process.env.PORT || 3001;
 
 //Requiring Mongoose/Mongodb
@@ -17,7 +18,6 @@ const Users = require('./models/Users.js');
 
 const app = express();
 
-//Configuring apps
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -38,6 +38,7 @@ mongoose.connect('mongodb://proj3:ClassProject@ds147544.mlab.com:47544/prepared_
   mongoose.connection.on('error', function(err) {
     console.log('Mongoose connection error: ' + err);
   });
+
 
 //Requiring routes
 const index = require('./routes/index');
