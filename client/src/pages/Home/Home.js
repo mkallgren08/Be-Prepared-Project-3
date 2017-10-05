@@ -6,6 +6,7 @@ const Home = () =>
     <div>
         <Container fluid> 
             <h1>Polaris</h1>
+            <br /> <br /> <br />
             <Row>
                 <Col size="md-3" />
                 <Col size="md-6">
