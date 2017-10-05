@@ -1,5 +1,4 @@
 const express = require('express');
-const hbs = require('express-hbs');
 const path = require('path');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -10,18 +9,10 @@ const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 3001;
 
-
 //Configuring database models
 const Users = require('./models/Users.js');
 
 const app = express();
-
-// Use `.hbs` for extensions and find partials in `views/partials`.
-app.engine('hbs', hbs.express4({
-  partialsDir: __dirname + '/views/partials'}));
-app.set('view engine', 'hbs');
-app.set('views', __dirname + '/views');
-
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -30,6 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/uploads', express.static('uploads'));
 
 //configuring database connection
 mongoose.connect('mongodb://proj3:ClassProject@ds147544.mlab.com:47544/prepared_db', {
