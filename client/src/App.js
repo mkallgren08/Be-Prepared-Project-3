@@ -6,7 +6,9 @@ import Blog from "./pages/Blog";
 import Resource from "./pages/Resource";
 import Hurricane from "./pages/Hurricane";
 import Nav from "./components/Nav";
+import EmergencyForm from "./pages/EmergencyForm";
 import Auth from './auth/auth';
+
 
 const auth = new Auth();
 
@@ -14,12 +16,14 @@ const auth = new Auth();
 const App = () => 
   <Router>
     <div>
-      <Nav auth={auth} />
-        <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
-        <Route exact path="/profile" render={(props) => <Profile auth={auth} {...props} />} />
-        <Route exact path="/blog" render={(props) => <Blog auth={auth} {...props} />} />
-        <Route exact path="/resource" render={(props) => <Resource auth={auth} {...props} />} />
-        <Route exact path="/hurricane" render={(props) => <Hurricane auth={auth} {...props} />} />
+
+      <Nav />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/blog" component={Blog} />
+        <Route exact path="/resource" component={Resource} />
+        <Route exact path="/hurricane" component={Hurricane} />
+        <Route exact path="/emergencyform" component={EmergencyForm} />
 
     </div>
   </Router>;
