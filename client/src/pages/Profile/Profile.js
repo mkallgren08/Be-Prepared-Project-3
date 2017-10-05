@@ -131,7 +131,7 @@ class Profile extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <a href="/emergencyform"><Button>Emergency Status Form</Button></a>
+                        <a href="/emergencyform"><Button className="blueBtn">Emergency Status Form</Button></a>
                     </Row>    
                 </Container>
             </div>

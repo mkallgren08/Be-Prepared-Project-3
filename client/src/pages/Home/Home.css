@@ -12,3 +12,9 @@ p {
     text-align: center;
     color: white;
 }
+
+.blueBtn {
+    background: #337ab7;
+    color: white;
+    border-color: #337ab7;
+}

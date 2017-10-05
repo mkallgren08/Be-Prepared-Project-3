@@ -26,6 +26,7 @@ const Home = () =>
                 <Col size="md-4" />
                 <Col size="md-4">
                     <Jumbotron>
+                        <h2 style={{ color: 'white', textAlign: 'center', textDecoration: "underline" }}>Emergency Checklists</h2>
                             <a href="./uploads/CommuterEmergencyPlan.pdf" target="_blank"><h4><span className="glyphicon glyphicon-list-alt" /> Commuter Emergency Plan</h4></a>
                             <a href="./uploads/DisasterPlanningforPetOwners.pdf" target="_blank"><h4><span className="glyphicon glyphicon-list-alt" /> Disaster Planning for Pet Owners</h4></a>
                             <a href="./uploads/DisasterPlanningforSpecialNeeds.pdf" target="_blank"><h4><span className="glyphicon glyphicon-list-alt" /> Disaster Planning for Special Needs</h4></a>
