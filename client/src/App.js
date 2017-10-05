@@ -4,12 +4,12 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Blog from "./pages/Blog";
 import Resource from "./pages/Resource";
-//import Drone from "./pages/Drone";
 import Hurricane from "./pages/Hurricane";
 import Nav from "./components/Nav";
 import Auth from './auth/auth';
 
 const auth = new Auth();
+
 
 const App = () => 
   <Router>
