@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
 import "./Drone.css";
+import Modal from "../../components/Modal";
 
 class Drone extends Component {
     
@@ -53,7 +54,7 @@ class Drone extends Component {
                     <h1>Drones</h1>
                     <div className="wrapper">
                          <FormBtn className="btn btn-default btn-lg">Add Your Drone to List</FormBtn>
-                    </div>
+                    </div>  
                     <br /> <br /> <br />
                     <Row>
                         <Col size="md-2"/>
