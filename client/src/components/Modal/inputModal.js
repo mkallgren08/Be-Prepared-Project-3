@@ -23,7 +23,7 @@ class InputModal extends React.Component {
           bsSize="large"
           onClick={this.open}
         >
-          Create New Post
+          Add/Update
           </Button>
 
         <Modal show={this.state.showModal} >
