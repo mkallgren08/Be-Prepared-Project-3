@@ -8,16 +8,16 @@ import InputModal from "../../components/Modal/inputModal";
 
 class EmergencyMap extends Component{
 
-    componentDidMount() {
-        this.loadEmergencyMap();
-    }
+    // componentDidMount() {
+    //     this.loadEmergencyMap();
+    // }
 
-    loadEmergencyMap = () => {
-        API.getEmergencyMap()
-        .then(res =>
-            this.setState({ EmergencyMap: res.data, title: "", author: "", link: "", body: "" })
-        ).catch(err => console.log(err));
-    };
+    // loadEmergencyMap = () => {
+    //     API.getEmergencyMap()
+    //     .then(res =>
+    //         this.setState({ EmergencyMap: res.data, title: "", author: "", link: "", body: "" })
+    //     ).catch(err => console.log(err));
+    // };
 
     // handleInputChange = event => {
     //     const {name, value } = event.target;
