@@ -69,6 +69,7 @@ class Profile extends Component {
                             </div>
                         </Col>
                         <Col size="md-2">
+                        <div className="wrapper">
                         <InputModal>
                                 <Input
                                 name="name"
@@ -107,7 +108,7 @@ class Profile extends Component {
                                 placeholder="Phone Number (required)"
                                 /> 
                         </InputModal> 
-
+                        </div>
                         <div>
                             <h4>{this.state.name}</h4>
                             <h4>{this.state.address}</h4>
