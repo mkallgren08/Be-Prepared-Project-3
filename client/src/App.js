@@ -9,8 +9,10 @@ import Nav from "./components/Nav";
 import Auth from "./auth/auth";
 import Callback from "./Callback/Callback";
 import history from "./history";
+import EmergencyForm from "./pages/EmergencyForm";
 
 const auth = new Auth();
+auth.login
 
 const handleAuthentication = (nextState, replace) => {
   if (/access_token|id_token|error/.test(nextState.location.hash)) {
