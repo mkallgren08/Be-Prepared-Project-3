@@ -7,21 +7,49 @@ import Resource from "./pages/Resource";
 //import Drone from "./pages/Drone";
 import Hurricane from "./pages/Hurricane";
 import Nav from "./components/Nav";
-import Auth from './auth/auth';
-
+import Auth from "./auth/auth";
+import Callback from "./Callback/Callback";
 const auth = new Auth();
 
-const App = () => 
+const handleAuthentication = (nextState, replace) => {
+  if (/access_token|id_token|error/.test(nextState.location.hash)) {
+    auth.handleAuthentication();
+  }
+}
+
+const App = () => (
   <Router>
     <div>
       <Nav auth={auth} />
-        <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
-        <Route exact path="/profile" render={(props) => <Profile auth={auth} {...props} />} />
-        <Route exact path="/blog" render={(props) => <Blog auth={auth} {...props} />} />
-        <Route exact path="/resource" render={(props) => <Resource auth={auth} {...props} />} />
-        <Route exact path="/hurricane" render={(props) => <Hurricane auth={auth} {...props} />} />
-
+      <Route exact path="/" render={props => <Home auth={auth} {...props} />} />
+      <Route
+        exact
+        path="/profile"
+        render={props => <Profile auth={auth} {...props} />}
+      />
+      <Route
+        exact
+        path="/blog"
+        render={props => <Blog auth={auth} {...props} />}
+      />
+      <Route
+        exact
+        path="/resource"
+        render={props => <Resource auth={auth} {...props} />}
+      />
+      <Route
+        exact
+        path="/hurricane"
+        render={props => <Hurricane auth={auth} {...props} />}
+      />
+      <Route 
+        path="/callback"
+        render={props => {
+          handleAuthentication(props);
+          return <Callback {...props} />
+        }} /> 
     </div>
-  </Router>;
+  </Router>
+);
 
 export default App;
