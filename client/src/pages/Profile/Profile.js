@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
+// import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
 import "./Profile.css";
@@ -18,39 +18,39 @@ class Profile extends Component {
         phoneNumber: "",
     }
 
-    componentDidMount() {
-        this.loadUser();
-    }
+    // componentDidMount() {
+    //     this.loadUser();
+    // }
 
-    loadUser = () => {
-        API.getUser()
-        .then(res =>
-            this.setState({ User: res.data, name: "", address: "", city:"", state:"", zipCode:"", phoneNumber: "" })
-        )
-        .catch(err => console.log(err));
-    };
+    // loadUser = () => {
+    //     API.getUser()
+    //     .then(res =>
+    //         this.setState({ User: res.data, name: "", address: "", city:"", state:"", zipCode:"", phoneNumber: "" })
+    //     )
+    //     .catch(err => console.log(err));
+    // };
 
-    handleInputChange = event => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
-    };
+    // handleInputChange = event => {
+    //     const { name, value } = event.target;
+    //     this.setState({
+    //         [name]: value
+    //     });
+    // };
 
-    handleFormSubmit = event => {
-        event.preventDefault();
-        if (this.state.name && this.state.address && this.state.city && this.state.state && this.state.zipCode && this.state.phoneNumber) {
-            API.saveUser({
-                name: this.state.name,
-                address: this.state.address,
-                city: this.state.city,
-                state: this.state.state,
-                zipCode: this.state.zipCode,
-                phoneNumber: this.state.phoneNumber
-            }).then(res => this.loadUser())
-            .catch(err => console.log(err));
-        }
-    }
+    // handleFormSubmit = event => {
+    //     event.preventDefault();
+    //     if (this.state.name && this.state.address && this.state.city && this.state.state && this.state.zipCode && this.state.phoneNumber) {
+    //         API.saveUser({
+    //             name: this.state.name,
+    //             address: this.state.address,
+    //             city: this.state.city,
+    //             state: this.state.state,
+    //             zipCode: this.state.zipCode,
+    //             phoneNumber: this.state.phoneNumber
+    //         }).then(res => this.loadUser())
+    //         .catch(err => console.log(err));
+    //     }
+    // }
 
     render(){
         return(
