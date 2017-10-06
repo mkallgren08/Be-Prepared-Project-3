@@ -58,6 +58,14 @@
 <a id= "makingEmergencyProfile"></a>
 ## Creation of Emergency Profile
 
+The Emergency Profile is something that all registered users are strongly recommended to fill out. It is a tool first and foremost meant for use by relief crews to assist you and create a more cohesive "sitational awareness map" for their efforts. It is also a tool for allowing friends and family to be kept abreast of your situation in the event that they cannot contact you (and vice versa) directly.
+
+The Emergency Profile is populated by the following fields:
+1. Your name
+2. Your street address
+
+See [Personal Data Access](#personalData) for information about how your personal data is stored and used.
+
 <a id= "searchArticles"></a>
 ## Searching Articles
 
@@ -74,17 +82,26 @@ In a survival situation, two things are incredibly lethal: __ignorance__ and __m
 <a id = "usingEmergencyProfile"></a>
 # Use of Emergency Profile
 
-The Emergency Profile is something that all registered users are strongly recommended to fill out. It is a tool first and foremost meant for use by relief crews to assist you and create a more cohesive "sitational awareness map" for their efforts. It is also a tool for allowing friends and family to be kept abreast of your situation in the event that they cannot contact you (and vice versa) directly.
-
-The Emergency Profile is populated by the following fields:
-1. Your name
-2. Your street address
-
-In the event of an emergency, you can update your emergency status with.
-
+In the event of an emergency, your status will be automatically switched to "Not Safe" until either you, a person with your login credentials (such as an emergency contact) , or a relief crew switch your status to "Safe". See below for further details.
 
 <a id = 'activeEmergency'></a>
 ## When is the Emergency Profile Activated?
+
+The Emergency Profile is 'activated' in the event of a natural disaster by an administrator outside of the disaster zone. Using the address you provided when creating your profile, the adminstrator will determine if you are in the affected zone or not. They will then switch your Emergency Status to "Not Safe" so that relief crews know to keep an ear to the ground for you. 
+
+<a id = 'updateEmergencyProfile'></a>
+## How to Update Your Emergency Profile
+
+You can log in at any time to mark yourself 'Safe'. If you are unable to access the webpage in the aftermath of an emergency, but you are able to reach your emergency contacts or a local relief crew who can access the webpage, they can update your status for you.
+
+<a id = 'emergencyCategories'></a>
+## Emergency Categories
+
+In the aftermath of an emergency you have several options when marking yourself "Not Safe". To assist with relief crew triage, we have included a set of categories that you can mark yourself under/in need of: 
+* Medical Assistance (Life Threatening) - for medical emergencies. __*THIS SELECTION SHOULD ALWAYS BE MADE IN CONJUCTION WITH AN ATTEMPT TO CALL TO YOUR LOCAL EMERGENCY CREW (I.E. 911).*__
+* Medical/Supply Needs (Urgent but Non-Life Threatening) - for medical needs that are not urgent at the moment, i.e. you have insulin now but need a supply within the next day or two or you need water purification tablets.
+* Childcare - for infant needs such as formula.
+* Miscellaneous  - for anything else that is not of an urgent nature. This includes running low on food (anything over three days' worth).
 
 <!-- SECTION 4 - RESOURCE SHARING -->
 
