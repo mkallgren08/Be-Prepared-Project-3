@@ -10,27 +10,29 @@
 2.	We want to set up an easy tracking system for relief crews to get people the help they cannot give themselves. 
 
 
-
+<a id = "backToTop"></a>
 # Table of Contents
+
 1. [Site Features](#features)
 2. [How to use](#howToUse)
-  1. [Sign Up Process](#signup)
-  2. [Creation of Emergency Profile](#makingEmergencyProfile)
-  3. [Searching Articles](#searchArticles)
-  4. [Writing Articles](#writeArticles)
-    * [Why Article Vetting is So Important](#whyVetting)
+	1. [Sign Up Process](#signup)
+	2. [Creation of Emergency Profile](#makingEmergencyProfile)
+	3. [Searching Articles](#searchArticles)
+	4. [Writing Articles](#writeArticles)
+    	* [Why Article Vetting is So Important](#whyVetting)
 3. [Use of Emergency Profile](#usingEmergencyProfile)
-  1. [When is the Emergency Profile Activated?](#activeEmergency)
-  2. [How to Update Emergency Profile](#updateEmergencyProfile)
-  3. [Types of Emergency Categories](#emergencyCategories)
+	1. [When is the Emergency Profile Activated?](#activeEmergency)
+	2. [How to Update Emergency Profile](#updateEmergencyProfile)
+	3. [Types of Emergency Categories](#emergencyCategories)
 4. [Resource Sharing](#resourceSharing)
+	1. [Drone Database](#droneDatabase)
 5. [Privacy](#privacy)
-  1. [Personal Data Access](#personalData)
+	1. [Personal Data Access](#personalData)
 6. [Technical Data](#techData)
-  1. [Dependencies](#dependencies)
-  2. [User Authentication](#userAuth)
+	1. [Dependencies](#dependencies)
+	2. [User Authentication](#userAuth)
 7. [Future Improvements](#futureImprovements)
-  1. [List of Future Features We Want to Have](#futureFeatures)
+	1. [List of Future Features We Want to Have](#futureFeatures)
 8. [Aditional Resources](#additionalResources)
 
 
@@ -75,7 +77,7 @@ See [Personal Data Access](#personalData) for information about how your persona
 <a id= "whyVetting"></a>
 ### Why Article Vetting is So Important
 
-In a survival situation, two things are incredibly lethal: __ignorance__ and __misinformation__.  The goal of this website is to help 
+In a survival situation, two things are incredibly lethal: __ignorance__ and __misinformation__.  The goal of this website is to help avoid ignorance in the event of an emergency, and the last thing we want is to undermine any good we do by spreading misinformation. This is why anyone who wishes to become a blogger must submit an application wherein they discuss their credentials. Even after approval, articles will still have to go through a collaborative editing process (similar to Wikipedia's model) to ensure accuracy.
 
 
 <!-- SECTION 3 - USE OF EMERGENCY PROFILE -->
@@ -104,6 +106,9 @@ In the aftermath of an emergency you have several options when marking yourself 
 * Miscellaneous  - for anything else that is not of an urgent nature. This includes running low on food (anything over three days' worth).
 
 <!-- SECTION 4 - RESOURCE SHARING -->
+<a id= "resourceSharing"></a>
+# Resource Sharing
+
 
 
 
@@ -126,6 +131,37 @@ In the future, the only people who can see your location and emergency data ([se
 
 <a id = "dependencies"></a>
 ## Dependencies
+
+__Server Dependencies__
+  	"dependencies": {
+		"auth0-js": "^8.10.1",
+		"body-parser": "~1.18.2",
+		"concurrently": "^3.5.0",
+		"cookie-parser": "~1.4.3",
+		"debug": "~2.6.9",
+		"express": "~4.15.5",
+		"express-router": "0.0.1",
+		"mongoose": "^4.11.14",
+		"morgan": "~1.9.0",
+		"multer": "^1.3.0",
+		"nodemon": "^1.12.1",
+		"react-bootstrap": "^0.31.3",
+		"yarn": "^1.1.0"
+  	}
+
+__Client Dependencies__
+  "dependencies": {
+    "auth0-js": "^8.10.1",
+    "axios": "^0.16.2",
+    "concurrently": "^3.5.0",
+    "react": "^16.0.0",
+    "react-bootstrap": "^0.31.3",
+    "react-dom": "^16.0.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.14"
+  }
+
+
 <a id = "userAuth"></a>
 ## User Authentication
 
