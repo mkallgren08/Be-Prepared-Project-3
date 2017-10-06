@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Button } from "react-bootstrap";
-//import AuthButtons from "./AuthButtons";
+import AuthButtons from "./AuthButtons";
 
 const Nav = (props) =>
     <ul className="nav navbar-nav navbar-right">
