@@ -1,14 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Blog from "./pages/Blog";
 import Resource from "./pages/Resource";
 import Hurricane from "./pages/Hurricane";
 import Nav from "./components/Nav";
-<<<<<<< HEAD
 import Auth from "./auth/auth";
 import Callback from "./Callback/Callback";
+import history from "./history";
+
 const auth = new Auth();
 
 const handleAuthentication = (nextState, replace) => {
@@ -18,7 +19,7 @@ const handleAuthentication = (nextState, replace) => {
 }
 
 const App = () => (
-  <Router>
+  <Router history={history}>
     <div>
       <Nav auth={auth} />
       <Route exact path="/" render={props => <Home auth={auth} {...props} />} />
@@ -48,27 +49,6 @@ const App = () => (
           handleAuthentication(props);
           return <Callback {...props} />
         }} /> 
-=======
-import EmergencyForm from "./pages/EmergencyForm";
-import Auth from './auth/auth';
-
-
-const auth = new Auth();
-
-
-const App = () => 
-  <Router>
-    <div>
-
-      <Nav />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/blog" component={Blog} />
-        <Route exact path="/resource" component={Resource} />
-        <Route exact path="/hurricane" component={Hurricane} />
-        <Route exact path="/emergencyform" component={EmergencyForm} />
-
->>>>>>> 2d0f2b142bdec69cc88c25cf371c32e3a048bb71
     </div>
   </Router>
 );

@@ -8,7 +8,7 @@ export default class AuthButtons extends Component {
 
   login() {
     this.props.auth.login();
-    console.log('logout');
+    
   }
 
   logout() {
@@ -24,9 +24,10 @@ export default class AuthButtons extends Component {
           <Button
             bsStyle="primary"
             className="btn-margin"
+            marginRight="40px"
             onClick={this.login.bind(this)}
           >
-            Log In
+            Sign Up/Log In
           </Button>
         )}
         {isAuthenticated() && (
