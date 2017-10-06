@@ -3,7 +3,8 @@ import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
 import "./Profile.css";
-
+import InputModal from "../../components/Modal/inputModal";
+import {Button} from "react-bootstrap";
 
 class Profile extends Component {
     
@@ -55,7 +56,8 @@ class Profile extends Component {
         return(
             <div>
                 <Container fluid>
-                <br /> <br /> 
+                <h1>My Profile</h1> 
+                <br /> <br />
                     <Row>
                         <Col size="md-5">
                             <div className="panel panel-default panel-primary">
@@ -68,7 +70,7 @@ class Profile extends Component {
                             </div>
                         </Col>
                         <Col size="md-2">
-                        <form>
+                        <InputModal>
                                 <Input
                                 name="name"
                                 value={this.state.name}
@@ -105,10 +107,17 @@ class Profile extends Component {
                                 onChange={this.handleInputChange}
                                 placeholder="Phone Number (required)"
                                 /> 
-                                <div className="wrapper">
-                                    <FormBtn disabled={!this.state.name && this.state.address && this.state.city && this.state.state && this.state.zipCode && this.state.phoneNumber} onClick={this.handleFormSubmit}>Submit</FormBtn>
-                                </div>
-                            </form> 
+                        </InputModal> 
+
+                        <div>
+                            <h4>{this.state.name}</h4>
+                            <h4>{this.state.address}</h4>
+                            <h4>{this.state.city}</h4>
+                            <h4>{this.state.state}</h4>
+                            <h4>{this.state.zipCode}</h4>
+                            <h4>{this.state.phoneNumber}</h4>    
+                        </div>    
+
                         </Col>
                         <Col size="md-5">
                             <div className="panel panel-default panel-primary">
@@ -122,23 +131,8 @@ class Profile extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col size="md-4" />
-                        <Col size="md-4">
-                            <h4>{this.state.name}</h4>
-                            <h4>{this.state.address}</h4>
-                            <h4>{this.state.city}</h4>
-                            <h4>{this.state.state}</h4>
-                            <h4>{this.state.zipCode}</h4>
-                            <h4>{this.state.phoneNumber}</h4>
-                        </Col>
-                        <Col size="md-4" />
+                        <a href="/emergencyform"><Button className="blueBtn">Emergency Status Form</Button></a>
                     </Row>    
-                    <Row>
-                        <div className="wrapper">
-                            <img src="http://via.placeholder.com/800x600" alt="googleMap" />
-                        </div>   
-                        <br /> <br /> <br /> 
-                    </Row>
                 </Container>
             </div>
         );

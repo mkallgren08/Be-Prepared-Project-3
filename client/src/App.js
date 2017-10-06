@@ -6,17 +6,24 @@ import Blog from "./pages/Blog";
 import Resource from "./pages/Resource";
 import Hurricane from "./pages/Hurricane";
 import Nav from "./components/Nav";
-//import Drone from "./pages/Drone";
+import EmergencyForm from "./pages/EmergencyForm";
+import Auth from './auth/auth';
+
+
+const auth = new Auth();
+
 
 const App = () => 
   <Router>
     <div>
+
       <Nav />
         <Route exact path="/" component={Home} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/resource" component={Resource} />
         <Route exact path="/hurricane" component={Hurricane} />
+        <Route exact path="/emergencyform" component={EmergencyForm} />
 
     </div>
   </Router>;

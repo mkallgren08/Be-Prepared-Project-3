@@ -9,7 +9,7 @@
 # production
 /build
 
-# misc
+ #misc
 .DS_Store
 .env.local
 .env.development.local
@@ -18,8 +18,4 @@
 
 npm-debug.log*
 yarn-debug.log*
-<<<<<<< HEAD
 yarn-error.log*
-=======
-yarn-error.log*
->>>>>>> master

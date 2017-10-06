@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Navbar, Button } from "react-bootstrap";
+import AuthButtons from "./AuthButtons";
 
-const Nav = () =>
-<ul className="nav nav-tabs">
+const Nav = (props) =>
+    <ul className="nav navbar-nav navbar-right">
         <li className={window.location.pathname === "/" ? "active" : ""}>
             <Link to="/">Home</Link>
-        </li>
+        </li> 
         <li className={window.location.pathname === "/profile" ? "active" : ""}>
             <Link to="/profile">My Profile</Link>
         </li>
@@ -15,6 +17,9 @@ const Nav = () =>
         <li className={window.location.pathname === "/blog" ? "active" : ""}>
             <Link to="/blog">Emergency Prep Blog</Link>
         </li>
+        <li className={window.location.pathname === "/#" ? "active" : ""}>
+            <Link to="/login">Sign-Up/Log-In</Link>
+        </li>    
     </ul>;
 
 export default Nav;

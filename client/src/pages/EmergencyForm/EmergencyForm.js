@@ -1,4 +1,7 @@
-// Import Up Here
+import React, {Component} from "react";
+import { Col, Row, Container } from "../../components/Grid";
+
+
 
 class EmergencyForm extends Component {
     state = {
@@ -19,4 +22,16 @@ class EmergencyForm extends Component {
         });
       };
 
+      render(){
+          return(
+            <Container fluid>
+                <h1>Emergency Status Form</h1>
+                
+                <Row>
+                    
+                </Row>
+            </Container>
+          );
+      }
 }
+export default EmergencyForm;
