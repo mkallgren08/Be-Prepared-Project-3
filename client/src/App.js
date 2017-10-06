@@ -1,32 +1,58 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Blog from "./pages/Blog";
 import Resource from "./pages/Resource";
 import Hurricane from "./pages/Hurricane";
 import Nav from "./components/Nav";
+import Auth from "./auth/auth";
+import Callback from "./Callback/Callback";
+import history from "./history";
 import EmergencyForm from "./pages/EmergencyForm";
-import Auth from './Auth/Auth.js';
-
 
 const auth = new Auth();
 auth.login
 
+const handleAuthentication = (nextState, replace) => {
+  if (/access_token|id_token|error/.test(nextState.location.hash)) {
+    auth.handleAuthentication();
+  }
+}
 
-const App = () => 
-  <Router>
+const App = () => (
+  <Router history={history}>
     <div>
-
-      <Nav />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/blog" component={Blog} />
-        <Route exact path="/resource" component={Resource} />
-        <Route exact path="/hurricane" component={Hurricane} />
-        <Route exact path="/emergencyform" component={EmergencyForm} />
-
+      <Nav auth={auth} />
+      <Route exact path="/" render={props => <Home auth={auth} {...props} />} />
+      <Route
+        exact
+        path="/profile"
+        render={props => <Profile auth={auth} {...props} />}
+      />
+      <Route
+        exact
+        path="/blog"
+        render={props => <Blog auth={auth} {...props} />}
+      />
+      <Route
+        exact
+        path="/resource"
+        render={props => <Resource auth={auth} {...props} />}
+      />
+      <Route
+        exact
+        path="/hurricane"
+        render={props => <Hurricane auth={auth} {...props} />}
+      />
+      <Route 
+        path="/callback"
+        render={props => {
+          handleAuthentication(props);
+          return <Callback {...props} />
+        }} /> 
     </div>
-  </Router>;
+  </Router>
+);
 
 export default App;
