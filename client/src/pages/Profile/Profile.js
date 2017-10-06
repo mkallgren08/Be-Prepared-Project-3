@@ -70,7 +70,6 @@ class Profile extends Component {
                             </div>
                         </Col>
                         <Col size="md-2">
-                        <InputModal>
                                 <Input
                                 name="name"
                                 value={this.state.name}
@@ -106,8 +105,7 @@ class Profile extends Component {
                                 value={this.state.phoneNumber}
                                 onChange={this.handleInputChange}
                                 placeholder="Phone Number (required)"
-                                /> 
-                        </InputModal> 
+                                />
 
                         <div>
                             <h4>{this.state.name}</h4>
