@@ -4,9 +4,9 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Blog from "./pages/Blog";
 import Resource from "./pages/Resource";
-//import Drone from "./pages/Drone";
 import Hurricane from "./pages/Hurricane";
 import Nav from "./components/Nav";
+<<<<<<< HEAD
 import Auth from "./auth/auth";
 import Callback from "./Callback/Callback";
 const auth = new Auth();
@@ -48,6 +48,27 @@ const App = () => (
           handleAuthentication(props);
           return <Callback {...props} />
         }} /> 
+=======
+import EmergencyForm from "./pages/EmergencyForm";
+import Auth from './auth/auth';
+
+
+const auth = new Auth();
+
+
+const App = () => 
+  <Router>
+    <div>
+
+      <Nav />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/blog" component={Blog} />
+        <Route exact path="/resource" component={Resource} />
+        <Route exact path="/hurricane" component={Hurricane} />
+        <Route exact path="/emergencyform" component={EmergencyForm} />
+
+>>>>>>> 2d0f2b142bdec69cc88c25cf371c32e3a048bb71
     </div>
   </Router>
 );

@@ -42,17 +42,12 @@ mongoose.connect('mongodb://proj3:ClassProject@ds147544.mlab.com:47544/prepared_
 
 
 //Requiring routes
-const index = require('./routes/index');
-const userdata = require('./routes/userdata');
+const api = require('./routes/api.js');
+
 
 //Configuring routes
-app.use('/', index);
-app.use('/user', userdata);
+app.use('/api', api);
 
-app.get('/', function (req, res) {
-  res.render('index');
-
-});
 
 //Send every request to the React app
 // Define any API routes before this run
