@@ -7,10 +7,11 @@ import Resource from "./pages/Resource";
 import Hurricane from "./pages/Hurricane";
 import Nav from "./components/Nav";
 import EmergencyForm from "./pages/EmergencyForm";
-import Auth from './auth/auth';
+import Auth from './Auth/Auth.js';
 
 
 const auth = new Auth();
+auth.login
 
 
 const App = () => 
