@@ -4,16 +4,19 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Blog from "./pages/Blog";
 import Resource from "./pages/Resource";
-//import Drone from "./pages/Drone";
 import Hurricane from "./pages/Hurricane";
 import Nav from "./components/Nav";
 import EmergencyForm from "./pages/EmergencyForm";
+import Auth from './auth/auth';
 
+
+const auth = new Auth();
 
 
 const App = () => 
   <Router>
     <div>
+
       <Nav />
         <Route exact path="/" component={Home} />
         <Route exact path="/profile" component={Profile} />
@@ -21,6 +24,7 @@ const App = () =>
         <Route exact path="/resource" component={Resource} />
         <Route exact path="/hurricane" component={Hurricane} />
         <Route exact path="/emergencyform" component={EmergencyForm} />
+
     </div>
   </Router>;
 
