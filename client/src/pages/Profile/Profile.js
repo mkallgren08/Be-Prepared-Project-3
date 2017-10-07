@@ -71,6 +71,7 @@ class Profile extends Component {
                         <Col size="md-2">
                         <div className="wrapper">
                         <InputModal>
+
                                 <Input
                                 name="name"
                                 value={this.state.name}
@@ -109,6 +110,7 @@ class Profile extends Component {
                                 /> 
                         </InputModal> 
                         </div>
+
                         <div>
                             <h4>{this.state.name}</h4>
                             <h4>{this.state.address}</h4>
