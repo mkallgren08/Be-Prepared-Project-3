@@ -2,12 +2,30 @@
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
+const jwt = require('express-jwt');
+const jwksRsa = require('jwks-rsa');
+const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 //setting port
-
 const PORT = process.env.PORT || 3001;
+
+//Enable CORS
+app.use(cors());
+
+const jwtCheck = jwt({
+  secret: jwks.express.JwtSecret({
+    cache: true,
+    rateLimit: true,
+    jwksRequestsPerMinute: 5,
+    jwksUri: https://
+  }),
+  audience:
+  issuer:
+  algorithms: ['RS256']
+
+});
 
 //Requiring Mongoose/Mongodb
 const mongoose = require('mongoose');
@@ -18,6 +36,7 @@ const Users = require('./models/Users.js');
 
 const app = express();
 
+app.use(jwtCheck);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -51,6 +70,9 @@ app.use('/api', api);
 
 //Send every request to the React app
 // Define any API routes before this run
+app.get('/authorized', function (req, res) {
+  res.send('Secured Resource');
+});
 
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
