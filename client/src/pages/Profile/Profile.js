@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import API from "../../utils/API";
+import React, { Component } from "react"; import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
 import "./Profile.css";
@@ -70,6 +69,9 @@ class Profile extends Component {
                             </div>
                         </Col>
                         <Col size="md-2">
+                        <div className="wrapper">
+                        <InputModal>
+
                                 <Input
                                 name="name"
                                 value={this.state.name}
@@ -105,7 +107,9 @@ class Profile extends Component {
                                 value={this.state.phoneNumber}
                                 onChange={this.handleInputChange}
                                 placeholder="Phone Number (required)"
-                                />
+                                /> 
+                        </InputModal> 
+                        </div>
 
                         <div>
                             <h4>{this.state.name}</h4>
