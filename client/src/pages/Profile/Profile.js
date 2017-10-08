@@ -55,7 +55,17 @@ class Profile extends Component {
             <div>
                 <Container fluid>
                     <h1>My Profile</h1>
-                    <br /> <br />
+                    <br />
+                    <Row>
+                        <div className="wrapper">
+                            <a href="/emergencyform">
+                                <button className="blueBtn btn btn-default">Emergency Status Form</button>
+                            </a>
+                        </div>
+                    </Row>
+
+                    <br/><br/>
+
                     <Row>
                         <Col size="md-5">
                             <div className="panel panel-default panel-primary">
@@ -137,9 +147,6 @@ class Profile extends Component {
                                 </div>
                             </div>
                         </Col>
-                    </Row>
-                    <Row>
-                        <a href="/emergencyform"><button className="blueBtn">Emergency Status Form</button></a>
                     </Row>
                 </Container>
             </div>

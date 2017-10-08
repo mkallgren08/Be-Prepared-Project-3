@@ -54,10 +54,12 @@ class Hurricane extends Component {
                     <h1>Hurricane Prep</h1>
 
                     <br /> <br />
-                    
+
                     <div className="wrapper">
                         <InputModal>
-                            <h2 className="whiteText" style={{ textAlign: "center" }}>Add a Blog Post</h2>
+                            <h2 className="whiteText" style={{ textAlign: "center" }}>
+                                Add a Blog Post
+                            </h2>
                             <form>
                                 <Input
                                     name="title"
