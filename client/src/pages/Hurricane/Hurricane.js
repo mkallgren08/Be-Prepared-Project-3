@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
-import { Input, FormBtn } from "../../components/Form";
+import { Input } from "../../components/Form";
 import { Modal } from 'react-bootstrap';
-import { Button, ButtonToolbar} from 'react-bootstrap';
 import "./Hurricane.css";
 import InputModal from "../../components/Modal/inputModal";
 

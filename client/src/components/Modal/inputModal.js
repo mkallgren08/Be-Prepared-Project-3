@@ -1,46 +1,66 @@
 import React from "react";
-import { Button, Modal } from 'react-bootstrap';
+import Modal from 'react-modal';
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    background: "black"
+  }
+};
 
 class InputModal extends React.Component {
-  state = {
-    showModal: false
+  constructor() {
+    super();
+
+    this.state = {
+      modalIsOpen: false
+    };
+
+    this.openModal = this.openModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
-  close = () => {
-    this.setState({ showModal: false });
+  openModal() {
+    this.setState({ modalIsOpen: true });
   }
 
-  open = () => {
-    this.setState({ showModal: true });
+  afterOpenModal() {
+    this.subtitle.style.color = "#337ab7";
+  }
+
+  closeModal() {
+    this.setState({ modalIsOpen: false });
   }
 
   render() {
-
     return (
       <div>
-        <Button
-          bsStyle="primary"
-          bsSize="large"
-          onClick={this.open}
+        <button onClick={this.openModal} className="btn btn-default" style={{ backgroundColor: "#337ab7", color: "white", borderColor: "#337ab7" }}>
+          {this.props.name}
+        </button>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
         >
-          Add/Update
-          </Button>
 
-        <Modal show={this.state.showModal} >
-          <Modal.Header closeButton>
-            <Modal.Title>{this.props.children}</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
+          <h2 ref={subtitle => this.subtitle = subtitle}>{this.props.title}</h2>
+
+          <form>
             {this.props.children}
-          </Modal.Body>
-          <Modal.Footer>
-            <Button>Close</Button>
-            <Button bsStyle="primary" onClick={this.handleFormSubmit}>Save changes</Button>
-          </Modal.Footer>
+          </form>
         </Modal>
       </div>
     );
   }
-};
+}
 
 export default InputModal;
