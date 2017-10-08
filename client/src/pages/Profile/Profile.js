@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import API from "../../utils/API";
+import React, { Component } from "react"; import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input } from "../../components/Form";
 import "./Profile.css";
@@ -70,8 +69,8 @@ class Profile extends Component {
                         </Col>
                         <Col size="md-2">
                             <div className="wrapper">
+
                                 <InputModal>
-                                
                                     <h2 className="whiteText">Add/Update User Information</h2>
                                     <form>
                                         <Input
@@ -115,6 +114,7 @@ class Profile extends Component {
                                             <button className="blueBtn" onClick={this.closeModal}>Close</button>
                                         </div>
                                     </form>
+
                                 </InputModal>
                             </div>
                             <div>

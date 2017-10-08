@@ -6,7 +6,7 @@ import { Modal } from 'react-bootstrap';
 import "./Hurricane.css";
 import InputModal from "../../components/Modal/inputModal";
 
-class Hurricane extends Component{
+class Hurricane extends Component {
 
     state = {
         Hurricane: [],
@@ -22,13 +22,13 @@ class Hurricane extends Component{
 
     loadHurricane = () => {
         API.getHurricane()
-        .then(res =>
-            this.setState({ Hurricane: res.data, title: "", author: "", link: "", body: "" })
-        ).catch(err => console.log(err));
+            .then(res =>
+                this.setState({ Hurricane: res.data, title: "", author: "", link: "", body: "" })
+            ).catch(err => console.log(err));
     };
 
     handleInputChange = event => {
-        const {name, value } = event.target;
+        const { name, value } = event.target;
         this.setState({
             [name]: value
         });
@@ -36,52 +36,64 @@ class Hurricane extends Component{
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if(this.state.title && this.state.author && this.state.body) {
+        if (this.state.title && this.state.author && this.state.body) {
             API.saveHurricane({
                 title: this.state.title,
                 author: this.state.author,
                 link: this.state.link,
                 body: this.state.body
             }).then(res => this.loadDrone())
-            .catch(err => console.log(err));
+                .catch(err => console.log(err));
         }
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
                 <Container fluid>
                     <h1>Hurricane Prep</h1>
+
+                    <br /> <br />
+                    
+                    <div className="wrapper">
                         <InputModal>
-                        <Modal.Title>Add a Blog Post</Modal.Title>
-                            <Input
-                                name="title"
-                                value={this.state.title}
-                                onChange={this.handleInputChange}
-                                placeholder="Title (required)"
-                            />
-                            <Input
-                                name="author"
-                                value={this.state.author}
-                                onChange={this.handleInputChange}
-                                placeholder="Author (required)"
-                            />
-                            <Input
-                                name="link"
-                                value={this.state.link}
-                                onChange={this.handleInputChange}
-                                placeholder="Link (required)"
-                            />
-                            <Input
-                                name="body"
-                                value={this.state.body}
-                                onChange={this.handleInputChange}
-                                placeholder="Post"
-                            /> 
-                        </InputModal>    
-                    <br/> <br/> <br/>
+                            <h2 className="whiteText" style={{ textAlign: "center" }}>Add a Blog Post</h2>
+                            <form>
+                                <Input
+                                    name="title"
+                                    value={this.state.title}
+                                    onChange={this.handleInputChange}
+                                    placeholder="Title (required)"
+                                />
+                                <Input
+                                    name="author"
+                                    value={this.state.author}
+                                    onChange={this.handleInputChange}
+                                    placeholder="Author (required)"
+                                />
+                                <Input
+                                    name="link"
+                                    value={this.state.link}
+                                    onChange={this.handleInputChange}
+                                    placeholder="Link"
+                                />
+                                <textarea
+                                    style={{ width: "500px", height: "175px" }}
+                                    name="body"
+                                    value={this.state.body}
+                                    onChange={this.handleInputChange}
+                                    placeholder="Add Your Post (required)"
+                                />
+                                <div style={{ textAlign: "right" }}>
+                                    <button style={{ marginRight: "5px" }} onChange={this.handleInputChange} onClick={this.handleFormSubmit} className="blueBtn">Submit</button>
+                                    <button className="blueBtn" onClick={this.closeModal}>Close</button>
+                                </div>
+                            </form>
+                        </InputModal>
+                    </div>
+                    <br /> 
                     <Row>
-                        <Col size="md-2"/>
+                        <Col size="md-2" />
                         <Col size="md-8">
                             <div className="panel panel-default panel-primary">
                                 <div className="panel-heading">
@@ -92,7 +104,7 @@ class Hurricane extends Component{
                                 </div>
                             </div>
                         </Col>
-                        <Col size="md-2"/>
+                        <Col size="md-2" />
                     </Row>
                 </Container>
             </div>
