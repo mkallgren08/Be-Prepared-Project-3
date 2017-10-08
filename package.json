@@ -25,5 +25,8 @@
     "nodemon": "^1.12.1",
     "react-bootstrap": "^0.31.3",
     "yarn": "^1.1.0"
+  },
+  "devDependencies": {
+    "nightmare": "^2.10.0"
   }
 }

@@ -5,8 +5,13 @@ import "./Home.css";
 
 const Home = () =>
     <div>
-        <Container fluid> 
-            <h1>Polaris</h1>
+        <Container fluid>
+            <Row>
+                <Col size = "md-3"> 
+                    <h1 className = "pageHeader">Polaris</h1>
+                </Col>
+                <Col size="md-9" />
+            </Row>
             <br /> <br /> <br />
             <Row>
                 <Col size="md-3" />
