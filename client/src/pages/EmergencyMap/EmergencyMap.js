@@ -1,12 +1,12 @@
 import API from "../../utils/API";
-import { Col, Row, Container } from "../../components/Grid";
-import { Input, FormBtn } from "../../components/Form";
-import { Modal } from 'react-bootstrap';
-import { Button, ButtonToolbar} from 'react-bootstrap';
+import Col from "../../components/Grid/Col";
+import Row from "../../components/Grid/Row";
+import Container from "../../components/Grid/Container";
+import Input from "../../components/Form/Input";
 import "./EmergencyMap.css";
 import InputModal from "../../components/Modal/inputModal";
 
-class EmergencyMap extends Component{
+class EmergencyMap extends Component {
 
     // componentDidMount() {
     //     this.loadEmergencyMap();
@@ -26,20 +26,20 @@ class EmergencyMap extends Component{
     //     });
     // };
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
                 <Container fluid>
-                    <h1>Emergency Map </h1>  
-                    <br/> <br/> <br/>
+                    <h1>Emergency Map </h1>
+                    <br /> <br /> <br />
                     <Row>
-                        <Col size="md-2"/>
+                        <Col size="md-2" />
                         <Col size="md-8">
-                        <div id="map">
-                        
-                        </div>
+                            <div id="map">
+
+                            </div>
                         </Col>
-                        <Col size="md-2"/>
+                        <Col size="md-2" />
                     </Row>
                 </Container>
             </div>

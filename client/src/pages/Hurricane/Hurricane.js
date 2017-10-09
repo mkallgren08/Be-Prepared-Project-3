@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { Col, Row, Container } from "../../components/Grid";
-import { Input } from "../../components/Form";
-import { Modal } from 'react-bootstrap';
+import Col from "../../components/Grid/Col";
+import Row from "../../components/Grid/Row";
+import Container from "../../components/Grid/Container";
+import Input from "../../components/Form/Input";
 import "./Hurricane.css";
 import InputModal from "../../components/Modal/inputModal";
 
@@ -93,7 +94,7 @@ class Hurricane extends Component {
                             </form>
                         </InputModal>
                     </div>
-                    <br /> 
+                    <br />
                     <Row>
                         <Col size="md-2" />
                         <Col size="md-8">
