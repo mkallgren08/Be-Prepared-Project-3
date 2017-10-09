@@ -9,6 +9,7 @@ import Nav from "./components/Nav";
 import Auth from "./auth/auth";
 import Callback from "./Callback/Callback";
 import history from "./history";
+import Drone from "./pages/Drone";
 import EmergencyForm from "./pages/EmergencyForm";
 
 const auth = new Auth();
@@ -44,6 +45,16 @@ const App = () => (
         exact
         path="/hurricane"
         render={props => <Hurricane auth={auth} {...props} />}
+      />
+      <Route
+        exact
+        path="/drone"
+        render={props => <Drone auth={auth} {...props} />}
+      />
+      <Route
+        exact
+        path="/emergencyForm"
+        render={props => <EmergencyForm auth={auth} {...props} />}
       />
       <Route 
         path="/callback"
