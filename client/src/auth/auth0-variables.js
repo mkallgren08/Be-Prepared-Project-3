@@ -1,5 +1,5 @@
 export const AUTH_CONFIG = {
-    domain: 'app77879210.auth0.com',
-    clientId: 'ZElR_1mIXHxBaHb7vEk0km736VwxmssX',
+    domain: 'rgtechnologygroup.auth0.com',
+    clientId: 'wcp3Q8nYvSde0kzv9HSR4m5Mzw5Y2tVv',
     callbackUrl: 'http://localhost:3000/callback'
-  }
+  };

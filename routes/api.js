@@ -3,7 +3,49 @@ const router = express.Router();
 const multer = require('multer');
 path = require('path');
 const Users = require('../models/Users.js');
+const jwt = require('express-jwt');
+const jwtAuthz = require('express-jwt-authz');
+const jwksRsa = require('jwks-rsa');
 
+require('dotenv').config();
+
+if (!process.env.AUTH0_DOMAIN || !process.env.AUTH0_AUDIENCE) {
+  throw 'Make sure you have AUTH0_DOMAIN, and AUTH0_AUDIENCE in your .env file';
+}
+const checkJwt = jwt({
+  secret: jwksRsa.expressJwtSecret({
+    cache: true,
+    rateLimit: true,
+    jwksRequestsPerMinute: 5,
+    jwksUri: 'https://rgtechnologygroup.auth0.com/.well-kknown/jwks.json'
+  }),
+  //validate the audience and the issuer
+  audience:'http://localhost:3001/api',
+  issuer: 'https://rgtechnologygroup.auth0.com',
+  algorithms: ['RS256']
+
+});
+
+const checkScopes = jwtAuthz([ 'read:profile', 'write:profile']);
+
+router.get('/users/:id', checkJwt, checkScopes, function (req, res){
+  res.json({
+    name: 'Joe',
+    address: '1725 Main St.'
+  })
+});
+
+router.get('/api/public', function(req, res) {
+  res.json({ message: "Hello from a public endpoint! You don't need to be authenticated to see this." });
+});
+
+router.get('/api/private', checkJwt, checkScopes, function(req, res) {
+  res.json({ message: "Hello from a private endpoint! You need to be authenticated and have a scope of read:messages to see this." });
+});
+
+/*router.post('/api/admin', checkJwt, checkScopesAdmin, function(req, res) {
+  res.json({ message: "Hello from an admin endpoint! You need to be authenticated and have a scope of write:messages to see this." });
+});*/
 
 router.route('/user/post').post(function (req, res) {
   const users = new Users(req.body);

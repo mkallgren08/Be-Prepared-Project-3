@@ -25,9 +25,8 @@ class Profile extends Component {
     loadUser = () => {
         API.getUser()
         .then(res =>
-            this.setState({ User: res.data, name: "", address: "", city:"", state:"", zipCode:"", phoneNumber: "" })
-        )
-        .catch(err => console.log(err));
+            this.setState({ ...res.data })
+        ).catch(err => console.log(err));
     };
 
     handleInputChange = event => {
@@ -72,7 +71,6 @@ class Profile extends Component {
                         <Col size="md-2">
 
                         <div className="wrapper">
-                        <InputModal>
                                 <Input
                                 name="name"
                                 value={this.state.name}
@@ -110,9 +108,6 @@ class Profile extends Component {
                                 placeholder="Phone Number (required)"
                                 />
 
-
-                                /> 
-                        </InputModal> 
                         </div>
                         <div>
                             <h4>{this.state.name}</h4>
