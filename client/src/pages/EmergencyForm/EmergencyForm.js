@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { Col, Row, Container } from "../../components/Grid";
+import Col from "../../components/Grid/Col";
+import Row from "../../components/Grid/Row";
+import Container from "../../components/Grid/Container";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
-import { Input } from "../../components/Form";
+import Input from "../../components/Form/Input";
 import InputModal from "../../components/Modal/inputModal";
 
 class EmergencyForm extends Component {

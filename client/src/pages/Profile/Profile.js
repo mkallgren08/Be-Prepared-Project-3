@@ -1,6 +1,8 @@
 import React, { Component } from "react"; import API from "../../utils/API";
-import { Col, Row, Container } from "../../components/Grid";
-import { Input } from "../../components/Form";
+import Col from "../../components/Grid/Col";
+import Row from "../../components/Grid/Row";
+import Container from "../../components/Grid/Container";
+import Input from "../../components/Form/Input";
 import "./Profile.css";
 import InputModal from "../../components/Modal/inputModal";
 
@@ -64,7 +66,7 @@ class Profile extends Component {
                         </div>
                     </Row>
 
-                    <br/><br/>
+                    <br /><br />
 
                     <Row>
                         <Col size="md-5">

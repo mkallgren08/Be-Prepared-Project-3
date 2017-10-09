@@ -1,5 +1,7 @@
 import React from "react";
-import { Col, Row, Container } from "../../components/Grid";
+import Col from "../../components/Grid/Col";
+import Row from "../../components/Grid/Row";
+import Container from "../../components/Grid/Container";
 import "./Resource.css";
 
 
