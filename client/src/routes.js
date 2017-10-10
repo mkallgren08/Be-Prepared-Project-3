@@ -10,6 +10,7 @@ import history from './history';
 import Blog from './pages/Blog';
 import Resource from './pages/Resource';
 import EmergencyForm from './pages/EmergencyForm/EmergencyForm';
+import EmergencyMap from './pages/EmergencyMap/EmergencyMap';
 
 const auth = new Auth();
 
@@ -46,6 +47,13 @@ export const makeMainRoutes = () => {
                   <Redirect to='/home'/>
               ) : (
                   <EmergencyForm auth={auth} {...props} />
+              )
+          )}/>
+          <Route path="/EmergencyMap" render={(props) => (
+              !auth.isAuthenticated() ? (
+                  <Redirect to='/home'/>
+              ) : (
+                  <EmergencyMap auth={auth} {...props} />
               )
           )}/>
           <Route path="/callback" render={(props) => {

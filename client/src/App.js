@@ -23,7 +23,7 @@ class App extends Component {
           <Navbar fluid>
             <Navbar.Header>
               <Navbar.Brand>
-                <a href="#">Auth0 - React</a>
+                <a href="/home">Polaris</a>
               </Navbar.Brand>
               <Button
                   bsStyle="primary"
@@ -31,6 +31,20 @@ class App extends Component {
                   onClick={this.goTo.bind(this, 'home')}
               >
                 Home
+              </Button>
+              <Button
+                  bsStyle="primary"
+                  className="btn-margin"
+                  onClick={this.goTo.bind(this, 'resource')}
+              >
+                Resources
+              </Button>
+              <Button
+                  bsStyle="primary"
+                  className="btn-margin"
+                  onClick={this.goTo.bind(this, 'blog')}
+              >
+                Blogs
               </Button>
               {
                 !isAuthenticated() && (
@@ -61,11 +75,18 @@ class App extends Component {
                         className="btn-margin"
                         onClick={this.goTo.bind(this, 'emergencyform')}
                     >
-<<<<<<< HEAD
-                      Emergency Form
-=======
                       EmergencyForm
->>>>>>> 6796b8058dd6093cd050940fc59de5eab86326e2
+                    </Button>
+                )
+              }
+              {
+                isAuthenticated() && (
+                    <Button
+                        bsStyle="primary"
+                        className="btn-margin"
+                        onClick={this.goTo.bind(this, 'emergencymap')}
+                    >
+                      EmergencyMap
                     </Button>
                 )
               }
