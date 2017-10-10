@@ -1,34 +1,33 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
-import Col from "../../components/Grid/Col";
-import Row from "../../components/Grid/Row";
-import Container from "../../components/Grid/Container";
-import Input from "../../components/Form/Input";
-import List from "../../components/List/List";
-import ListItem from "../../components/List/ListItem";
+import API from "../../../utils/API";
+import Col from "../../../components/Grid/Col";
+import Row from "../../../components/Grid/Row";
+import Container from "../../../components/Grid/Container";
+import Input from "../../../components/Form/Input";
+import List from "../../../components/List/List";
+import ListItem from "../../../components/List/ListItem";
 import { Link } from "react-router-dom";
-import "./Drone.css";
-import InputModal from "../../components/Modal/inputModal";
+import "./Hurricane.css";
+import InputModal from "../../../components/Modal/inputModal";
 
-
-class Drone extends Component {
+class Hurricane extends Component {
 
     state = {
-        drones: [],
-        name: "",
-        zipCode: "",
-        phoneNumber: "",
-        comment: "",
+        hurricanes: [],
+        title: "",
+        author: "",
+        link: "",
+        body: "",
     }
 
     componentDidMount() {
-        this.loadDrones();
+        this.loadHurricanes();
     }
 
-    loadDrones = () => {
-        API.getDrones()
+    loadHurricanes = () => {
+        API.getHurricanes()
             .then(res =>
-                this.setState({ drones: res.data, name: "", zipCode: "", phoneNumber: "", comment: "" })
+                this.setState({ hurricanes: res.data, title: "", author: "", link: "", body: "" })
             ).catch(err => console.log(err));
     };
 
@@ -41,13 +40,13 @@ class Drone extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if (this.state.name && this.state.zipCode && this.state.phoneNumber && this.state.comment) {
-            API.saveDrone({
-                name: this.state.name,
-                zipCode: this.state.zipCode,
-                phoneNumber: this.state.phoneNumber,
-                comment: this.state.comment
-            }).then(res => this.loadDrones())
+        if (this.state.title && this.state.author && this.state.body) {
+            API.saveHurricane({
+                title: this.state.title,
+                author: this.state.author,
+                link: this.state.link,
+                body: this.state.body
+            }).then(res => this.loadHurricanes())
                 .catch(err => console.log(err));
         }
     }
@@ -59,42 +58,43 @@ class Drone extends Component {
                     <Row>
                         <Col size="md-1" />
                         <Col size="md-4">
-                            <h1 className="pageHeader">Drones</h1>
+                            <h1 className="pageHeader">Hurricane Prep</h1>
                         </Col>
                         <Col size="md-7" />
                     </Row>
-                    <br /><br />
+
+                    <br /> <br />
 
                     <div className="wrapper">
                         <InputModal>
-                            <h2 className="pageHeader">
-                                Add Your Drone
+                            <h2 className="whiteText" style={{ textAlign: "center" }}>
+                                Add a Blog Post
                             </h2>
                             <form>
                                 <Input
-                                    name="name"
-                                    value={this.state.name}
+                                    name="title"
+                                    value={this.state.title}
                                     onChange={this.handleInputChange}
-                                    placeholder="Name (required)"
+                                    placeholder="Title (required)"
                                 />
                                 <Input
-                                    name="zipCode"
-                                    value={this.state.zipCode}
+                                    name="author"
+                                    value={this.state.author}
                                     onChange={this.handleInputChange}
-                                    placeholder="Zip Code (required)"
+                                    placeholder="Author (required)"
                                 />
                                 <Input
-                                    name="phoneNumber"
-                                    value={this.state.phoneNumber}
+                                    name="link"
+                                    value={this.state.link}
                                     onChange={this.handleInputChange}
-                                    placeholder="Phone Number (required)"
+                                    placeholder="Link"
                                 />
                                 <textarea
                                     style={{ width: "500px", height: "175px" }}
-                                    name="comment"
-                                    value={this.state.comment}
+                                    name="body"
+                                    value={this.state.body}
                                     onChange={this.handleInputChange}
-                                    placeholder="Comment (required)"
+                                    placeholder="Add Your Post (required)"
                                 />
                                 <div style={{ textAlign: "right" }}>
                                     <button style={{ marginRight: "5px" }} onChange={this.handleInputChange} onClick={this.handleFormSubmit} className="blueBtn">Submit</button>
@@ -109,22 +109,21 @@ class Drone extends Component {
                         <Col size="md-8">
                             <div className="panel panel-default panel-primary">
                                 <div className="panel-heading">
-                                    <h3 className="panel-title">Drones</h3>
+                                    <h3 className="panel-title">Hurricanes</h3>
                                 </div>
                                 <div className="panel-body scroll">
-                                    {this.state.drones ? (
+                                    {this.state.hurricanes ? (
                                         <List>
-                                            {this.state.drones.map(drone => (
-                                                <ListItem key={drone._id}>
-                                                    <Link to={"/drones/" + drone._id}>
+                                            {this.state.hurricanes.map(hurricane => (
+                                                <ListItem key={hurricane._id}>
+                                                    <Link to={"/hurricanes/" + hurricane._id}>
                                                         <strong>
-                                                            {drone.name} <br />
-                                                            {drone.zipCode} <br />
-                                                            {drone.phoneNumber} <br />
-                                                            {drone.comment}
+                                                            {hurricane.title} by {hurricane.author} <br />
+                                                            {hurricane.link} <br />
+                                                            {hurricane.body}
                                                         </strong>
                                                     </Link>
-                                                    <button className="blutBtn btn btn-default" onClick={() => this.handleFormSubmit(drone._id)}>Save</button>
+                                                    <button className="blutBtn btn btn-default" onClick={() => this.handleFormSubmit(hurricane._id)}>Save</button>
                                                 </ListItem>
                                             ))}
                                         </List>
@@ -142,4 +141,4 @@ class Drone extends Component {
     }
 }
 
-export default Drone;
+export default Hurricane;

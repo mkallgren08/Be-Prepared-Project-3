@@ -5,7 +5,7 @@ import AuthButtons from "./AuthButtons";
 const Nav = (props) =>
     <ul className="nav navbar-nav navbar-right" style={{paddingRight: "20px", lineHeight: "50px"}}>
         <li className={window.location.pathname === "/" ? "active" : ""}>
-            <Link to="/">Home</Link>
+            <Link to="/" className = "homeLink">Home</Link>
         </li> 
         <li className={window.location.pathname === "/profile" ? "active" : ""}>
             <Link to="/profile">My Profile</Link>
@@ -15,6 +15,9 @@ const Nav = (props) =>
         </li>
         <li className={window.location.pathname === "/blog" ? "active" : ""}>
             <Link to="/blog">Emergency Prep Blog</Link>
+        </li>
+        <li className={window.location.pathname === "/blog" ? "active" : ""}>
+            <Link to="/emergencyMap">Emergency Map</Link>
         </li>
         <li><AuthButtons auth={props.auth} />
         </li>

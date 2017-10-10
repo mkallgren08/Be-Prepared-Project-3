@@ -1,19 +1,16 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
-import Col from "../../components/Grid/Col";
-import Row from "../../components/Grid/Row";
-import Container from "../../components/Grid/Container";
-import Input from "../../components/Form/Input";
-import List from "../../components/List/List";
-import ListItem from "../../components/List/ListItem";
-import { Link } from "react-router-dom";
-import "./Hurricane.css";
-import InputModal from "../../components/Modal/inputModal";
+import API from "../../../utils/API";
+import Col from "../../../components/Grid/Col";
+import Row from "../../../components/Grid/Row";
+import Container from "../../../components/Grid/Container";
+import Input from "../../../components/Form/Input";
+import "./Blizzard.css";
+import InputModal from "../../../components/Modal/inputModal";
 
-class Hurricane extends Component {
+class Blizzard extends Component {
 
     state = {
-        hurricanes: [],
+        Blizzard: [],
         title: "",
         author: "",
         link: "",
@@ -21,13 +18,13 @@ class Hurricane extends Component {
     }
 
     componentDidMount() {
-        this.loadHurricanes();
+        this.loadBlizzard();
     }
 
-    loadHurricanes = () => {
-        API.getHurricanes()
+    loadBlizzard = () => {
+        API.getBlizzard()
             .then(res =>
-                this.setState({ hurricanes: res.data, title: "", author: "", link: "", body: "" })
+                this.setState({ Blizzard: res.data, title: "", author: "", link: "", body: "" })
             ).catch(err => console.log(err));
     };
 
@@ -41,12 +38,12 @@ class Hurricane extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         if (this.state.title && this.state.author && this.state.body) {
-            API.saveHurricane({
+            API.saveBlizzard({
                 title: this.state.title,
                 author: this.state.author,
                 link: this.state.link,
                 body: this.state.body
-            }).then(res => this.loadHurricanes())
+            }).then(res => this.loadDrone())
                 .catch(err => console.log(err));
         }
     }
@@ -55,7 +52,13 @@ class Hurricane extends Component {
         return (
             <div>
                 <Container fluid>
-                    <h1>Hurricane Prep</h1>
+                    <Row>
+                        <Col size="md-1" />
+                        <Col size="md-4">
+                            <h1 className="pageHeader">Blizzard Prep</h1>
+                        </Col>
+                        <Col size="md-7" />
+                    </Row>
 
                     <br /> <br />
 
@@ -103,27 +106,10 @@ class Hurricane extends Component {
                         <Col size="md-8">
                             <div className="panel panel-default panel-primary">
                                 <div className="panel-heading">
-                                    <h3 className="panel-title">Hurricanes</h3>
+                                    <h3 className="panel-title">Blizzards</h3>
                                 </div>
                                 <div className="panel-body scroll">
-                                    {this.state.hurricanes ? (
-                                        <List>
-                                            {this.state.hurricanes.map(hurricane => (
-                                                <ListItem key={hurricane._id}>
-                                                    <Link to={"/hurricanes/" + hurricane._id}>
-                                                        <strong>
-                                                            {hurricane.title} by {hurricane.author} <br />
-                                                            {hurricane.link} <br />
-                                                            {hurricane.body}
-                                                        </strong>
-                                                    </Link>
-                                                    <button className="blutBtn btn btn-default" onClick={() => this.handleFormSubmit(hurricane._id)}>Save</button>
-                                                </ListItem>
-                                            ))}
-                                        </List>
-                                    ) : (
-                                            <h3>No Results to Display</h3>
-                                        )}
+                                    Panel content
                                 </div>
                             </div>
                         </Col>
@@ -135,4 +121,4 @@ class Hurricane extends Component {
     }
 }
 
-export default Hurricane;
+export default Blizzard;

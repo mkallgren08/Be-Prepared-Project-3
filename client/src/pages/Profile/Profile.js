@@ -72,7 +72,13 @@ class Profile extends Component {
         return (
             <div>
                 <Container fluid>
-                    <h1 className="blackText">My Profile</h1>
+                    <Row>
+                        <Col size="md-1" />
+                        <Col size="md-4">
+                            <h1 className="pageHeader">My Profile</h1>
+                        </Col>
+                        <Col size="md-7" />
+                    </Row>
                     <br />
                     <Row>
                         <div className="wrapper">
