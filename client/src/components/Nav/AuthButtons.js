@@ -19,7 +19,7 @@ export default class AuthButtons extends Component {
     const { isAuthenticated } = this.props.auth;
 
     return (
-      <div>
+      <div className = "signupLoginBtn">
         {!isAuthenticated() && (
           <Button
             bsStyle="primary"

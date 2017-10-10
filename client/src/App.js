@@ -5,10 +5,14 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Blog from "./pages/Blog";
 import Resource from "./pages/Resource";
-import Hurricane from "./pages/Hurricane";
+import Hurricane from "./pages/BlogPages/Hurricane";
+import Nav from "./components/Nav";
+import Auth from "./auth/auth";
+import Callback from "./Callback/Callback";
+import history from "./history";
 import Drone from "./pages/Drone";
 import EmergencyForm from "./pages/EmergencyForm";
-import './App.css';
+import EmergencyMap from "./pages/EmergencyMap";
 
 class App extends Component {
   goTo(route) {

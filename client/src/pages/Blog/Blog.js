@@ -8,8 +8,13 @@ import "./Blog.css";
 const Blog = () =>
   <div>
     <Container fluid>
-      <h1 className="blackText">Emergency Prep Blog</h1>
-      <h3 className="blackText">Search for information on how to prepare for natural disasters</h3>
+      <Row>
+        <Col size="md-1" />
+        <Col size="md-4">
+          <h1 className="pageHeader">Emergency Prep Blog</h1>
+        </Col>
+        <Col size="md-7" />
+      </Row>
       <Row>
         <Col size="md-4">
           <div className="wrapper">

@@ -8,8 +8,13 @@ import "./Resource.css";
 const Resource = () =>
     <div>
         <Container fluid>
-            <h1 className="blackText">Resource Sharing</h1>
-            <h3 className="blackText">List or find available resources to assist in disaster relief</h3>
+            <Row>
+                <Col size="md-1" />
+                <Col size="md-4">
+                    <h1 className="pageHeader">Resource Sharing</h1>
+                </Col>
+                <Col size="md-7" />
+            </Row>
             <Row>
                 <Col size="md-4">
                     <div className="wrapper">

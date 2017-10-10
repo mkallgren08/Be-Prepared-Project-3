@@ -13,7 +13,7 @@ const Home = () =>
                 <Col size="md-3">
                     <h1 className="pageHeader blackText">Polaris</h1>
                 </Col>
-                <Col size="md-9" />
+                <Col size="md-7" />
             </Row>
             <br /> <br /> <br />
             <Row>
