@@ -61,7 +61,11 @@ class App extends Component {
                         className="btn-margin"
                         onClick={this.goTo.bind(this, 'emergencyform')}
                     >
+<<<<<<< HEAD
                       Emergency Form
+=======
+                      EmergencyForm
+>>>>>>> 6796b8058dd6093cd050940fc59de5eab86326e2
                     </Button>
                 )
               }
