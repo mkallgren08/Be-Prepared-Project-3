@@ -3105,9 +3105,9 @@ globby@^6.1.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
-"google-maps-react@https://github.com/artokun/google-maps-react.git":
+"google-maps-react@git+https://github.com/artokun/google-maps-react.git":
   version "1.1.0"
-  resolved "https://github.com/artokun/google-maps-react.git#32297a8fc11ab9b82819ff59480f6560cecf3f08"
+  resolved "git+https://github.com/artokun/google-maps-react.git#32297a8fc11ab9b82819ff59480f6560cecf3f08"
   dependencies:
     history "^3.0.0"
     invariant "^2.2.1"
