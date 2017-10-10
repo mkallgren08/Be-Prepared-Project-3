@@ -3,6 +3,7 @@ import Col from "../../components/Grid/Col";
 import Row from "../../components/Grid/Row";
 import Container from "../../components/Grid/Container";
 import Jumbotron from "../../components/Jumbotron";
+import "../../index.css"
 import "./Home.css";
 
 const Home = () =>
