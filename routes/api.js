@@ -6,6 +6,7 @@ const Users = require("../models/Users.js");
 const jwt = require("express-jwt");
 const jwtAuthz = require("express-jwt-authz");
 const jwksRsa = require("jwks-rsa");
+const geocoding = require("google-geocoding");
 
 require("dotenv").config();
 
@@ -37,6 +38,19 @@ router.get(
     });
   }
 );
+
+router.post("/users/:id/location", function(req, res){
+  console.log(req.body)
+    geocoding.geocode(req.body.address, function(err, location) {
+      if( err ) {
+          console.log('Error: ' + err);
+      } else if( !location ) {
+          console.log('No result.');
+      } else {
+          console.log('Latitude: ' + location.lat + ' ; Longitude: ' + location.lng);
+      }
+  });
+})
 
 router.get("/api/public", function(req, res) {
   res.json({

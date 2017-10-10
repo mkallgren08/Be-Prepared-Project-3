@@ -19,6 +19,7 @@
     "express-jwt": "^5.3.0",
     "express-jwt-authz": "^1.0.0",
     "express-router": "0.0.1",
+    "google-geocoding": "^0.1.7",
     "jwks-rsa": "^1.2.0",
     "mongoose": "^4.12.1",
     "morgan": "~1.9.0",

@@ -1066,6 +1066,10 @@ glob@^7.0.5:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
+google-geocoding@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/google-geocoding/-/google-geocoding-0.1.7.tgz#8da975801209ef74483f880e332e92c68528f57b"
+
 got@^6.7.1:
   version "6.7.1"
   resolved "https://registry.yarnpkg.com/got/-/got-6.7.1.tgz#240cd05785a9a18e561dc1b44b41c763ef1e8db0"
