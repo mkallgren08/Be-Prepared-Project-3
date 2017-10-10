@@ -17,23 +17,28 @@ const checkJwt = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: 'https://rgtechnologygroup.auth0.com/.well-kknown/jwks.json'
+    jwksUri: "https://" + process.env.AUTH0_DOMAIN + "/.well-known/jwks.json"
   }),
   //validate the audience and the issuer
-  audience:'http://localhost:3001/api',
-  issuer: 'https://rgtechnologygroup.auth0.com',
-  algorithms: ['RS256']
+  audience: process.env.AUTH0_AUDIENCE,
+  issuer: "https://" + process.env.AUTH0_DOMAIN + "/",
+  algorithms: ["RS256"]
 
 });
 
 const checkScopes = jwtAuthz([ 'read:profile', 'write:profile']);
 
-router.get('/users/:id', checkJwt, checkScopes, function (req, res){
-  res.json({
-    name: 'Joe',
-    address: '1725 Main St.'
-  })
-});
+router.get(
+    "/users/:id",
+    checkJwt,
+    //  jwtAuthz(["read:profile", "write:profile"]),
+    function(req, res) {
+      res.json({
+        name: "Joe",
+        address: "1725 Main St."
+      });
+    }
+);
 
 router.get('/api/public', function(req, res) {
   res.json({ message: "Hello from a public endpoint! You don't need to be authenticated to see this." });

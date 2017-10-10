@@ -35,15 +35,14 @@ mongoose.connect('mongodb://proj3:ClassProject@ds147544.mlab.com:47544/prepared_
   useMongoClient: true
 });
   // When successfully connected
-  mongoose.connection.on('connected', function() {
-    console.log('Mongoose connection open');
+mongoose.connection.on('connected', function() {
+  console.log('Mongoose connection open');
   });
 
 // If the connection throws an error
-  mongoose.connection.on('error', function(err) {
-    console.log('Mongoose connection error: ' + err);
+mongoose.connection.on('error', function(err) {
+  console.log('Mongoose connection error: ' + err);
   });
-
 
 //Requiring routes
 const api = require('./routes/api.js');
@@ -72,15 +71,15 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+//app.use(function(err, req, res, next) {
   // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+ // res.locals.message = err.message;
+ // res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+//  res.status(err.status || 500);
+ // res.render('error');
+//});
 
 
 app.listen(PORT, function() {
