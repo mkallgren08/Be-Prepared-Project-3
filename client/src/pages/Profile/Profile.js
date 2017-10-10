@@ -4,6 +4,9 @@ import Col from "../../components/Grid/Col";
 import Row from "../../components/Grid/Row";
 import Container from "../../components/Grid/Container";
 import Input from "../../components/Form/Input";
+/*import List from "../../components/List/List";
+import ListItem from "../../components/List/ListItem";
+import { Link } from "react-router-dom";*/
 import "./Profile.css";
 import InputModal from "../../components/Modal/inputModal";
 import { Button } from "react-bootstrap";
@@ -65,86 +68,113 @@ class Profile extends Component {
     }
   };
 
-  render() {
-    return (
-        <div>
-          <Container fluid>
-            <h1>My Profile</h1>
-            <br /> <br />
-            <Row>
-              <Col size="md-5">
-                <div className="panel panel-default panel-primary">
-                  <div className="panel-heading">
-                    <h3 className="panel-title">My Posts</h3>
-                  </div>
-                  <div className="panel-body scroll">Panel content</div>
-                </div>
-              </Col>
-              <Col size="md-2">
-                <div className="wrapper">
-                  <Input
-                      name="name"
-                      value={this.state.name}
-                      onChange={this.handleInputChange}
-                      placeholder="Name (required)"
-                  />
-                  <Input
-                      name="address"
-                      value={this.state.address}
-                      onChange={this.handleInputChange}
-                      placeholder="Address (required)"
-                  />
-                  <Input
-                      name="city"
-                      value={this.state.city}
-                      onChange={this.handleInputChange}
-                      placeholder="City (required)"
-                  />
-                  <Input
-                      name="state"
-                      value={this.state.state}
-                      onChange={this.handleInputChange}
-                      placeholder="State (required)"
-                  />
-                  <Input
-                      name="zipCode"
-                      value={this.state.zipCode}
-                      onChange={this.handleInputChange}
-                      placeholder="Zip Code (required)"
-                  />
-                  <Input
-                      name="phoneNumber"
-                      value={this.state.phoneNumber}
-                      onChange={this.handleInputChange}
-                      placeholder="Phone Number (required)"
-                  />
-                </div>
-                <div>
-                  <h4>{this.state.name}</h4>
-                  <h4>{this.state.address}</h4>
-                  <h4>{this.state.city}</h4>
-                  <h4>{this.state.state}</h4>
-                  <h4>{this.state.zipCode}</h4>
-                  <h4>{this.state.phoneNumber}</h4>
-                </div>
-              </Col>
-              <Col size="md-5">
-                <div className="panel panel-default panel-primary">
-                  <div className="panel-heading">
-                    <h3 className="panel-title">Favorites</h3>
-                  </div>
-                  <div className="panel-body scroll">Panel content</div>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <a href="/emergencyform">
-                <Button className="blueBtn">Emergency Status Form</Button>
-              </a>
-            </Row>
-          </Container>
-        </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <Container fluid>
+                    <h1 className="blackText">My Profile</h1>
+                    <br />
+                    <Row>
+                        <div className="wrapper">
+                            <strong>
+                                <p className="blackText">
+                                    Welcome to your profile page. You are able to update your user information, review your
+                                    saved posts, and accesss your emergency status form.
+                                </p>
+                            </strong>        
+                            <a href="/emergencyform">
+                                <button className="blueBtn btn btn-default">Emergency Status Form</button>
+                            </a>
+                        </div>
+                    </Row>
+
+                    <br /><br />
+
+                    <Row>
+                        <Col size="md-5">
+                            <div className="panel panel-default panel-primary">
+                                <div className="panel-heading">
+                                    <h3 className="panel-title">My Posts</h3>
+                                </div>
+                                <div className="panel-body scroll">
+                                    Panel content
+                                </div>
+                            </div>
+                        </Col>
+                        <Col size="md-2">
+                            <div className="wrapper">
+
+                                <InputModal>
+                                    <h2 className="whiteText">Add/Update User Information</h2>
+                                    <form>
+                                        <Input
+                                            name="name"
+                                            value={this.state.name}
+                                            onChange={this.handleInputChange}
+                                            placeholder="Name (required)"
+                                        />
+                                        <Input
+                                            name="address"
+                                            value={this.state.address}
+                                            onChange={this.handleInputChange}
+                                            placeholder="Address (required)"
+                                        />
+                                        <Input
+                                            name="city"
+                                            value={this.state.city}
+                                            onChange={this.handleInputChange}
+                                            placeholder="City (required)"
+                                        />
+                                        <Input
+                                            name="state"
+                                            value={this.state.state}
+                                            onChange={this.handleInputChange}
+                                            placeholder="State (required)"
+                                        />
+                                        <Input
+                                            name="zipCode"
+                                            value={this.state.zipCode}
+                                            onChange={this.handleInputChange}
+                                            placeholder="Zip Code (required)"
+                                        />
+                                        <Input
+                                            name="phoneNumber"
+                                            value={this.state.phoneNumber}
+                                            onChange={this.handleInputChange}
+                                            placeholder="Phone Number (required)"
+                                        />
+                                        <div style={{ textAlign: "right" }}>
+                                            <button style={{ marginRight: "5px" }} onChange={this.handleInputChange} onClick={this.handleFormSubmit} className="blueBtn">Submit</button>
+                                            <button className="blueBtn" onClick={this.closeModal}>Close</button>
+                                        </div>
+                                    </form>
+
+                                </InputModal>
+                            </div>
+                            <div>
+                                <h4>{this.state.name}</h4>
+                                <h4>{this.state.address}</h4>
+                                <h4>{this.state.city}</h4>
+                                <h4>{this.state.state}</h4>
+                                <h4>{this.state.zipCode}</h4>
+                                <h4>{this.state.phoneNumber}</h4>
+                            </div>
+
+                        </Col>
+                        <Col size="md-5">
+                            <div className="panel panel-default panel-primary">
+                                <div className="panel-heading">
+                                    <h3 className="panel-title">Favorites</h3>
+                                </div>
+                                <div className="panel-body scroll">
+                                    Panel content
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+        );
+    }
 }
 export default Profile;
