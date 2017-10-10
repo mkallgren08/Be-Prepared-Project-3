@@ -11,7 +11,7 @@ export default {
   },
   //Save user to the database
   saveUser: function(token, id) {
-      return azios.get("api/users/" + id, {
+      return axios.get("api/users/" + id, {
           headers: {
               Authorization: "Bearer " + token
           }
