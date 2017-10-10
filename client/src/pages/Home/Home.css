@@ -1,7 +1,7 @@
 body{
     background: black;
-    {/*background: URL("./images/polaris.jpg") no-repeat center center fixed;
-    background-size: 100%;*/}
+    /*background: URL("./images/polaris.jpg") no-repeat center center fixed;
+    background-size: 100%;*/
 }
 h1 {
     text-align: center;
@@ -17,4 +17,8 @@ p {
     background: #337ab7;
     color: white;
     border-color: #337ab7;
+}
+
+.whiteText {
+    color: white;
 }
