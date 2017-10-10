@@ -112,7 +112,7 @@ class Profile extends Component {
 
                                 <InputModal>
                                     <h2 className="whiteText">Add/Update User Information</h2>
-                                    <form>
+                                    
                                         <Input
                                             name="name"
                                             value={this.state.name}
@@ -153,7 +153,7 @@ class Profile extends Component {
                                             <button style={{ marginRight: "5px" }} onChange={this.handleInputChange} onClick={this.handleFormSubmit} className="blueBtn">Submit</button>
                                             <button className="blueBtn" onClick={this.closeModal}>Close</button>
                                         </div>
-                                    </form>
+                                    
 
                                 </InputModal>
                             </div>
