@@ -16,7 +16,7 @@ const Nav = (props) =>
         <li className={window.location.pathname === "/blog" ? "active" : ""}>
             <Link to="/blog">Emergency Prep Blog</Link>
         </li>
-        <li className={window.location.pathname === "/blog" ? "active" : ""}>
+        <li className={window.location.pathname === "/emergencyMap" ? "active" : ""}>
             <Link to="/emergencyMap">Emergency Map</Link>
         </li>
         <li><AuthButtons auth={props.auth} />

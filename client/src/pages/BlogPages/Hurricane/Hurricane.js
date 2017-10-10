@@ -6,6 +6,9 @@ import Container from "../../../components/Grid/Container";
 import Input from "../../../components/Form/Input";
 import "./Hurricane.css";
 import InputModal from "../../../components/Modal/inputModal";
+import ListItem from "../../../components/List/ListItem";
+import List from "../../../components/List/List";
+import {Link} from "react-router-dom";
 
 class Hurricane extends Component {
 
