@@ -1,7 +1,9 @@
 body{
-    background: black;
-    /*background: URL("./images/polaris.jpg") no-repeat center center fixed;
-    background-size: 100%;*/
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7)
+      ),url("https://cdn.pixabay.com/photo/2015/09/30/08/33/flood-965092_1280.jpg");
+    background-size: cover;
 }
 h1 {
     text-align: center;
@@ -25,4 +27,13 @@ p {
 
 .blackText {
     color: black;
+}
+.pageHeader {
+    text-align: center;
+    background: transparent;
+    color: white;
+    font-family: 'Eczar', serif;
+}
+.intro {
+    font-size: 2rem;
 }
