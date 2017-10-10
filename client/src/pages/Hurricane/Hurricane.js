@@ -4,13 +4,16 @@ import Col from "../../components/Grid/Col";
 import Row from "../../components/Grid/Row";
 import Container from "../../components/Grid/Container";
 import Input from "../../components/Form/Input";
+import List from "../../components/List/List";
+import ListItem from "../../components/List/ListItem";
+import { Link } from "react-router-dom";
 import "./Hurricane.css";
 import InputModal from "../../components/Modal/inputModal";
 
 class Hurricane extends Component {
 
     state = {
-        Hurricane: [],
+        hurricanes: [],
         title: "",
         author: "",
         link: "",
@@ -18,13 +21,13 @@ class Hurricane extends Component {
     }
 
     componentDidMount() {
-        this.loadHurricane();
+        this.loadHurricanes();
     }
 
-    loadHurricane = () => {
-        API.getHurricane()
+    loadHurricanes = () => {
+        API.getHurricanes()
             .then(res =>
-                this.setState({ Hurricane: res.data, title: "", author: "", link: "", body: "" })
+                this.setState({ hurricanes: res.data, title: "", author: "", link: "", body: "" })
             ).catch(err => console.log(err));
     };
 
@@ -43,7 +46,7 @@ class Hurricane extends Component {
                 author: this.state.author,
                 link: this.state.link,
                 body: this.state.body
-            }).then(res => this.loadDrone())
+            }).then(res => this.loadHurricanes())
                 .catch(err => console.log(err));
         }
     }
@@ -103,7 +106,24 @@ class Hurricane extends Component {
                                     <h3 className="panel-title">Hurricanes</h3>
                                 </div>
                                 <div className="panel-body scroll">
-                                    Panel content
+                                    {this.state.hurricanes ? (
+                                        <List>
+                                            {this.state.hurricanes.map(hurricane => (
+                                                <ListItem key={hurricane._id}>
+                                                    <Link to={"/hurricanes/" + hurricane._id}>
+                                                        <strong>
+                                                            {hurricane.title} by {hurricane.author} <br />
+                                                            {hurricane.link} <br />
+                                                            {hurricane.body}
+                                                        </strong>
+                                                    </Link>
+                                                    <button className="blutBtn btn btn-default" onClick={() => this.handleFormSubmit(hurricane._id)}>Save</button>
+                                                </ListItem>
+                                            ))}
+                                        </List>
+                                    ) : (
+                                            <h3>No Results to Display</h3>
+                                        )}
                                 </div>
                             </div>
                         </Col>

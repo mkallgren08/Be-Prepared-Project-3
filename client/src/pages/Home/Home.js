@@ -10,7 +10,7 @@ const Home = () =>
         <Container fluid>
             <Row>
                 <Col size="md-3">
-                    <h1 className="pageHeader">Polaris</h1>
+                    <h1 className="pageHeader blackText">Polaris</h1>
                 </Col>
                 <Col size="md-9" />
             </Row>
@@ -18,13 +18,13 @@ const Home = () =>
             <Row>
                 <Col size="md-3" />
                 <Col size="md-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
+                    <strong>
+                    <p className="blackText">Welcome to the Polaris emergency preparedness site. Emergencies
+                        and disasters can happen at any time.  Being prepared will provide you and your family
+                        with what you need to cope with those emergencies.  This site will provide you with information
+                        and resources to help you prepare for and manage emergencies.
+                    </p>
+                    </strong>
                 </Col>
                 <Col size="md=3" />
             </Row>

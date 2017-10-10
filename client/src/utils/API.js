@@ -12,7 +12,7 @@ export default {
     },
 
     //Get drone with given id
-    getDrone: function(id) {
+    getDrones: function(id) {
         return axios.get("/api/drones/" + id);
     },
 
@@ -20,7 +20,7 @@ export default {
         return axios.post("/api/drones", droneData);
     },
 
-    getHurricane: function(id) {
+    getHurricanes: function(id) {
         return axios.get("/api/hurricanes/" + id);
     },
 

@@ -3,6 +3,9 @@ import Col from "../../components/Grid/Col";
 import Row from "../../components/Grid/Row";
 import Container from "../../components/Grid/Container";
 import Input from "../../components/Form/Input";
+/*import List from "../../components/List/List";
+import ListItem from "../../components/List/ListItem";
+import { Link } from "react-router-dom";*/
 import "./Profile.css";
 import InputModal from "../../components/Modal/inputModal";
 
@@ -56,10 +59,16 @@ class Profile extends Component {
         return (
             <div>
                 <Container fluid>
-                    <h1>My Profile</h1>
+                    <h1 className="blackText">My Profile</h1>
                     <br />
                     <Row>
                         <div className="wrapper">
+                            <strong>
+                                <p className="blackText">
+                                    Welcome to your profile page. You are able to update your user information, review your
+                                    saved posts, and accesss your emergency status form.
+                                </p>
+                            </strong>        
                             <a href="/emergencyform">
                                 <button className="blueBtn btn btn-default">Emergency Status Form</button>
                             </a>
