@@ -9,6 +9,7 @@ import Hurricane from "./pages/Hurricane";
 import Drone from "./pages/Drone";
 import EmergencyForm from "./pages/EmergencyForm";
 import './App.css';
+import "./index.css";
 
 class App extends Component {
   goTo(route) {
