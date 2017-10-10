@@ -59,6 +59,17 @@ class App extends Component {
                     <Button
                         bsStyle="primary"
                         className="btn-margin"
+                        onClick={this.goTo.bind(this, 'emergencyform')}
+                    >
+                      EmergencyForm
+                    </Button>
+                )
+              }
+              {
+                isAuthenticated() && (
+                    <Button
+                        bsStyle="primary"
+                        className="btn-margin"
                         onClick={this.goTo.bind(this, 'ping')}
                     >
                       Ping
