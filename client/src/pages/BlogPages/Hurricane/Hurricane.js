@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+/*import React, { Component } from "react";
 import API from "../../../utils/API";
 import Col from "../../../components/Grid/Col";
 import Row from "../../../components/Grid/Row";
@@ -139,3 +139,4 @@ class Hurricane extends Component {
 }
 
 export default Hurricane;
+*/
