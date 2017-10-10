@@ -47,7 +47,13 @@ class EmergencyForm extends Component {
     render() {
         return (
             <Container fluid>
-                <h3>Emergency Status Form</h3>
+                <Row>
+                    <Col size="md-1" />
+                    <Col size="md-4">
+                        <h1 className="pageHeader">Emergency Status Form</h1>
+                    </Col>
+                    <Col size="md-7" />
+                </Row>
                 <br />
                 <Row>
                     <Col size="md-6">

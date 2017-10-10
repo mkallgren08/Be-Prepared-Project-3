@@ -9,10 +9,11 @@ const Home = () =>
     <div>
         <Container fluid>
             <Row>
-                <Col size="md-3">
-                    <h1 className="pageHeader">Polaris</h1>
+                <Col size="md-1" />
+                <Col size="md-4">
+                    <h1 className="pageHeader">Polaris Preparation</h1>
                 </Col>
-                <Col size="md-9" />
+                <Col size="md-7" />
             </Row>
             <br /> <br /> <br />
             <Row>

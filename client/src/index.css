@@ -5,6 +5,10 @@ body {
   background-repeat: no-repeat;
 }
 
+.homeLink{
+  border-bottom-left-radius: 10px;
+}
+
 .nav{
   border-bottom-left-radius: 10px;
   background: r#C0BFBF; /* For browsers that do not support gradients */
@@ -12,9 +16,12 @@ body {
   background: -o-linear-gradient(right, #C0BFBF, #E2E1E1); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(right, #C0BFBF, #E2E1E1); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to right, #C0BFBF , #E2E1E1); /* Standard syntax */
+  border-bottom: black .5px solid;
+  border-left: black .5px solid;
+  margin-right: 0px;
 }
 
-.pageDescriptor{
+.pageHeader{
   color: black;
   /* width: 90%; */
   background: r#C0BFBF; /* For browsers that do not support gradients */
@@ -22,4 +29,9 @@ body {
   background: -o-linear-gradient(right, #C0BFBF, #E2E1E1); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(right, #C0BFBF, #E2E1E1); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to right, #C0BFBF , #E2E1E1); /* Standard syntax */
+}
+
+.signupLoginBtn{
+  padding-left: 15px;
+  border-left: #C0BFBF 3px double;
 }

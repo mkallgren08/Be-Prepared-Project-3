@@ -14,18 +14,18 @@ const PORT = process.env.PORT || 3001;
 //Enable CORS
 app.use(cors());
 
-const jwtCheck = jwt({
-  secret: jwks.express.JwtSecret({
-    cache: true,
-    rateLimit: true,
-    jwksRequestsPerMinute: 5,
-    jwksUri: https://
-  }),
-  audience:
-  issuer:
-  algorithms: ['RS256']
+// const jwtCheck = jwt({
+//   secret: jwks.express.JwtSecret({
+//     cache: true,
+//     rateLimit: true,
+//     jwksRequestsPerMinute: 5,
+//     jwksUri: "https://"
+//   }),
+//   audience:
+//   issuer:
+//   algorithms: ['RS256']
 
-});
+// });
 
 //Requiring Mongoose/Mongodb
 const mongoose = require('mongoose');
@@ -36,7 +36,7 @@ const Users = require('./models/Users.js');
 
 const app = express();
 
-app.use(jwtCheck);
+//app.use(jwtCheck);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

@@ -4,13 +4,14 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Blog from "./pages/Blog";
 import Resource from "./pages/Resource";
-import Hurricane from "./pages/Hurricane";
+import Hurricane from "./pages/BlogPages/Hurricane";
 import Nav from "./components/Nav";
 import Auth from "./auth/auth";
 import Callback from "./Callback/Callback";
 import history from "./history";
 import Drone from "./pages/Drone";
 import EmergencyForm from "./pages/EmergencyForm";
+import EmergencyMap from "./pages/EmergencyMap";
 
 const auth = new Auth();
 auth.login
@@ -55,6 +56,11 @@ const App = () => (
         exact
         path="/emergencyForm"
         render={props => <EmergencyForm auth={auth} {...props} />}
+      />
+      <Route
+        exact
+        path="/emergencyMap"
+        render={props => <EmergencyMap auth={auth} {...props} />}
       />
       <Route 
         path="/callback"

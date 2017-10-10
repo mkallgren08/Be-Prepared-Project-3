@@ -1,31 +1,30 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
-import Col from "../../components/Grid/Col";
-import Row from "../../components/Grid/Row";
-import Container from "../../components/Grid/Container";
-import Input from "../../components/Form/Input";
-import "./Drone.css";
-import InputModal from "../../components/Modal/inputModal";
+import API from "../../../utils/API";
+import Col from "../../../components/Grid/Col";
+import Row from "../../../components/Grid/Row";
+import Container from "../../../components/Grid/Container";
+import Input from "../../../components/Form/Input";
+import "./Volcano.css";
+import InputModal from "../../../components/Modal/inputModal";
 
-
-class Drone extends Component {
+class Volcano extends Component {
 
     state = {
-        Drone: [],
-        name: "",
-        zipCode: "",
-        phoneNumber: "",
-        comment: "",
+        Volcano: [],
+        title: "",
+        author: "",
+        link: "",
+        body: "",
     }
 
     componentDidMount() {
-        this.loadDrone();
+        this.loadVolcano();
     }
 
-    loadDrone = () => {
-        API.getDrone()
+    loadVolcano = () => {
+        API.getVolcano()
             .then(res =>
-                this.setState({ Drone: res.data, name: "", zipCode: "", phoneNumber: "", comment: "" })
+                this.setState({ Volcano: res.data, title: "", author: "", link: "", body: "" })
             ).catch(err => console.log(err));
     };
 
@@ -38,12 +37,12 @@ class Drone extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if (this.state.name && this.state.zipCode && this.state.phoneNumber && this.state.comment) {
-            API.saveDrone({
-                name: this.state.name,
-                zipCode: this.state.zipCode,
-                phoneNumber: this.state.phoneNumber,
-                comment: this.state.comment
+        if (this.state.title && this.state.author && this.state.body) {
+            API.saveVolcano({
+                title: this.state.title,
+                author: this.state.author,
+                link: this.state.link,
+                body: this.state.body
             }).then(res => this.loadDrone())
                 .catch(err => console.log(err));
         }
@@ -56,42 +55,43 @@ class Drone extends Component {
                     <Row>
                         <Col size="md-1" />
                         <Col size="md-4">
-                            <h1 className="pageHeader">Drones</h1>
+                            <h1 className="pageHeader">Volcano Prep</h1>
                         </Col>
                         <Col size="md-7" />
                     </Row>
-                    <br /><br />
+
+                    <br /> <br />
 
                     <div className="wrapper">
                         <InputModal>
-                            <h2 className="pageHeader">
-                                Add Your Drone
+                            <h2 className="whiteText" style={{ textAlign: "center" }}>
+                                Add a Blog Post
                             </h2>
                             <form>
                                 <Input
-                                    name="name"
-                                    value={this.state.name}
+                                    name="title"
+                                    value={this.state.title}
                                     onChange={this.handleInputChange}
-                                    placeholder="Name (required)"
+                                    placeholder="Title (required)"
                                 />
                                 <Input
-                                    name="zipCode"
-                                    value={this.state.zipCode}
+                                    name="author"
+                                    value={this.state.author}
                                     onChange={this.handleInputChange}
-                                    placeholder="Zip Code (required)"
+                                    placeholder="Author (required)"
                                 />
                                 <Input
-                                    name="phoneNumber"
-                                    value={this.state.phoneNumber}
+                                    name="link"
+                                    value={this.state.link}
                                     onChange={this.handleInputChange}
-                                    placeholder="Phone Number (required)"
+                                    placeholder="Link"
                                 />
                                 <textarea
                                     style={{ width: "500px", height: "175px" }}
-                                    name="comment"
-                                    value={this.state.comment}
+                                    name="body"
+                                    value={this.state.body}
                                     onChange={this.handleInputChange}
-                                    placeholder="Comment (required)"
+                                    placeholder="Add Your Post (required)"
                                 />
                                 <div style={{ textAlign: "right" }}>
                                     <button style={{ marginRight: "5px" }} onChange={this.handleInputChange} onClick={this.handleFormSubmit} className="blueBtn">Submit</button>
@@ -106,7 +106,7 @@ class Drone extends Component {
                         <Col size="md-8">
                             <div className="panel panel-default panel-primary">
                                 <div className="panel-heading">
-                                    <h3 className="panel-title">Drones</h3>
+                                    <h3 className="panel-title">Volcanos</h3>
                                 </div>
                                 <div className="panel-body scroll">
                                     Panel content
@@ -121,4 +121,4 @@ class Drone extends Component {
     }
 }
 
-export default Drone;
+export default Volcano;
