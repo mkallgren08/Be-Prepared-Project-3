@@ -7,6 +7,9 @@ import Ping from './ping/ping';
 import Callback from './Callback/Callback';
 import Auth from './auth/auth';
 import history from './history';
+import Blog from './pages/Blog';
+import Resource from './pages/Resource';
+import EmergencyForm from './pages/EmergencyForm/EmergencyForm';
 
 const auth = new Auth();
 
@@ -22,7 +25,8 @@ export const makeMainRoutes = () => {
         <div>
           <Route path="/" render={(props) => <App auth={auth} {...props} />} />
           <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
-          <Route path="/blog" render={(props) => <blog auth={auth} {...props} />} />
+          <Route path="/blog" render={(props) => <Blog auth={auth} {...props} />} />
+          <Route path="/resource" render={(props) => <Resource auth={auth} {...props} />} />
           <Route path="/profile" render={(props) => (
               !auth.isAuthenticated() ? (
                   <Redirect to="/home"/>
@@ -37,18 +41,11 @@ export const makeMainRoutes = () => {
                   <Ping auth={auth} {...props} />
               )
           )} />
-          <Route path="/resource" render={(props) => (
+          <Route path="/EmergencyForm" render={(props) => (
               !auth.isAuthenticated() ? (
                   <Redirect to='/home'/>
               ) : (
-                  <Ping auth={auth} {...props} />
-              )
-          )}/>
-          <Route path="/hurricane" render={(props) => (
-              !auth.isAuthenticated() ? (
-                  <Redirect to='/home'/>
-              ) : (
-                  <Ping auth={auth} {...props} />
+                  <EmergencyForm auth={auth} {...props} />
               )
           )}/>
           <Route path="/callback" render={(props) => {
