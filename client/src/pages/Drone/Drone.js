@@ -4,6 +4,9 @@ import Col from "../../components/Grid/Col";
 import Row from "../../components/Grid/Row";
 import Container from "../../components/Grid/Container";
 import Input from "../../components/Form/Input";
+import List from "../../components/List/List";
+import ListItem from "../../components/List/ListItem";
+import { Link } from "react-router-dom";
 import "./Drone.css";
 import InputModal from "../../components/Modal/inputModal";
 
@@ -11,7 +14,7 @@ import InputModal from "../../components/Modal/inputModal";
 class Drone extends Component {
 
     state = {
-        Drone: [],
+        drones: [],
         name: "",
         zipCode: "",
         phoneNumber: "",
@@ -19,13 +22,13 @@ class Drone extends Component {
     }
 
     componentDidMount() {
-        this.loadDrone();
+        this.loadDrones();
     }
 
-    loadDrone = () => {
-        API.getDrone()
+    loadDrones = () => {
+        API.getDrones()
             .then(res =>
-                this.setState({ Drone: res.data, name: "", zipCode: "", phoneNumber: "", comment: "" })
+                this.setState({ drones: res.data, name: "", zipCode: "", phoneNumber: "", comment: "" })
             ).catch(err => console.log(err));
     };
 
@@ -44,7 +47,7 @@ class Drone extends Component {
                 zipCode: this.state.zipCode,
                 phoneNumber: this.state.phoneNumber,
                 comment: this.state.comment
-            }).then(res => this.loadDrone())
+            }).then(res => this.loadDrones())
                 .catch(err => console.log(err));
         }
     }
@@ -109,7 +112,25 @@ class Drone extends Component {
                                     <h3 className="panel-title">Drones</h3>
                                 </div>
                                 <div className="panel-body scroll">
-                                    Panel content
+                                    {this.state.drones ? (
+                                        <List>
+                                            {this.state.drones.map(drone => (
+                                                <ListItem key={drone._id}>
+                                                    <Link to={"/drones/" + drone._id}>
+                                                        <strong>
+                                                            {drone.name} <br />
+                                                            {drone.zipCode} <br />
+                                                            {drone.phoneNumber} <br />
+                                                            {drone.comment}
+                                                        </strong>
+                                                    </Link>
+                                                    <button className="blutBtn btn btn-default" onClick={() => this.handleFormSubmit(drone._id)}>Save</button>
+                                                </ListItem>
+                                            ))}
+                                        </List>
+                                    ) : (
+                                            <h3>No Results to Display</h3>
+                                        )}
                                 </div>
                             </div>
                         </Col>

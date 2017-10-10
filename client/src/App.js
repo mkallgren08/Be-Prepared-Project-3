@@ -1,5 +1,6 @@
-import React from "react";
-import { Router, Route } from "react-router-dom";
+import React, { Component } from 'react';
+import { Navbar, a } from 'react-bootstrap';
+import { Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Blog from "./pages/Blog";
@@ -13,63 +14,90 @@ import Drone from "./pages/Drone";
 import EmergencyForm from "./pages/EmergencyForm";
 import EmergencyMap from "./pages/EmergencyMap";
 
-const auth = new Auth();
-auth.login
+class App extends Component {
+  goTo(route) {
+    this.props.history.replace(`/${route}`)
+  }
 
-const handleAuthentication = (nextState, replace) => {
-  if (/access_token|id_token|error/.test(nextState.location.hash)) {
-    auth.handleAuthentication();
+  login() {
+    this.props.auth.login();
+  }
+
+  logout() {
+    this.props.auth.logout();
+  }
+
+  render() {
+    const { isAuthenticated } = this.props.auth;
+
+    return (
+      <div>
+        <Navbar fluid>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="/">Polaris</a>
+            </Navbar.Brand>
+            <ul className="nav navbar-nav " style={{ paddingRight: "20px", lineHeight: "50px" }}>
+              <li
+                onClick={this.goTo.bind(this, 'home')}
+              >
+                Home
+              </li>
+              {
+                !isAuthenticated() && (
+                  <li
+                    onClick={this.login.bind(this)}
+                  >
+                  Log In
+                    </li>
+                )
+              }
+              {
+                isAuthenticated() && (
+                  <li
+                    onClick={this.goTo.bind(this, 'profile')}
+                  >
+                    Profile
+                    </li>
+                )
+              }
+              {
+                isAuthenticated() && (
+                  <li
+                    onClick={this.goTo.bind(this, 'ping')}
+                  >
+                    Ping
+                    </li>
+                )
+              }
+              {
+                isAuthenticated() && (
+                  <li
+                    onClick={this.logout.bind(this)}
+                  >
+                    Log Out
+                    </li>
+                )
+              }
+              <li className={window.location.pathname === "/resource" ? "active" : ""}>
+                <Link to="/resource">Resources</Link>
+              </li>
+              <li className={window.location.pathname === "/blog" ? "active" : ""}>
+                <Link to="/blog">Emergency Prep Blog</Link>
+              </li>
+            </ul>
+          </Navbar.Header>
+        </Navbar>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/blog" component={Blog} />
+        <Route exact path="/resource" component={Resource} />
+        <Route exact path="/drone" component={Drone} />
+        <Route exact path="/hurricane" component={Hurricane} />
+        <Route exact path="/emergencyform" component={EmergencyForm} />
+      </div>
+    );
   }
 }
-
-const App = () => (
-  <Router history={history}>
-    <div>
-      <Nav auth={auth} />
-      <Route exact path="/" render={props => <Home auth={auth} {...props} />} />
-      <Route
-        exact
-        path="/profile"
-        render={props => <Profile auth={auth} {...props} />}
-      />
-      <Route
-        exact
-        path="/blog"
-        render={props => <Blog auth={auth} {...props} />}
-      />
-      <Route
-        exact
-        path="/resource"
-        render={props => <Resource auth={auth} {...props} />}
-      />
-      <Route
-        exact
-        path="/hurricane"
-        render={props => <Hurricane auth={auth} {...props} />}
-      />
-      <Route
-        exact
-        path="/drone"
-        render={props => <Drone auth={auth} {...props} />}
-      />
-      <Route
-        exact
-        path="/emergencyForm"
-        render={props => <EmergencyForm auth={auth} {...props} />}
-      />
-      <Route
-        exact
-        path="/emergencyMap"
-        render={props => <EmergencyMap auth={auth} {...props} />}
-      />
-      <Route 
-        path="/callback"
-        render={props => {
-          handleAuthentication(props);
-          return <Callback {...props} />
-        }} /> 
-    </div>
-  </Router>
-);
 
 export default App;

@@ -1,56 +1,72 @@
-import React, { Component } from "react"; import API from "../../utils/API";
+import React, { Component } from "react";
+import API from "../../utils/API";
 import Col from "../../components/Grid/Col";
 import Row from "../../components/Grid/Row";
 import Container from "../../components/Grid/Container";
 import Input from "../../components/Form/Input";
+/*import List from "../../components/List/List";
+import ListItem from "../../components/List/ListItem";
+import { Link } from "react-router-dom";*/
 import "./Profile.css";
 import InputModal from "../../components/Modal/inputModal";
+import { Button } from "react-bootstrap";
 
 class Profile extends Component {
+  state = {
+    User: [],
+    name: "",
+    address: "",
+    city: "",
+    state: "",
+    zipCode: "",
+    phoneNumber: ""
+  };
 
-    state = {
-        User: [],
-        name: "",
-        address: "",
-        city: "",
-        state: "",
-        zipCode: "",
-        phoneNumber: "",
+  componentDidMount() {
+    this.loadUser();
+  }
+
+  loadUser() {
+    const { auth } = this.props;
+
+    auth.getProfile((err, profile) => {
+      if (err) throw new Error("Error retrieving profile from Auth0");
+      console.log(profile);
+      API.getUser(auth.getAccessToken(), profile.sub)
+      .then(res => this.setState({ ...res.data }))
+      .catch(err => console.log(err));
+    });
+  }
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (
+        this.state.name &&
+        this.state.address &&
+        this.state.city &&
+        this.state.state &&
+        this.state.zipCode &&
+        this.state.phoneNumber
+    ) {
+      API.saveUser({
+        name: this.state.name,
+        address: this.state.address,
+        city: this.state.city,
+        state: this.state.state,
+        zipCode: this.state.zipCode,
+        phoneNumber: this.state.phoneNumber
+      })
+      .then(res => this.loadUser())
+      .catch(err => console.log(err));
     }
-
-    componentDidMount() {
-        this.loadUser();
-    }
-
-    loadUser = () => {
-        API.getUser()
-            .then(res =>
-                this.setState({ User: res.data, name: "", address: "", city: "", state: "", zipCode: "", phoneNumber: "" })
-            )
-            .catch(err => console.log(err));
-    };
-
-    handleInputChange = event => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
-    };
-
-    handleFormSubmit = event => {
-        event.preventDefault();
-        if (this.state.name && this.state.address && this.state.city && this.state.state && this.state.zipCode && this.state.phoneNumber) {
-            API.saveUser({
-                name: this.state.name,
-                address: this.state.address,
-                city: this.state.city,
-                state: this.state.state,
-                zipCode: this.state.zipCode,
-                phoneNumber: this.state.phoneNumber
-            }).then(res => this.loadUser())
-                .catch(err => console.log(err));
-        }
-    }
+  };
 
     render() {
         return (
@@ -66,6 +82,12 @@ class Profile extends Component {
                     <br />
                     <Row>
                         <div className="wrapper">
+                            <strong>
+                                <p className="blackText">
+                                    Welcome to your profile page. You are able to update your user information, review your
+                                    saved posts, and accesss your emergency status form.
+                                </p>
+                            </strong>        
                             <a href="/emergencyform">
                                 <button className="blueBtn btn btn-default">Emergency Status Form</button>
                             </a>
