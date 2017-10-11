@@ -20,7 +20,7 @@ export default {
 
   // Save Emergency Form Data
   saveForm: function(token, id){
-    return axios.post("api/users/" + id + "/emergencyform", {
+    return axios.post("/api/users/" + id + "/emergencyform", {
       headers: {
         Authorization: "Bearer " + token
       }
