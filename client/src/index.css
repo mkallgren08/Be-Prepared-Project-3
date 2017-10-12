@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  background-image: url("./images/flooding.jpg");
+  background-image: url("./images/flooding.png");
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -29,6 +29,7 @@ body {
   background: -o-linear-gradient(right, #C0BFBF, #E2E1E1); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(right, #C0BFBF, #E2E1E1); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to right, #C0BFBF , #E2E1E1); /* Standard syntax */
+  font-family: 'Eczar', serif;
 }
 
 .signupLoginBtn{

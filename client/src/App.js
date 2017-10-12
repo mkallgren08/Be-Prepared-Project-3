@@ -22,14 +22,14 @@ class App extends Component {
       <div>
         <Navbar fluid>
           {/* <Navbar.Header> */}
-            {/* <Row>
-              <Col md={2}> */}
+            <Row>
+              <Col md={2}>
                 <Navbar.Brand>
                   <a href="/home">Polaris</a>
                 </Navbar.Brand>
-              {/* </Col>
-              <Col md={5} />
-              <Col md={5}> */}
+              </Col>
+              <Col md={3} />
+              <Col md={7}>
                 <Button
                   bsStyle="primary"
                   className="btn-margin"
@@ -83,7 +83,7 @@ class App extends Component {
                       EmergencyForm
                     </Button>
                   )
-                }s
+                }
                 {
                   isAuthenticated() && (
                     <Button
@@ -117,8 +117,8 @@ class App extends Component {
                     </Button>
                   )
                 }
-              {/* </Col>
-            </Row> */}
+              </Col>
+            </Row>
           {/* </Navbar.Header> */}
         </Navbar>
 

@@ -22,6 +22,12 @@
   font-size: large;
 }
 
+#root {
+  background-image: url("./images/flooding.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
