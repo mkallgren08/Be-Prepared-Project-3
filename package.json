@@ -6,7 +6,11 @@
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node server.js",
     "client": "node start-client.js",
+<<<<<<< HEAD
     "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
+=======
+    "heroku-postbuild": "cd client && npm --production=false && npm run build"
+>>>>>>> 89a5f141f3de85b6eaa1b67f11252ff1edf830c0
   },
   "dependencies": {
     "auth0-js": "^8.10.1",
