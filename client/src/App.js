@@ -83,7 +83,7 @@ class App extends Component {
                       EmergencyForm
                     </Button>
                   )
-                }
+                }s
                 {
                   isAuthenticated() && (
                     <Button
@@ -104,17 +104,10 @@ class App extends Component {
                     >
                       Ping
                     </Button>
-<<<<<<< HEAD
-                  )
-                }
-                {
-                  isAuthenticated() && (
-=======
                 )
               }
               {
                 isAuthenticated() &&  (
->>>>>>> 89a5f141f3de85b6eaa1b67f11252ff1edf830c0
                     <Button
                       bsStyle="primary"
                       className="btn-margin"

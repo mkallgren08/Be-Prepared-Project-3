@@ -43,36 +43,8 @@ router.get(
   }
 );
 
-<<<<<<< HEAD
-router.post("/users/:id/location", function(req, res){
-  console.log(req.body)
-    geocoding.geocode(req.body.address, function(err, location) {
-      if( err ) {
-          console.log('Error: ' + err);
-      } else if( !location ) {
-          console.log('No result.');
-      } else {
-          console.log('Latitude: ' + location.lat + ' ; Longitude: ' + location.lng);
-      }
-  });
-})
-
-router.get("/api/public", function(req, res) {
-  res.json({
-    message:
-      "Hello from a public endpoint! You don't need to be authenticated to see this."
-  });
-});
-
-router.get("/api/private", checkJwt, function(req, res) {
-  res.json({
-    message:
-      "Hello from a private endpoint! You need to be authenticated and have a scope of read:messages to see this."
-  });
-=======
 router.post("/users/profile", checkJwt, checkScopes, function(req , res) {
   res.status(201).send({message: "This is the POST /profile endpoint"});
->>>>>>> 89a5f141f3de85b6eaa1b67f11252ff1edf830c0
 });
 
 
