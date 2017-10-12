@@ -32,7 +32,7 @@ export const makeMainRoutes = () => {
               !auth.isAuthenticated() ? (
                   <Redirect to="/home"/>
               ) : (
-                  <Profile auth={auth} {...props} />
+                  <Profile auth={auth} test="foo" {...props} />
               )
           )} />
           <Route path="/ping" render={(props) => (
