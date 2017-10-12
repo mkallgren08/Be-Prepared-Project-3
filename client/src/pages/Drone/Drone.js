@@ -70,7 +70,7 @@ class Drone extends Component {
                             <h2 className="pageHeader">
                                 Add Your Drone
                             </h2>
-                            <form>
+                            
                                 <Input
                                     name="name"
                                     value={this.state.name}
@@ -100,7 +100,7 @@ class Drone extends Component {
                                     <button style={{ marginRight: "5px" }} onChange={this.handleInputChange} onClick={this.handleFormSubmit} className="blueBtn">Submit</button>
                                     <button className="blueBtn" onClick={this.closeModal}>Close</button>
                                 </div>
-                            </form>
+                            
                         </InputModal>
                     </div>
                     <br />

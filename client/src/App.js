@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 import './App.css';
 
 class App extends Component {
@@ -20,13 +21,14 @@ class App extends Component {
 
     return (
         <div>
-          <Navbar fluid>
+          <Navbar className="transparent" fluid>
             <Navbar.Header>
               <Navbar.Brand>
-                <a href="/home">Polaris</a>
+                <Link to="/home" style={{color: "white", fontSize: "20px"}}>Polaris</Link>
               </Navbar.Brand>
               <Button
                   bsStyle="primary"
+                  style={{margin: "7px"}}
                   className="btn-margin"
                   onClick={this.goTo.bind(this, 'home')}
               >
@@ -34,6 +36,7 @@ class App extends Component {
               </Button>
               <Button
                   bsStyle="primary"
+                  style={{margin: "7px"}}
                   className="btn-margin"
                   onClick={this.goTo.bind(this, 'resource')}
               >
@@ -41,6 +44,7 @@ class App extends Component {
               </Button>
               <Button
                   bsStyle="primary"
+                  style={{margin: "7px"}}
                   className="btn-margin"
                   onClick={this.goTo.bind(this, 'blog')}
               >
@@ -50,6 +54,7 @@ class App extends Component {
                 !isAuthenticated() && (
                     <Button
                         bsStyle="primary"
+                        style={{margin: "7px"}}
                         className="btn-margin"
                         onClick={this.login.bind(this)}
                     >
@@ -61,6 +66,7 @@ class App extends Component {
                 isAuthenticated() && (
                     <Button
                         bsStyle="primary"
+                        style={{margin: "7px"}}
                         className="btn-margin"
                         onClick={this.goTo.bind(this, 'profile')}
                     >
@@ -72,6 +78,7 @@ class App extends Component {
                 isAuthenticated() && (
                     <Button
                         bsStyle="primary"
+                        style={{margin: "7px"}}
                         className="btn-margin"
                         onClick={this.goTo.bind(this, 'emergencyform')}
                     >
@@ -83,6 +90,7 @@ class App extends Component {
                 isAuthenticated() && (
                     <Button
                         bsStyle="primary"
+                        style={{margin: "7px"}}
                         className="btn-margin"
                         onClick={this.goTo.bind(this, 'emergencymap')}
                     >
@@ -94,6 +102,7 @@ class App extends Component {
                 isAuthenticated() && (
                     <Button
                         bsStyle="primary"
+                        style={{margin: "7px"}}
                         className="btn-margin"
                         onClick={this.goTo.bind(this, 'ping')}
                     >
@@ -105,6 +114,7 @@ class App extends Component {
                 isAuthenticated() && (
                     <Button
                         bsStyle="primary"
+                        style={{margin: "7px"}}
                         className="btn-margin"
                         onClick={this.logout.bind(this)}
                     >

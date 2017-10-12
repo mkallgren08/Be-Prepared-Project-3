@@ -88,9 +88,6 @@ class Profile extends Component {
                                     saved posts, and accesss your emergency status form.
                                 </p>
                             </strong>        
-                            <a href="/emergencyform">
-                                <button className="blueBtn btn btn-default">Emergency Status Form</button>
-                            </a>
                         </div>
                     </Row>
 

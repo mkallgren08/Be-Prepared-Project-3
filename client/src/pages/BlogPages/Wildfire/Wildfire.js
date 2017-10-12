@@ -67,7 +67,7 @@ class Wildfire extends Component {
                             <h2 className="whiteText" style={{ textAlign: "center" }}>
                                 Add a Blog Post
                             </h2>
-                            <form>
+                            
                                 <Input
                                     name="title"
                                     value={this.state.title}
@@ -97,7 +97,7 @@ class Wildfire extends Component {
                                     <button style={{ marginRight: "5px" }} onChange={this.handleInputChange} onClick={this.handleFormSubmit} className="blueBtn">Submit</button>
                                     <button className="blueBtn" onClick={this.closeModal}>Close</button>
                                 </div>
-                            </form>
+                            
                         </InputModal>
                     </div>
                     <br />
