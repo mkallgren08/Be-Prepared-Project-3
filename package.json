@@ -8,9 +8,6 @@
     "client": "node start-client.js"//,
     // "heroku-postbuild": "cd client && npm --production=false && npm run build"
   },
-  "engines": {
-    "node": "6.11.0"
-  },
   "dependencies": {
     "auth0-js": "^8.10.1",
     "body-parser": "~1.18.2",
