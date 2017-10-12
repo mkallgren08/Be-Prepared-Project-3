@@ -47,15 +47,21 @@ class EmergencyForm extends Component {
     render() {
         return (
             <Container fluid>
-                <h3>Emergency Status Form</h3>
+                <Row>
+                    <Col size="md-1" />
+                    <Col size="md-4">
+                        <h1 className="pageHeader">Emergency Status Form</h1>
+                    </Col>
+                    <Col size="md-7" />
+                </Row>
                 <br />
                 <Row>
                     <Col size="md-6">
                         <div className="wrapper">
-                            <h4>Full Name{/*{this.state.name}*/}</h4>
-                            <h4>Location{/*{this.state.address}*/}</h4>
+                            <h4 className="blackText">Full Name{/*{this.state.name}*/}</h4>
+                            <h4 className="blackText">Location{/*{this.state.address}*/}</h4>
                             <InputModal>
-                                <h2 className="whiteText" style={{ textAlign: "center" }}>
+                                <h2 className="blackText" style={{ textAlign: "center" }}>
                                     Update Your Location
                                 </h2>
                                 <form>
@@ -113,7 +119,7 @@ class EmergencyForm extends Component {
                         </div>
                     </Col>
                     <Col size="md-6">
-                        <h4 style={{ textAlign: "left" }}>Please specify what you need:</h4>
+                        <h4 style={{ textAlign: "left", color: "black" }}>Please specify what you need:</h4>
                         <textarea style={{ height: "405px", width: "650px" }} />
                         <button className="blueBtn btn btn-default btn-lg">Submit</button>
                     </Col>
