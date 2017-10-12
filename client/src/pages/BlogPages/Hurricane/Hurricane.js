@@ -9,7 +9,9 @@ import ListItem from "../../../components/List/ListItem";
 import { Link } from "react-router-dom";
 import "./Hurricane.css";
 import InputModal from "../../../components/Modal/inputModal";
-
+import List from "../../../components/List/List";
+import ListItem from "../../../components/List/ListItem";
+import { Link } from "react-router-dom";
 class Hurricane extends Component {
 
     state = {

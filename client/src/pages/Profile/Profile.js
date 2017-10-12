@@ -87,7 +87,11 @@ class Profile extends Component {
                                     Welcome to your profile page. You are able to update your user information, review your
                                     saved posts, and accesss your emergency status form.
                                 </p>
+<<<<<<< HEAD
                             </strong>        
+=======
+                            </strong>
+>>>>>>> 8d7d5b3b76842520d55b2e67479896f3216aa28e
                         </div>
                     </Row>
 

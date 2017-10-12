@@ -111,7 +111,7 @@ class App extends Component {
                 )
               }
               {
-                isAuthenticated() && (
+                isAuthenticated() &&  (
                     <Button
                         bsStyle="primary"
                         style={{margin: "7px"}}
