@@ -23,7 +23,6 @@ class App extends Component {
           <Navbar fluid>
             <Navbar.Header>
               <Navbar.Brand>
-                <a href="/home">Polaris</a>
               </Navbar.Brand>
               <Button
                   bsStyle="primary"
