@@ -6,6 +6,7 @@ const Users = require("../models/Users.js");
 const jwt = require("express-jwt");
 const jwtAuthz = require("express-jwt-authz");
 const jwksRsa = require("jwks-rsa");
+const geocoding = require("google-geocoding");
 
 require("dotenv").config();
 
@@ -26,10 +27,14 @@ const checkJwt = jwt({
   algorithms: ["RS256"]
 });
 
+const checkScopes = jwtAuthz(['read:profile', 'write:profile', 'update:profile']);
+router.get('/api/users', checkJwt, checkScopes, function(req, res) {
+  res.json({ message: 'Hello from the users endpoint! you need to be authenticated to see this'});
+});
+
 router.get(
   "/users/:id",
-  checkJwt,
-  //  jwtAuthz(["read:profile", "write:profile"]),
+  checkJwt, checkScopes,
   function(req, res) {
     res.json({
       name: "Joe",
@@ -38,25 +43,12 @@ router.get(
   }
 );
 
-router.get("/api/public", function(req, res) {
-  res.json({
-    message:
-      "Hello from a public endpoint! You don't need to be authenticated to see this."
-  });
+router.post("/users/profile", checkJwt, checkScopes, function(req , res) {
+  res.status(201).send({message: "This is the POST /profile endpoint"});
 });
 
-router.get("/api/private", checkJwt, function(req, res) {
-  res.json({
-    message:
-      "Hello from a private endpoint! You need to be authenticated and have a scope of read:messages to see this."
-  });
-});
 
-/*router.post('/api/admin', checkJwt, checkScopesAdmin, function(req, res) {
-  res.json({ message: "Hello from an admin endpoint! You need to be authenticated and have a scope of write:messages to see this." });
-});*/
-
-router.route("/user/post").post(function(req, res) {
+router.route("/users/post", checkJwt, checkScopes).post(function(req, res) {
   const users = new Users(req.body);
   users
     .save()

@@ -87,10 +87,7 @@ class Profile extends Component {
                                     Welcome to your profile page. You are able to update your user information, review your
                                     saved posts, and accesss your emergency status form.
                                 </p>
-                            </strong>        
-                            <a href="/emergencyform">
-                                <button className="blueBtn btn btn-default">Emergency Status Form</button>
-                            </a>
+                            </strong>
                         </div>
                     </Row>
 

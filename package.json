@@ -5,7 +5,11 @@
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node server.js",
-    "client": "node start-client.js"
+    "client": "node start-client.js"//,
+    // "heroku-postbuild": "cd client && npm --production=false && npm run build"
+  },
+  "engines": {
+    "node": "6.11.0"
   },
   "dependencies": {
     "auth0-js": "^8.10.1",
@@ -19,6 +23,7 @@
     "express-jwt": "^5.3.0",
     "express-jwt-authz": "^1.0.0",
     "express-router": "0.0.1",
+    "google-geocoding": "^0.1.7",
     "jwks-rsa": "^1.2.0",
     "mongoose": "^4.12.1",
     "morgan": "~1.9.0",
@@ -29,6 +34,7 @@
     "yarn": "^1.2.0"
   },
   "devDependencies": {
+    "dotenv": "^4.0.0",
     "nightmare": "^2.10.0"
   }
 }
