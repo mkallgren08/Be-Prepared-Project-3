@@ -9,6 +9,13 @@ import Auth from './auth/auth';
 import history from './history';
 import Blog from './pages/Blog';
 import Resource from './pages/Resource';
+import Drone from "./pages/Drone";
+import Hurricane from "./pages/BlogPages/Hurricane";
+import Blizzard from "./pages/BlogPages/Blizzard";
+import Wildfire from "./pages/BlogPages/Wildfire";
+import Tornado from "./pages/BlogPages/Tornado";
+import Tsunami from "./pages/BlogPages/Tsunami";
+import Volcano from "./pages/BlogPages/Volcano";
 import EmergencyForm from './pages/EmergencyForm/EmergencyForm';
 import EmergencyMap from './pages/EmergencyMap/EmergencyMap';
 
@@ -28,6 +35,13 @@ export const makeMainRoutes = () => {
           <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
           <Route path="/blog" render={(props) => <Blog auth={auth} {...props} />} />
           <Route path="/resource" render={(props) => <Resource auth={auth} {...props} />} />
+          <Route path="/drone" render={(props) => <Drone auth={auth} {...props} />} />
+          <Route path="/hurricane" render={(props) => <Hurricane auth={auth} {...props} />} />
+          <Route path="/blizzard" render={(props) => <Blizzard auth={auth} {...props} />} />
+          <Route path="/fire" render={(props) => <Wildfire auth={auth} {...props} />} />
+          <Route path="/tornado" render={(props) => <Tornado auth={auth} {...props} />} />
+          <Route path="/tsunami" render={(props) => <Tsunami auth={auth} {...props} />} />
+          <Route path="/volcano" render={(props) => <Volcano auth={auth} {...props} />} />
           <Route path="/profile" render={(props) => (
               !auth.isAuthenticated() ? (
                   <Redirect to="/home"/>

@@ -1,1 +1,1 @@
-export { default } from "./Hurricane.js";
+export { default } from "./Wildfire.js";

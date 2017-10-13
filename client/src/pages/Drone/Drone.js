@@ -59,11 +59,14 @@ class Drone extends Component {
                     <Row>
                         <Col size="md-1" />
                         <Col size="md-4">
-                            <h1 className="pageHeader">Drones</h1>
+                            <h1 style={{textAlign: "center", textDecoration: "underline"}}>Drones</h1>
                         </Col>
                         <Col size="md-7" />
                     </Row>
-                    <br /><br />
+                    <Row>
+                        <h4>View search or delivery drones available in your area. Click the 'Add/Update' button to add your drone to the list.</h4> 
+                    </Row>
+                    <br />
 
                     <div className="wrapper">
                         <InputModal>
@@ -109,7 +112,7 @@ class Drone extends Component {
                         <Col size="md-8">
                             <div className="panel panel-default panel-primary">
                                 <div className="panel-heading">
-                                    <h3 className="panel-title">Drones</h3>
+                                    <h3 className="panel-title">Available Drones</h3>
                                 </div>
                                 <div className="panel-body scroll">
                                     {this.state.drones ? (

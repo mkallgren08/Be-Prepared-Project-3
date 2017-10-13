@@ -4,13 +4,16 @@ import Col from "../../../components/Grid/Col";
 import Row from "../../../components/Grid/Row";
 import Container from "../../../components/Grid/Container";
 import Input from "../../../components/Form/Input";
+import List from "../../../components/List/List";
+import ListItem from "../../../components/List/ListItem";
+import { Link } from "react-router-dom";
 import "./Tornado.css";
 import InputModal from "../../../components/Modal/inputModal";
 
 class Tornado extends Component {
 
     state = {
-        Tornado: [],
+        tornado: [],
         title: "",
         author: "",
         link: "",
@@ -24,7 +27,7 @@ class Tornado extends Component {
     loadTornado = () => {
         API.getTornado()
             .then(res =>
-                this.setState({ Tornado: res.data, title: "", author: "", link: "", body: "" })
+                this.setState({ tornado: res.data, title: "", author: "", link: "", body: "" })
             ).catch(err => console.log(err));
     };
 
@@ -55,7 +58,7 @@ class Tornado extends Component {
                     <Row>
                         <Col size="md-1" />
                         <Col size="md-4">
-                            <h1 className="pageHeader">Tornado Prep</h1>
+                            <h1 className="pageHeader" style={{textAlign: "center", textDecoration: "underline"}}>Tornado Prep</h1>
                         </Col>
                         <Col size="md-7" />
                     </Row>
@@ -106,10 +109,27 @@ class Tornado extends Component {
                         <Col size="md-8">
                             <div className="panel panel-default panel-primary">
                                 <div className="panel-heading">
-                                    <h3 className="panel-title">Tornados</h3>
+                                    <h3 className="panel-title">Tornados Preparedness Posts</h3>
                                 </div>
-                                <div className="panel-body scroll">
-                                    Panel content
+                                <div className="panel-body scroll blackText">
+                                {this.state.tornados ? (
+                                        <List>
+                                            {this.state.tornados.map(tornado => (
+                                                <ListItem key={tornado._id}>
+                                                    <Link to={"/tornados/" + tornado._id}>
+                                                        <strong>
+                                                            {tornado.title} by {tornado.author} <br />
+                                                            {tornado.link} <br />
+                                                            {tornado.body}
+                                                        </strong>
+                                                    </Link>
+                                                    <button className="blutBtn btn btn-default" onClick={() => this.handleFormSubmit(tornado._id)}>Save</button>
+                                                </ListItem>
+                                            ))}
+                                        </List>
+                                    ) : (
+                                            <h3 className="blackText">No Results to Display</h3>
+                                        )}
                                 </div>
                             </div>
                         </Col>
