@@ -2,6 +2,7 @@ import React from "react";
 import Col from "../../components/Grid/Col";
 import Row from "../../components/Grid/Row";
 import Container from "../../components/Grid/Container";
+import { Link } from "react-router-dom";
 import "./Resource.css";
 
 
@@ -18,29 +19,29 @@ const Resource = () =>
             <Row>
                 <Col size="md-4">
                     <div className="wrapper">
-                        <a className="whiteText" href="/drone">
+                        <Link to="/drone" className="whiteText">
                             <img className="resourceImg" src="./images/drone.jpg" alt="drone" />
                             <br />
                             Drones
-                         </a>
+                         </Link>
                     </div>
                 </Col>
                 <Col size="md-4">
                     <div className="wrapper">
-                        <a className="whiteText" href="/firstaid">
+                        <Link to="firstaid" className="whiteText">
                             <img className="resourceImg" src="./images/firstAid.png" alt="First Aid" />
                             <br />
                             First Aid
-                        </a>
+                        </Link>
                     </div>
                 </Col>
                 <Col size="md-4">
                     <div className="wrapper">
-                        <a className="whiteText" href="/rafts">
+                        <Link to="/rafts" className="whiteText">
                             <img className="resourceImg" src="./images/boats.jpg" alt="Rafts" />
                             <br />
                             Rafts
-                        </a>
+                        </Link>
                     </div>
                 </Col>
 
@@ -48,29 +49,29 @@ const Resource = () =>
             <Row>
                 <Col size="md-4">
                     <div className="wrapper">
-                        <a className="whiteText" href="/foodAndWater">
+                        <Link to="/foodAndWater" className="whiteText">
                             <img className="resourceImg" src="./images/foodAndWater.svg" alt="Food/Water" />
                             <br />
                             Food/Water
-                        </a>
+                        </Link>
                     </div>
                 </Col>
                 <Col size="md-4">
                     <div className="wrapper">
-                        <a className="whiteText" href="/generator">
+                        <Link to="generator" className="whiteText">
                             <img className="resourceImg" src="./images/generator.jpg" alt="Generator" />
                             <br />
                             Generator
-                        </a>
+                        </Link>
                     </div>
                 </Col>
                 <Col size="md-4">
                     <div className="wrapper">
-                        <a className="whiteText" href="/generalResource">
+                        <Link to="generalResource" className="whiteText">
                             <img className="resourceImg" src="./images/general.ico" alt="General" />
                             <br />
                             Miscellaneous
-                        </a>
+                        </Link>
                     </div>
                 </Col>
             </Row>

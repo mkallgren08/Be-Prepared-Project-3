@@ -4,13 +4,16 @@ import Col from "../../../components/Grid/Col";
 import Row from "../../../components/Grid/Row";
 import Container from "../../../components/Grid/Container";
 import Input from "../../../components/Form/Input";
+import List from "../../../components/List/List";
+import ListItem from "../../../components/List/ListItem";
+import { Link } from "react-router-dom";
 import "./Volcano.css";
 import InputModal from "../../../components/Modal/inputModal";
 
 class Volcano extends Component {
 
     state = {
-        Volcano: [],
+        volcano: [],
         title: "",
         author: "",
         link: "",
@@ -24,7 +27,7 @@ class Volcano extends Component {
     loadVolcano = () => {
         API.getVolcano()
             .then(res =>
-                this.setState({ Volcano: res.data, title: "", author: "", link: "", body: "" })
+                this.setState({ volcano: res.data, title: "", author: "", link: "", body: "" })
             ).catch(err => console.log(err));
     };
 
@@ -55,7 +58,7 @@ class Volcano extends Component {
                     <Row>
                         <Col size="md-1" />
                         <Col size="md-4">
-                            <h1 className="pageHeader">Volcano Prep</h1>
+                            <h1 className="pageHeader" style={{textAlign: "center", textDecoration: "underline"}}>Volcano Prep</h1>
                         </Col>
                         <Col size="md-7" />
                     </Row>
@@ -67,7 +70,7 @@ class Volcano extends Component {
                             <h2 className="whiteText" style={{ textAlign: "center" }}>
                                 Add a Blog Post
                             </h2>
-                            <form>
+                            
                                 <Input
                                     name="title"
                                     value={this.state.title}
@@ -97,7 +100,7 @@ class Volcano extends Component {
                                     <button style={{ marginRight: "5px" }} onChange={this.handleInputChange} onClick={this.handleFormSubmit} className="blueBtn">Submit</button>
                                     <button className="blueBtn" onClick={this.closeModal}>Close</button>
                                 </div>
-                            </form>
+                            
                         </InputModal>
                     </div>
                     <br />
@@ -106,10 +109,27 @@ class Volcano extends Component {
                         <Col size="md-8">
                             <div className="panel panel-default panel-primary">
                                 <div className="panel-heading">
-                                    <h3 className="panel-title">Volcanos</h3>
+                                    <h3 className="panel-title">Volcano Preparedness Posts</h3>
                                 </div>
-                                <div className="panel-body scroll">
-                                    Panel content
+                                <div className="panel-body scroll blackText">
+                                {this.state.volcanos ? (
+                                        <List>
+                                            {this.state.volcanos.map(volcano => (
+                                                <ListItem key={volcano._id}>
+                                                    <Link to={"/volcanos/" + volcano._id}>
+                                                        <strong>
+                                                            {volcano.title} by {volcano.author} <br />
+                                                            {volcano.link} <br />
+                                                            {volcano.body}
+                                                        </strong>
+                                                    </Link>
+                                                    <button className="blutBtn btn btn-default" onClick={() => this.handleFormSubmit(volcano._id)}>Save</button>
+                                                </ListItem>
+                                            ))}
+                                        </List>
+                                    ) : (
+                                            <h3 className="blackText">No Results to Display</h3>
+                                        )}
                                 </div>
                             </div>
                         </Col>

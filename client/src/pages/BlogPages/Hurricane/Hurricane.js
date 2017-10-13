@@ -1,4 +1,4 @@
-/*import React, { Component } from "react";
+import React, { Component } from "react";
 import API from "../../../utils/API";
 import Col from "../../../components/Grid/Col";
 import Row from "../../../components/Grid/Row";
@@ -9,9 +9,7 @@ import ListItem from "../../../components/List/ListItem";
 import { Link } from "react-router-dom";
 import "./Hurricane.css";
 import InputModal from "../../../components/Modal/inputModal";
-import List from "../../../components/List/List";
-import ListItem from "../../../components/List/ListItem";
-import { Link } from "react-router-dom";
+
 class Hurricane extends Component {
 
     state = {
@@ -60,7 +58,7 @@ class Hurricane extends Component {
                     <Row>
                         <Col size="md-1" />
                         <Col size="md-4">
-                            <h1 className="pageHeader">Hurricane Prep</h1>
+                            <h1 className="pageHeader" style={{textAlign: "center", textDecoration: "underline"}}>Hurricane Prep</h1>
                         </Col>
                         <Col size="md-7" />
                     </Row>
@@ -72,7 +70,7 @@ class Hurricane extends Component {
                             <h2 className="whiteText" style={{ textAlign: "center" }}>
                                 Add a Blog Post
                             </h2>
-                            <form>
+                            
                                 <Input
                                     name="title"
                                     value={this.state.title}
@@ -102,7 +100,7 @@ class Hurricane extends Component {
                                     <button style={{ marginRight: "5px" }} onChange={this.handleInputChange} onClick={this.handleFormSubmit} className="blueBtn">Submit</button>
                                     <button className="blueBtn" onClick={this.closeModal}>Close</button>
                                 </div>
-                            </form>
+                            
                         </InputModal>
                     </div>
                     <br />
@@ -111,9 +109,9 @@ class Hurricane extends Component {
                         <Col size="md-8">
                             <div className="panel panel-default panel-primary">
                                 <div className="panel-heading">
-                                    <h3 className="panel-title">Hurricanes</h3>
+                                    <h3 className="panel-title">Hurricanes Preparedness Posts</h3>
                                 </div>
-                                <div className="panel-body scroll">
+                                <div className="panel-body scroll blackText">
                                     {this.state.hurricanes ? (
                                         <List>
                                             {this.state.hurricanes.map(hurricane => (
@@ -130,7 +128,7 @@ class Hurricane extends Component {
                                             ))}
                                         </List>
                                     ) : (
-                                            <h3>No Results to Display</h3>
+                                            <h3 className="blackText">No Results to Display</h3>
                                         )}
                                 </div>
                             </div>
@@ -144,4 +142,3 @@ class Hurricane extends Component {
 }
 
 export default Hurricane;
-*/

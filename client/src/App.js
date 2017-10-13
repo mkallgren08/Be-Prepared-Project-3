@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import { Navbar, Button, Row, Col } from 'react-bootstrap';
 import './App.css';
 
@@ -20,129 +21,118 @@ class App extends Component {
 
     return (
       <div>
-        {/* <Navbar fluid> */}
-        {/* <Navbar.Header> */}
-        <Row>
-          <Col md={3}>
-            {/* <Navbar.Brand> */}
-            <Row>
-              <Col md={6} className = "navBrandWrapper">
-                <div className="navBrand">
-                  <a href="/home">Polaris</a>
-                </div>
-              </Col>
-              <Col md={6} className = "navGitWrapper">
-                <div className="navGit">
-                  <a href="https://www.google.com">Polaris</a>
-                </div>
-              </Col>
-            </Row>
-            {/* </Navbar.Brand> */}
-          </Col>
-          <Col md={2} />
-          <Col md={7}>
-            <div className="navWrapper">
-              <Button
-                //bsStyle="primary"
-                //className="btn-margin"
-                className="navButton"
-                onClick={this.goTo.bind(this, 'home')}
-              >
-                Home
+        <Navbar fluid className="transparent">
+          {/* <Navbar.Header> */}
+          {/* <Row>
+              <Col md={2}> */}
+          <Navbar.Brand>
+            <a href="/home" style={{ fontStyle: "italic", color: "white" }}>Polaris</a>
+          </Navbar.Brand>
+          {/* </Col>
+              <Col md={5} />
+              <Col md={5}> */}
+          <div style={{textAlign: "right"}}>
+          <Button
+            bsStyle="primary"
+            style={{ margin: "7px" }}
+            className="btn-margin transparent"
+            onClick={this.goTo.bind(this, 'home')}
+          >
+            Home
               </Button>
-              <Button
-                //bsStyle="primary"
-                //className="btn-margin"
-                className="navButton"
-                onClick={this.goTo.bind(this, 'resource')}
-              >
-                Resources
+          <Button
+            bsStyle="primary"
+            style={{ margin: "7px" }}
+            className="btn-margin transparent"
+            onClick={this.goTo.bind(this, 'resource')}
+          >
+            Resources
               </Button>
-              <Button
-                //bsStyle="primary"
-                //className="btn-margin"
-                className="navButton"
-                onClick={this.goTo.bind(this, 'blog')}
-              >
-                Blogs
+          <Button
+            bsStyle="primary"
+            style={{ margin: "7px" }}
+            className="btn-margin transparent"
+            onClick={this.goTo.bind(this, 'blog')}
+          >
+            Blogs
               </Button>
-              {
-                !isAuthenticated() && (
-                  <Button
-                    //bsStyle="primary"
-                    //className="btn-margin"
-                    className="navButton"
-                    onClick={this.login.bind(this)}
-                  >
-                    Log In
+          {
+            !isAuthenticated() && (
+              <Button
+                bsStyle="primary"
+                style={{ margin: "7px" }}
+                className="btn-margin transparent"
+                onClick={this.login.bind(this)}               
+              >
+                Log In
                     </Button>
-                )
-              }
-              {
-                isAuthenticated() && (
-                  <Button
-                    //bsStyle="primary"
-                    //className="btn-margin"
-                    className="navButton"
-                    onClick={this.goTo.bind(this, 'profile')}
-                  >
-                    Profile
+            )
+          }
+          {
+            isAuthenticated() && (
+              <Button
+                bsStyle="primary"
+                style={{ margin: "7px" }}
+                className="btn-margin transparent"
+                onClick={this.goTo.bind(this, 'profile')}
+              >
+                Profile
                     </Button>
-                )
-              }
-              {
-                isAuthenticated() && (
-                  <Button
-                    //bsStyle="primary"
-                    //className="btn-margin"
-                    className="navButton"
-                    onClick={this.goTo.bind(this, 'emergencyform')}
-                  >
-                    EmergencyForm
+            )
+          }
+          {
+            isAuthenticated() && (
+              <Button
+                bsStyle="primary"
+                style={{ margin: "7px" }}
+                className="btn-margin transparent"
+                onClick={this.goTo.bind(this, 'emergencyform')}
+              >
+                EmergencyForm
                     </Button>
-                )
-              }
-              {
-                isAuthenticated() && (
-                  <Button
-                    //bsStyle="primary"
-                    //className="btn-margin"
-                    className="navButton"
-                    onClick={this.goTo.bind(this, 'emergencymap')}
-                  >
-                    EmergencyMap
+            )
+          }
+          {
+            isAuthenticated() && (
+              <Button
+                bsStyle="primary"
+                style={{ margin: "7px" }}
+                className="btn-margin transparent"
+                onClick={this.goTo.bind(this, 'emergencymap')}
+              >
+                EmergencyMap
                     </Button>
-                )
-              }
-              {
-                isAuthenticated() && (
-                  <Button
-                    //bsStyle="primary"
-                    //className="btn-margin"
-                    className="navButton"
-                    onClick={this.goTo.bind(this, 'ping')}
-                  >
-                    Ping
+            )
+          }
+          {
+            isAuthenticated() && (
+              <Button
+                bsStyle="primary"
+                style={{ margin: "7px" }}
+                className="btn-margin transparent"
+                onClick={this.goTo.bind(this, 'ping')}
+              >
+                Ping
                     </Button>
-                )
-              }
-              {
-                isAuthenticated() && (
-                  <Button
-                    //bsStyle="primary"
-                    //className="btn-margin"
-                    className="navButton navLoginOut"
-                    onClick={this.logout.bind(this)}
-                  >
-                    Log Out
+            )
+          }
+          {
+            isAuthenticated() && (
+              <Button
+                bsStyle="primary"
+                style={{ margin: "7px" }}
+                className="btn-margin transparent"
+                onClick={this.logout.bind(this)}
+              >
+                Log Out
                     </Button>
-                )
-              }
-            </div>
-          </Col>
-        </Row>
-        {/* </Navbar.Header> */}
-        {/* </Navbar> */}
+            ) 
+          }
+          </div> 
+          {/* </Col>
+            </Row> */}
+          {/* </Navbar.Header> */}
+        </Navbar>
 
       </div>
     );

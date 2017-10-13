@@ -4,13 +4,16 @@ import Col from "../../../components/Grid/Col";
 import Row from "../../../components/Grid/Row";
 import Container from "../../../components/Grid/Container";
 import Input from "../../../components/Form/Input";
+import List from "../../../components/List/List";
+import ListItem from "../../../components/List/ListItem";
+import { Link } from "react-router-dom";
 import "./Wildfire.css";
 import InputModal from "../../../components/Modal/inputModal";
 
 class Wildfire extends Component {
 
     state = {
-        Wildfire: [],
+        wildfire: [],
         title: "",
         author: "",
         link: "",
@@ -24,7 +27,7 @@ class Wildfire extends Component {
     loadWildfire = () => {
         API.getWildfire()
             .then(res =>
-                this.setState({ Wildfire: res.data, title: "", author: "", link: "", body: "" })
+                this.setState({ wildfire: res.data, title: "", author: "", link: "", body: "" })
             ).catch(err => console.log(err));
     };
 
@@ -55,7 +58,7 @@ class Wildfire extends Component {
                     <Row>
                         <Col size="md-1" />
                         <Col size="md-4">
-                            <h1 className="pageHeader">Wildfire Prep</h1>
+                            <h1 className="pageHeader" style={{textAlign: "center", textDecoration: "underline"}}>Wildfire Prep</h1>
                         </Col>
                         <Col size="md-7" />
                     </Row>
@@ -67,7 +70,7 @@ class Wildfire extends Component {
                             <h2 className="whiteText" style={{ textAlign: "center" }}>
                                 Add a Blog Post
                             </h2>
-                            <form>
+                            
                                 <Input
                                     name="title"
                                     value={this.state.title}
@@ -97,7 +100,7 @@ class Wildfire extends Component {
                                     <button style={{ marginRight: "5px" }} onChange={this.handleInputChange} onClick={this.handleFormSubmit} className="blueBtn">Submit</button>
                                     <button className="blueBtn" onClick={this.closeModal}>Close</button>
                                 </div>
-                            </form>
+                            
                         </InputModal>
                     </div>
                     <br />
@@ -106,10 +109,27 @@ class Wildfire extends Component {
                         <Col size="md-8">
                             <div className="panel panel-default panel-primary">
                                 <div className="panel-heading">
-                                    <h3 className="panel-title">Wildfires</h3>
+                                    <h3 className="panel-title">Wildfires Preparedness Posts</h3>
                                 </div>
-                                <div className="panel-body scroll">
-                                    Panel content
+                                <div className="panel-body scroll blackText">
+                                {this.state.wildfires ? (
+                                        <List>
+                                            {this.state.wildfires.map(wildfire => (
+                                                <ListItem key={wildfire._id}>
+                                                    <Link to={"/wildfires/" + wildfire._id}>
+                                                        <strong>
+                                                            {wildfire.title} by {wildfire.author} <br />
+                                                            {wildfire.link} <br />
+                                                            {wildfire.body}
+                                                        </strong>
+                                                    </Link>
+                                                    <button className="blutBtn btn btn-default" onClick={() => this.handleFormSubmit(wildfire._id)}>Save</button>
+                                                </ListItem>
+                                            ))}
+                                        </List>
+                                    ) : (
+                                            <h3 className="blackText">No Results to Display</h3>
+                                        )}
                                 </div>
                             </div>
                         </Col>

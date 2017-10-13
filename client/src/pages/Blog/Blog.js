@@ -2,6 +2,7 @@ import React from "react";
 import Col from "../../components/Grid/Col";
 import Row from "../../components/Grid/Row";
 import Container from "../../components/Grid/Container";
+import { Link } from "react-router-dom";
 import "./Blog.css";
 
 
@@ -18,29 +19,29 @@ const Blog = () =>
       <Row>
         <Col size="md-4">
           <div className="wrapper">
-            <a className="whiteText" href="/hurricane">
+            <Link to="/hurricane" className="whiteText">
               <img className="blogImg" src="./images/hurricane.jpg" alt="Hurricane" />
               <br />
               Hurricane
-            </a>
+            </Link>
           </div>
         </Col>
         <Col size="md-4">
           <div className="wrapper">
-            <a className="whiteText" href="/tornado">
+            <Link to="/tornado" className="whiteText">
               <img className="blogImg" src="./images/tornado.jpg" alt="Tornado" />
               <br />
               Tornado
-            </a>
+            </Link>
           </div>
         </Col>
         <Col size="md-4">
           <div className="wrapper">
-            <a className="whiteText" href="/blizzard">
+            <Link to="/blizzard" className="whiteText">
               <img className="blogImg" src="./images/blizzard.jpg" alt="blizzard" />
               <br />
               Blizzard
-            </a>
+            </Link>
           </div>
         </Col>
 
@@ -48,29 +49,29 @@ const Blog = () =>
       <Row>
         <Col size="md-4">
           <div className="wrapper">
-            <a className="whiteText" href="/tsunami">
+            <Link to="/tsunami" className="whiteText">
               <img className="blogImg" src="./images/tsunami.jpg" alt="tsunami" />
               <br />
               Tsunami
-            </a>
+            </Link>
           </div>
         </Col>
         <Col size="md-4">
           <div className="wrapper">
-            <a className="whiteText" href="/fire">
+            <Link to="/fire" className="whiteText">
               <img className="blogImg" src="./images/fire.jpg" alt="wild fire" />
               <br />
               Wild Fire
-            </a>
+            </Link>
           </div>
         </Col>
         <Col size="md-4">
           <div className="wrapper">
-            <a className="whiteText" href="/volcano">
+            <Link to="volcano" className="whiteText">
               <img className="blogImg" src="./images/volcano.jpg" alt="volcano" />
               <br />
               Volcanic Eruption
-            </a>
+            </Link>
           </div>
         </Col>
 
