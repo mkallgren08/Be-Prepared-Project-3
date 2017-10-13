@@ -8,16 +8,8 @@
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node server.js",
-<<<<<<< HEAD
-    "client": "node start-client.js"//,
-    // "heroku-postbuild": "cd client && npm --production=false && npm run build"
-  },
-  "engines": {
-    "node": "6.11.0"
-=======
     "client": "node start-client.js",
     "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
->>>>>>> 931b0618c621d8c253c925862a16903e03be6740
   },
   "dependencies": {
     "auth0-js": "^8.10.1",
