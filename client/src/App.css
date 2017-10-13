@@ -22,10 +22,57 @@
   font-size: large;
 }
 
+.navbar-default{
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.navBrand, .navGit, .navWrapper{
+  margin-top: 7px;
+  border: black 3px solid;
+  height: 50px;
+}
+
+.navBrand, .navGit{
+  text-align: center;
+  border-left: 0px;
+  vertical-align: middle;
+}
+
+.navBrand{
+  margin-left: 5px;
+}
+
+.navBrandWrapper{
+  padding-right: 0px;
+}
+
+.navButton{
+  border: none;
+  border-radius: 0px;
+  height: 100%;
+}
+
+.navGitWrapper{
+  padding-left: 0px;
+}
+
+.navLoginOut{
+  padding-left: 30px;
+}
+
+.navWrapper{
+  margin-left: 7%;
+  float: right;
+  margin-right: 8px;
+  border-right: 0px;
+
+}
+
 #root {
   background-image: url("./images/flooding.png");
   background-size: 100%;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
 }
 
 @keyframes App-logo-spin {
