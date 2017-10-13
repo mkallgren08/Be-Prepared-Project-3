@@ -6,6 +6,7 @@ const Users = require("../models/Users.js");
 const jwt = require("express-jwt");
 const jwtAuthz = require("express-jwt-authz");
 const jwksRsa = require("jwks-rsa");
+const geocoding = require("google-geocoding");
 
 require("dotenv").config();
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Navbar, Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import { Navbar, Button, Row, Col } from 'react-bootstrap';
 import './App.css';
 
 class App extends Component {
@@ -20,91 +20,111 @@ class App extends Component {
     const { isAuthenticated } = this.props.auth;
 
     return (
-        <div>
-          <Navbar className="transparent" fluid>
-            <Navbar.Header>
-              <Navbar.Brand>
-                <Link to="/home" style={{color: "white", fontSize: "20px"}}>Polaris</Link>
-              </Navbar.Brand>
-              <Button
+      <div>
+        <Navbar fluid>
+          {/* <Navbar.Header> */}
+            {/* <Row>
+              <Col md={2}> */}
+                <Navbar.Brand>
+                  <a href="/home">Polaris</a>
+                </Navbar.Brand>
+              {/* </Col>
+              <Col md={5} />
+              <Col md={5}> */}
+                <Button
                   bsStyle="primary"
                   style={{margin: "7px"}}
                   className="btn-margin"
                   onClick={this.goTo.bind(this, 'home')}
-              >
-                Home
+                >
+                  Home
               </Button>
-              <Button
+                <Button
                   bsStyle="primary"
                   style={{margin: "7px"}}
                   className="btn-margin"
                   onClick={this.goTo.bind(this, 'resource')}
-              >
-                Resources
+                >
+                  Resources
               </Button>
-              <Button
+                <Button
                   bsStyle="primary"
                   style={{margin: "7px"}}
                   className="btn-margin"
                   onClick={this.goTo.bind(this, 'blog')}
-              >
-                Blogs
+                >
+                  Blogs
               </Button>
-              {
-                !isAuthenticated() && (
+                {
+                  !isAuthenticated() && (
                     <Button
                         bsStyle="primary"
                         style={{margin: "7px"}}
                         className="btn-margin"
                         onClick={this.login.bind(this)}
+                      bsStyle="primary"
+                      className="btn-margin"
+                      onClick={this.login.bind(this)}
                     >
                       Log In
                     </Button>
-                )
-              }
-              {
-                isAuthenticated() && (
+                  )
+                }
+                {
+                  isAuthenticated() && (
                     <Button
                         bsStyle="primary"
                         style={{margin: "7px"}}
                         className="btn-margin"
                         onClick={this.goTo.bind(this, 'profile')}
+                      bsStyle="primary"
+                      className="btn-margin"
+                      onClick={this.goTo.bind(this, 'profile')}
                     >
                       Profile
                     </Button>
-                )
-              }
-              {
-                isAuthenticated() && (
+                  )
+                }
+                {
+                  isAuthenticated() && (
                     <Button
                         bsStyle="primary"
                         style={{margin: "7px"}}
                         className="btn-margin"
                         onClick={this.goTo.bind(this, 'emergencyform')}
+                      bsStyle="primary"
+                      className="btn-margin"
+                      onClick={this.goTo.bind(this, 'emergencyform')}
                     >
                       EmergencyForm
                     </Button>
-                )
-              }
-              {
-                isAuthenticated() && (
+                  )
+                }
+                {
+                  isAuthenticated() && (
                     <Button
                         bsStyle="primary"
                         style={{margin: "7px"}}
                         className="btn-margin"
                         onClick={this.goTo.bind(this, 'emergencymap')}
+                      bsStyle="primary"
+                      className="btn-margin"
+                      onClick={this.goTo.bind(this, 'emergencymap')}
                     >
                       EmergencyMap
                     </Button>
-                )
-              }
-              {
-                isAuthenticated() && (
+                  )
+                }
+                {
+                  isAuthenticated() && (
                     <Button
                         bsStyle="primary"
                         style={{margin: "7px"}}
                         className="btn-margin"
                         onClick={this.goTo.bind(this, 'ping')}
+                      bsStyle="primary"
+                      className="btn-margin"
+                      onClick={this.goTo.bind(this, 'ping')}
                     >
                       Ping
                     </Button>
@@ -117,14 +137,20 @@ class App extends Component {
                         style={{margin: "7px"}}
                         className="btn-margin"
                         onClick={this.logout.bind(this)}
+                      bsStyle="primary"
+                      className="btn-margin"
+                      onClick={this.logout.bind(this)}
                     >
                       Log Out
                     </Button>
-                )
-              }
-            </Navbar.Header>
-          </Navbar>
-        </div>
+                  )
+                }
+              {/* </Col>
+            </Row> */}
+          {/* </Navbar.Header> */}
+        </Navbar>
+
+      </div>
     );
   }
 }
