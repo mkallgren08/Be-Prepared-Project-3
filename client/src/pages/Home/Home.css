@@ -5,9 +5,8 @@ body{
       ),url("../../images/background.jpg");
     background-size: cover;
 }
-h1 {
+h1, h2 {
     text-align: center;
-    color: white;
 }
 
 p {
@@ -28,12 +27,12 @@ p {
 .blackText {
     color: black;
 }
-.pageHeader {
+/* .pageHeader {
     text-align: center;
     background: transparent;
     color: white;
     font-family: 'Eczar', serif;
-}
+} */
 .intro {
     font-size: 2rem;
 }
