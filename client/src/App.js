@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, Button } from 'react-bootstrap';
+import { Navbar, Button, Row, Col } from 'react-bootstrap';
 import './App.css';
 
 class App extends Component {
@@ -19,25 +19,71 @@ class App extends Component {
     const { isAuthenticated } = this.props.auth;
 
     return (
-        <div>
-          <Navbar fluid>
-            <Navbar.Header>
-              <Navbar.Brand>
-                <a href="#">Auth0 - React</a>
-              </Navbar.Brand>
-              <Button
-                  bsStyle="primary"
-                  className="btn-margin"
+      <div>
+        <Navbar fluid className="NavbarCustom">
+          {/* <Navbar.Header> */}
+          <Row>
+            <Col md={2}>
+              <Row>
+                <Col md={8}>
+                  <a href="/home" className="navBrandWrapper" >
+                    <div className="navBrand">
+                      Polaris
+                    </div>
+                  </a>
+                </Col>
+                <Col md={4}>
+                  <a href="/home" className="navGitWrapper" >
+                    <div className="navGit">
+                      Git Hub
+                    </div>
+                  </a>
+                </Col>
+              </Row>
+            </Col>
+            <Col md={1} />
+            <Col md={9}>
+              <div className="navWrapper">
+                <Button
+                  //bsStyle="primary"
+                  //style={{ margin: "7px" }}
+                  className="navButton navHome"
                   onClick={this.goTo.bind(this, 'home')}
               >
                 Home
               </Button>
-              {
+
+              /*{
                 !isAuthenticated() && (
                     <Button
                         bsStyle="primary"
                         className="btn-margin"
                         onClick={this.login.bind(this)}
+               */
+
+                <Button
+                  //bsStyle="primary"
+                  //style={{ margin: "7px" }}
+                  className="navButton "
+                  onClick={this.goTo.bind(this, 'resource')}
+                >
+                  Resources
+              </Button>
+                <Button
+                  //bsStyle="primary"
+                  //style={{ margin: "7px" }}
+                  className="navButton "
+                  onClick={this.goTo.bind(this, 'blog')}
+                >
+                  Blogs
+              </Button>
+                {
+                  !isAuthenticated() && (
+                    <Button
+                      //bsStyle="primary"
+                      //style={{ margin: "7px" }}
+                      className="navButton navLoginOut"
+                      onClick={this.login.bind(this)}
                     >
                       Log In
                     </Button>
@@ -46,9 +92,10 @@ class App extends Component {
               {
                 isAuthenticated() && (
                     <Button
-                        bsStyle="primary"
-                        className="btn-margin"
-                        onClick={this.goTo.bind(this, 'profile')}
+                      //bsStyle="primary"
+                      //style={{ margin: "7px" }}
+                      className="navButton "
+                      onClick={this.goTo.bind(this, 'profile')}
                     >
                       Profile
                     </Button>
@@ -57,39 +104,58 @@ class App extends Component {
               {
                 isAuthenticated() && (
                     <Button
-                        bsStyle="primary"
-                        className="btn-margin"
-                        onClick={this.goTo.bind(this, 'emergencyform')}
+                      //bsStyle="primary"
+                      //style={{ margin: "7px" }}
+                      className="navButton "
+                      onClick={this.goTo.bind(this, 'emergencyform')}
                     >
                       EmergencyForm
                     </Button>
-                )
-              }
-              {
-                isAuthenticated() && (
+                  )
+                }
+                {
+                  isAuthenticated() && (
                     <Button
-                        bsStyle="primary"
-                        className="btn-margin"
-                        onClick={this.goTo.bind(this, 'ping')}
+                      //bsStyle="primary"
+                      //style={{ margin: "7px" }}
+                      className="navButton "
+                      onClick={this.goTo.bind(this, 'emergencymap')}
+                    >
+                      EmergencyMap
+                    </Button>
+                  )
+                }
+                {
+                  isAuthenticated() && (
+                    <Button
+                      //bsStyle="primary"
+                      //style={{ margin: "7px" }}
+                      className="navButton "
+                      onClick={this.goTo.bind(this, 'ping')}
                     >
                       Ping
                     </Button>
-                )
-              }
-              {
-                isAuthenticated() &&  (
+                  )
+                }
+                {
+                  isAuthenticated() && (
                     <Button
-                        bsStyle="primary"
-                        className="btn-margin"
-                        onClick={this.logout.bind(this)}
+                      //bsStyle="primary"
+                      //style={{ margin: "7px" }}
+                      className="navButton navLoginOut"
+                      onClick={this.logout.bind(this)}
                     >
                       Log Out
                     </Button>
-                )
-              }
-            </Navbar.Header>
-          </Navbar>
-        </div>
+                  )
+                }
+              </div>
+            </Col>
+          </Row>
+          {/* </Navbar.Header> */}
+        </Navbar>
+
+      </div>
     );
   }
 }

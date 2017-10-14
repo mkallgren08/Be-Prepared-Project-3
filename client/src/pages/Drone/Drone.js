@@ -59,18 +59,21 @@ class Drone extends Component {
                     <Row>
                         <Col size="md-1" />
                         <Col size="md-4">
-                            <h1 className="pageHeader">Drones</h1>
+                            <h1 style={{textAlign: "center", textDecoration: "underline"}}>Drones</h1>
                         </Col>
                         <Col size="md-7" />
                     </Row>
-                    <br /><br />
+                    <Row>
+                        <h4>View search or delivery drones available in your area. Click the 'Add/Update' button to add your drone to the list.</h4> 
+                    </Row>
+                    <br />
 
                     <div className="wrapper">
                         <InputModal>
                             <h2 className="pageHeader">
                                 Add Your Drone
                             </h2>
-                            <form>
+                            
                                 <Input
                                     name="name"
                                     value={this.state.name}
@@ -100,7 +103,7 @@ class Drone extends Component {
                                     <button style={{ marginRight: "5px" }} onChange={this.handleInputChange} onClick={this.handleFormSubmit} className="blueBtn">Submit</button>
                                     <button className="blueBtn" onClick={this.closeModal}>Close</button>
                                 </div>
-                            </form>
+                            
                         </InputModal>
                     </div>
                     <br />
@@ -109,7 +112,7 @@ class Drone extends Component {
                         <Col size="md-8">
                             <div className="panel panel-default panel-primary">
                                 <div className="panel-heading">
-                                    <h3 className="panel-title">Drones</h3>
+                                    <h3 className="panel-title">Available Drones</h3>
                                 </div>
                                 <div className="panel-body scroll">
                                     {this.state.drones ? (

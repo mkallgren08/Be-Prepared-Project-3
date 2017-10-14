@@ -4,13 +4,16 @@ import Col from "../../../components/Grid/Col";
 import Row from "../../../components/Grid/Row";
 import Container from "../../../components/Grid/Container";
 import Input from "../../../components/Form/Input";
+import List from "../../../components/List/List";
+import ListItem from "../../../components/List/ListItem";
+import { Link } from "react-router-dom";
 import "./Tsunami.css";
 import InputModal from "../../../components/Modal/inputModal";
 
 class Tsunami extends Component {
 
     state = {
-        Tsunami: [],
+        tsunami: [],
         title: "",
         author: "",
         link: "",
@@ -24,7 +27,7 @@ class Tsunami extends Component {
     loadTsunami = () => {
         API.getTsunami()
             .then(res =>
-                this.setState({ Tsunami: res.data, title: "", author: "", link: "", body: "" })
+                this.setState({ tsunami: res.data, title: "", author: "", link: "", body: "" })
             ).catch(err => console.log(err));
     };
 
@@ -55,7 +58,7 @@ class Tsunami extends Component {
                     <Row>
                         <Col size="md-1" />
                         <Col size="md-4">
-                            <h1 className="pageHeader">Tsunami Prep</h1>
+                            <h1 className="pageHeader" style={{textAlign: "center", textDecoration: "underline"}}>Tsunami Prep</h1>
                         </Col>
                         <Col size="md-7" />
                     </Row>
@@ -67,7 +70,7 @@ class Tsunami extends Component {
                             <h2 className="whiteText" style={{ textAlign: "center" }}>
                                 Add a Blog Post
                             </h2>
-                            <form>
+                            
                                 <Input
                                     name="title"
                                     value={this.state.title}
@@ -97,7 +100,7 @@ class Tsunami extends Component {
                                     <button style={{ marginRight: "5px" }} onChange={this.handleInputChange} onClick={this.handleFormSubmit} className="blueBtn">Submit</button>
                                     <button className="blueBtn" onClick={this.closeModal}>Close</button>
                                 </div>
-                            </form>
+                                
                         </InputModal>
                     </div>
                     <br />
@@ -106,10 +109,27 @@ class Tsunami extends Component {
                         <Col size="md-8">
                             <div className="panel panel-default panel-primary">
                                 <div className="panel-heading">
-                                    <h3 className="panel-title">Tsunamis</h3>
+                                    <h3 className="panel-title">Tsunami Preparedness Posts</h3>
                                 </div>
-                                <div className="panel-body scroll">
-                                    Panel content
+                                <div className="panel-body scroll blackText">
+                                {this.state.tsunamis ? (
+                                        <List>
+                                            {this.state.tsunamis.map(tsunami => (
+                                                <ListItem key={tsunami._id}>
+                                                    <Link to={"/tsunamis/" + tsunami._id}>
+                                                        <strong>
+                                                            {tsunami.title} by {tsunami.author} <br />
+                                                            {tsunami.link} <br />
+                                                            {tsunami.body}
+                                                        </strong>
+                                                    </Link>
+                                                    <button className="blutBtn btn btn-default" onClick={() => this.handleFormSubmit(tsunami._id)}>Save</button>
+                                                </ListItem>
+                                            ))}
+                                        </List>
+                                    ) : (
+                                            <h3 className="blackText">No Results to Display</h3>
+                                        )}
                                 </div>
                             </div>
                         </Col>

@@ -9,22 +9,16 @@ import "./Home.css";
 const Home = () =>
     <div>
         <Container fluid>
-            <Row>
-                <Col size="md-3">
-                    <h1 className="pageHeader whiteText">POLARIS</h1>
-                </Col>
-                <Col size="md-7" />
-            </Row>
-            <br /> <br /> <br />
+            <br />
             <Row>
                 <Col size="md-3" />
                 <Col size="md-6">
                     <strong>
-                    <p className="whiteText intro"><h2>Welcome to the Polaris emergency preparedness site</h2> 
+                    <div className="whiteText intro"><h2 style={{textDecoration: "underline"}}>Welcome to the Polaris emergency preparedness site</h2> 
                         <p>Emergencies and disasters can happen at any time.  Being prepared will provide you and your family
                         with what you need to cope with those emergencies.  This site will provide you with information
                         and resources to help you prepare for and manage emergencies.</p>
-                    </p>
+                    </div>
                     </strong>
                 </Col>
                 <Col size="md=3" />

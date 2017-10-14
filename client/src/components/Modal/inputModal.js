@@ -42,7 +42,7 @@ class InputModal extends React.Component {
     return (
       <div>
         <button onClick={this.openModal} className="btn btn-default" style={{ backgroundColor: "#337ab7", color: "white", borderColor: "#337ab7" }}>
-          Add/Update Info
+          Add/Update
         </button>
         <Modal
           isOpen={this.state.modalIsOpen}
