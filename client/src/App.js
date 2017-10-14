@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import { Navbar, Button, Row, Col } from 'react-bootstrap';
 import './App.css';
 
@@ -50,9 +49,18 @@ class App extends Component {
                   //style={{ margin: "7px" }}
                   className="navButton navHome"
                   onClick={this.goTo.bind(this, 'home')}
-                >
-                  Home
+              >
+                Home
               </Button>
+
+              /*{
+                !isAuthenticated() && (
+                    <Button
+                        bsStyle="primary"
+                        className="btn-margin"
+                        onClick={this.login.bind(this)}
+               */
+
                 <Button
                   //bsStyle="primary"
                   //style={{ margin: "7px" }}
@@ -79,10 +87,10 @@ class App extends Component {
                     >
                       Log In
                     </Button>
-                  )
-                }
-                {
-                  isAuthenticated() && (
+                )
+              }
+              {
+                isAuthenticated() && (
                     <Button
                       //bsStyle="primary"
                       //style={{ margin: "7px" }}
@@ -91,10 +99,10 @@ class App extends Component {
                     >
                       Profile
                     </Button>
-                  )
-                }
-                {
-                  isAuthenticated() && (
+                )
+              }
+              {
+                isAuthenticated() && (
                     <Button
                       //bsStyle="primary"
                       //style={{ margin: "7px" }}
