@@ -3,14 +3,14 @@ const mongoose = require('mongoose');
 
 //Define the schema
 const UsersSchema = new mongoose.Schema({
-  username: {type: String, unique: true},
+  email: {type: String, unique: true},
   name: 'String',
   address: 'String',
   city: 'String',
   state: 'String',
   zipcode: 'Number',
   phone: 'String'
-});
+  });
 
 module.exports = mongoose.model('Users', UsersSchema);
 
