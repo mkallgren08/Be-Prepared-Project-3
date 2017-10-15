@@ -53,13 +53,13 @@ class App extends Component {
                 Home
               </Button>
 
-              /*{
+              {/* {
                 !isAuthenticated() && (
                     <Button
                         bsStyle="primary"
                         className="btn-margin"
                         onClick={this.login.bind(this)}
-               */
+              } */}
 
                 <Button
                   //bsStyle="primary"

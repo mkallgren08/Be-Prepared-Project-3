@@ -58,6 +58,10 @@
   border-top-right-radius: 15px;
 }
 
+.navBrand:hover{
+  background-color: #e6e6e6;
+}
+
 .NavbarCustom{
   padding-right: 0px;
 }
@@ -69,6 +73,13 @@
   text-align: center;
 
 }
+
+.navBrandWrapper:hover{
+  background-color: #e6e6e6;
+  color: darkslategray;
+  text-decoration: none ;
+}
+
 
 .navButton{
   background: transparent;
