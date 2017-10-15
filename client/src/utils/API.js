@@ -36,6 +36,45 @@ export default {
     return axios.post("/api/drones", droneData);
   },
 
+  getFirstAids: function(id) {
+    return axios.get("/api/firstaid/" + id);
+  },
+
+  saveFirstAid: function(firstaidData) {
+    return axios.post("/api/firstaid", firstaidData);
+  },
+
+  getFoodWaters: function(id) {
+    return axios.get("/api/foodwater/" + id);
+  },
+
+  saveFoodWater: function(foodwaterData) {
+    return axios.post("/api/foodwater", foodwaterData);
+  },
+
+  getGenerators: function(id) {
+    return axios.get("/api/generators/" + id);
+  },
+
+  saveGenerator: function(generatorData) {
+    return axios.post("/api/generators", generatorData);
+  },
+
+  getMiscs: function(id) {
+    return axios.get("/api/miscs/" + id);
+  },
+
+  saveMisc: function(miscData) {
+    return axios.post("/api/miscs", miscData);
+  },
+
+  getRafts: function(id) {
+    return axios.get("/api/rafts/" + id);
+  },
+
+  saveRaft: function(raftData) {
+    return axios.post("/api/rafts", raftData);
+  },
 
   // Get and Save Posts related to Hurricanes
   getHurricanes: function(id) {

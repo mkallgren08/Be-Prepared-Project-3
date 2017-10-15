@@ -10,6 +10,11 @@ import history from './history';
 import Blog from './pages/Blog';
 import Resource from './pages/Resource';
 import Drone from "./pages/Drone";
+import FirstAid from "./pages/FirstAid";
+import FoodWater from "./pages/FoodWater";
+import Generator from "./pages/Generator";
+import Misc from "./pages/Misc";
+import Raft from "./pages/Raft";
 import Hurricane from "./pages/BlogPages/Hurricane";
 import Blizzard from "./pages/BlogPages/Blizzard";
 import Wildfire from "./pages/BlogPages/Wildfire";
@@ -36,6 +41,11 @@ export const makeMainRoutes = () => {
           <Route path="/blog" render={(props) => <Blog auth={auth} {...props} />} />
           <Route path="/resource" render={(props) => <Resource auth={auth} {...props} />} />
           <Route path="/drone" render={(props) => <Drone auth={auth} {...props} />} />
+          <Route path="/firstaid" render={(props) => <FirstAid auth={auth} {...props} />} />
+          <Route path="/foodwater" render={(props) => <FoodWater auth={auth} {...props} />} />
+          <Route path="/generator" render={(props) => <Generator auth={auth} {...props} />} />
+          <Route path="/misc" render={(props) => <Misc auth={auth} {...props} />} />
+          <Route path="/raft" render={(props) => <Raft auth={auth} {...props} />} />
           <Route path="/hurricane" render={(props) => <Hurricane auth={auth} {...props} />} />
           <Route path="/blizzard" render={(props) => <Blizzard auth={auth} {...props} />} />
           <Route path="/fire" render={(props) => <Wildfire auth={auth} {...props} />} />
