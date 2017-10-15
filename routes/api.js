@@ -8,11 +8,15 @@ const jwtAuthz = require("express-jwt-authz");
 const jwksRsa = require("jwks-rsa");
 const geocoding = require("google-geocoding");
 
-require("dotenv").config();
+//Setting environment variable so it does not call dotenv in production
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 
 if (!process.env.AUTH0_DOMAIN || !process.env.AUTH0_AUDIENCE) {
   throw "Make sure you have AUTH0_DOMAIN, and AUTH0_AUDIENCE in your .env file";
 }
+//Creating middleware for checking the JSON Web Token
 const checkJwt = jwt({
   secret: jwksRsa.expressJwtSecret({
     cache: true,
@@ -27,6 +31,7 @@ const checkJwt = jwt({
   algorithms: ["RS256"]
 });
 
+//Creating the variable to check user scopes
 const checkScopes = jwtAuthz(['read:profile', 'write:profile', 'update:profile']);
 router.get('/api/users', checkJwt, checkScopes, function(req, res) {
   res.json({ message: 'Hello from the users endpoint! you need to be authenticated to see this'});

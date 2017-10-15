@@ -75,7 +75,7 @@ class Profile extends Component {
                     <Row>
                         <Col size="md-1" />
                         <Col size="md-4">
-                            <h1 className="pageHeader">My Profile</h1>
+                            <h1 className="pageHeader" style={{textDecoration: "underline"}}>My Profile</h1>
                         </Col>
                         <Col size="md-7" />
                     </Row>
@@ -83,7 +83,7 @@ class Profile extends Component {
                     <Row>
                         <div className="wrapper">
                             <strong>
-                                <p className="blackText">
+                                <p className="whiteText">
                                     Welcome to your profile page. You are able to update your user information, review your
                                     saved posts, and accesss your emergency status form.
                                 </p>
@@ -100,7 +100,7 @@ class Profile extends Component {
                                     <h3 className="panel-title">My Posts</h3>
                                 </div>
                                 <div className="panel-body scroll">
-                                    Panel content
+                                    <p style={{textAlign: "center", fontStyle: "italic", color: "black"}}>No Posts to Display</p>
                                 </div>
                             </div>
                         </Col>
@@ -151,7 +151,7 @@ class Profile extends Component {
                                         </div>
                                 </InputModal>
                             </div>
-                            <div>
+                            <div className="whiteText">
                                 <h4>{this.state.name}</h4>
                                 <h4>{this.state.address}</h4>
                                 <h4>{this.state.city}</h4>
@@ -167,7 +167,7 @@ class Profile extends Component {
                                     <h3 className="panel-title">Favorites</h3>
                                 </div>
                                 <div className="panel-body scroll">
-                                    Panel content
+                                    <p style={{textAlign: "center", fontStyle: "italic", color: "black"}}>No Favorites to Display</p>
                                 </div>
                             </div>
                         </Col>

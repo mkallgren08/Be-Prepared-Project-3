@@ -46,5 +46,44 @@ export default {
     return axios.post("/api/hurricanes", hurricaneData);
   },
 
+  getBlizzard: function(id) {
+    return axios.get("/api/blizzards/" + id);
+  },
+
+  saveBlizzard: function(blizzardData) {
+    return axios.post("/api/Blizzards", blizzardData);
+  },
+  
+  getTornado: function(id) {
+    return axios.get("/api/tornado/" + id);
+  },
+
+  saveTornado: function(tornadoData) {
+    return axios.post("/api/tornado", tornadoData);
+  },
+
+  getTsunami: function(id) {
+    return axios.get("/api/tsunami/" + id);
+  },
+
+  saveTsunami: function(tsunamiData) {
+    return axios.post("/api/tsunami", tsunamiData);
+  },
+
+  getVolcano: function(id) {
+    return axios.get("/api/volcano/" + id);
+  },
+
+  saveVolcano: function(volcanoData) {
+    return axios.post("/api/volcano", volcanoData);
+  },
+
+  getWildfire: function(id) {
+    return axios.get("/api/wildfire/" + id);
+  },
+
+  saveWildfire: function(wildfireData) {
+    return axios.post("/api/wildfire", wildfireData);
+  },
 
 };

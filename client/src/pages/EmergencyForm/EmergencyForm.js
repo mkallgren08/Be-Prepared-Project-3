@@ -64,7 +64,7 @@ class EmergencyForm extends Component {
                                 <h2 className="blackText" style={{ textAlign: "center" }}>
                                     Update Your Location
                                 </h2>
-                                <form>
+                                
                                     <Input
                                         name="address"
                                         value={this.state.address}
@@ -75,7 +75,7 @@ class EmergencyForm extends Component {
                                         <button style={{ marginRight: "5px" }} onChange={this.handleInputChange} onClick={this.handleFormSubmit} className="blueBtn">Submit</button>
                                         <button className="blueBtn" onClick={this.closeModal}>Close</button>
                                     </div>
-                                </form>
+                                
                             </InputModal>
                         </div>
 

@@ -20,33 +20,59 @@ class App extends Component {
 
     return (
       <div>
-        <Navbar fluid>
+        <Navbar fluid className="NavbarCustom">
           {/* <Navbar.Header> */}
-            {/* <Row>
-              <Col md={2}> */}
-                <Navbar.Brand>
-                  <a href="/home">Polaris</a>
-                </Navbar.Brand>
-              {/* </Col>
-              <Col md={5} />
-              <Col md={5}> */}
+          <Row>
+            <Col md={2}>
+              <Row>
+                <Col md={8}>
+                  <a href="/home" className="navBrandWrapper" >
+                    <div className="navBrand">
+                      Polaris
+                    </div>
+                  </a>
+                </Col>
+                <Col md={4}>
+                  <a href="/home" className="navGitWrapper" >
+                    <div className="navGit">
+                      Git Hub
+                    </div>
+                  </a>
+                </Col>
+              </Row>
+            </Col>
+            <Col md={1} />
+            <Col md={9}>
+              <div className="navWrapper">
                 <Button
-                  bsStyle="primary"
-                  className="btn-margin"
+                  //bsStyle="primary"
+                  //style={{ margin: "7px" }}
+                  className="navButton navHome"
                   onClick={this.goTo.bind(this, 'home')}
-                >
-                  Home
+              >
+                Home
               </Button>
+
+              {/* {
+                !isAuthenticated() && (
+                    <Button
+                        bsStyle="primary"
+                        className="btn-margin"
+                        onClick={this.login.bind(this)}
+              } */}
+
                 <Button
-                  bsStyle="primary"
-                  className="btn-margin"
+                  //bsStyle="primary"
+                  //style={{ margin: "7px" }}
+                  className="navButton "
                   onClick={this.goTo.bind(this, 'resource')}
                 >
                   Resources
               </Button>
                 <Button
-                  bsStyle="primary"
-                  className="btn-margin"
+                  //bsStyle="primary"
+                  //style={{ margin: "7px" }}
+                  className="navButton "
                   onClick={this.goTo.bind(this, 'blog')}
                 >
                   Blogs
@@ -54,41 +80,45 @@ class App extends Component {
                 {
                   !isAuthenticated() && (
                     <Button
-                      bsStyle="primary"
-                      className="btn-margin"
+                      //bsStyle="primary"
+                      //style={{ margin: "7px" }}
+                      className="navButton navLoginOut"
                       onClick={this.login.bind(this)}
                     >
                       Log In
                     </Button>
-                  )
-                }
-                {
-                  isAuthenticated() && (
+                )
+              }
+              {
+                isAuthenticated() && (
                     <Button
-                      bsStyle="primary"
-                      className="btn-margin"
+                      //bsStyle="primary"
+                      //style={{ margin: "7px" }}
+                      className="navButton "
                       onClick={this.goTo.bind(this, 'profile')}
                     >
                       Profile
                     </Button>
-                  )
-                }
-                {
-                  isAuthenticated() && (
+                )
+              }
+              {
+                isAuthenticated() && (
                     <Button
-                      bsStyle="primary"
-                      className="btn-margin"
+                      //bsStyle="primary"
+                      //style={{ margin: "7px" }}
+                      className="navButton "
                       onClick={this.goTo.bind(this, 'emergencyform')}
                     >
                       EmergencyForm
                     </Button>
                   )
-                }s
+                }
                 {
                   isAuthenticated() && (
                     <Button
-                      bsStyle="primary"
-                      className="btn-margin"
+                      //bsStyle="primary"
+                      //style={{ margin: "7px" }}
+                      className="navButton "
                       onClick={this.goTo.bind(this, 'emergencymap')}
                     >
                       EmergencyMap
@@ -98,27 +128,30 @@ class App extends Component {
                 {
                   isAuthenticated() && (
                     <Button
-                      bsStyle="primary"
-                      className="btn-margin"
+                      //bsStyle="primary"
+                      //style={{ margin: "7px" }}
+                      className="navButton "
                       onClick={this.goTo.bind(this, 'ping')}
                     >
                       Ping
                     </Button>
-                )
-              }
-              {
-                isAuthenticated() &&  (
+                  )
+                }
+                {
+                  isAuthenticated() && (
                     <Button
-                      bsStyle="primary"
-                      className="btn-margin"
+                      //bsStyle="primary"
+                      //style={{ margin: "7px" }}
+                      className="navButton navLoginOut"
                       onClick={this.logout.bind(this)}
                     >
                       Log Out
                     </Button>
                   )
                 }
-              {/* </Col>
-            </Row> */}
+              </div>
+            </Col>
+          </Row>
           {/* </Navbar.Header> */}
         </Navbar>
 
