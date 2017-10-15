@@ -28,7 +28,7 @@ const Resource = () =>
                 </Col>
                 <Col size="md-4">
                     <div className="wrapper">
-                        <Link to="firstaid" className="whiteText">
+                        <Link to="./firstaid" className="whiteText">
                             <img className="resourceImg" src="./images/firstAid.png" alt="First Aid" />
                             <br />
                             First Aid
@@ -37,7 +37,7 @@ const Resource = () =>
                 </Col>
                 <Col size="md-4">
                     <div className="wrapper">
-                        <Link to="/rafts" className="whiteText">
+                        <Link to="/raft" className="whiteText">
                             <img className="resourceImg" src="./images/boats.jpg" alt="Rafts" />
                             <br />
                             Rafts
@@ -49,7 +49,7 @@ const Resource = () =>
             <Row>
                 <Col size="md-4">
                     <div className="wrapper">
-                        <Link to="/foodAndWater" className="whiteText">
+                        <Link to="/foodwater" className="whiteText">
                             <img className="resourceImg" src="./images/foodAndWater.svg" alt="Food/Water" />
                             <br />
                             Food/Water
@@ -58,7 +58,7 @@ const Resource = () =>
                 </Col>
                 <Col size="md-4">
                     <div className="wrapper">
-                        <Link to="generator" className="whiteText">
+                        <Link to="/generator" className="whiteText">
                             <img className="resourceImg" src="./images/generator.jpg" alt="Generator" />
                             <br />
                             Generator
@@ -67,7 +67,7 @@ const Resource = () =>
                 </Col>
                 <Col size="md-4">
                     <div className="wrapper">
-                        <Link to="generalResource" className="whiteText">
+                        <Link to="/misc" className="whiteText">
                             <img className="resourceImg" src="./images/general.ico" alt="General" />
                             <br />
                             Miscellaneous
