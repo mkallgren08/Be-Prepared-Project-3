@@ -1,6 +1,5 @@
 .nav {
     opacity: 0;
     color: black;
-    float: right;
-    
+    text-align: right;
 }

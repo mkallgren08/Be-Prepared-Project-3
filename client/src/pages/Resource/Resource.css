@@ -2,8 +2,26 @@
     margin: 20px;
     height: 250px;
     width: 250px;
+    border: solid 5px #CCC;
+    background: #ffffff;
+    transition: all 0.5s;
+    background-size: cover;
+    border-radius: 30px;
 }
-
-h1 {
-    text-align: center;
+.resourceImg:hover {
+    transform: scale(1.1);
+}
+.resourceLink {
+    background: black;
+    padding: 20px 0px 20px 0px;
+    border-radius: 15px;
+    margin: 0 auto;
+    width: 250px;
+    
+}
+.pageHeader {
+    color: white;
+    background: black;
+    padding: 15px;
+    border-radius: 15px;
 }
