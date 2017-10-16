@@ -22,8 +22,8 @@ const Blog = () =>
             <Link to="/hurricane" className="whiteText">
               <img className="blogImg" src="./images/hurricane.jpg" alt="Hurricane" />
               <br />
-              Hurricane
             </Link>
+            <h3 className="eventTitle">Hurricane</h3>
           </div>
         </Col>
         <Col size="md-4">
@@ -31,8 +31,8 @@ const Blog = () =>
             <Link to="/tornado" className="whiteText">
               <img className="blogImg" src="./images/tornado.jpg" alt="Tornado" />
               <br />
-              Tornado
             </Link>
+            <h3 className="eventTitle">Tornado</h3>
           </div>
         </Col>
         <Col size="md-4">
@@ -40,8 +40,8 @@ const Blog = () =>
             <Link to="/blizzard" className="whiteText">
               <img className="blogImg" src="./images/blizzard.jpg" alt="blizzard" />
               <br />
-              Blizzard
             </Link>
+            <h3 className="eventTitle">Blizzard</h3>
           </div>
         </Col>
 
@@ -52,8 +52,8 @@ const Blog = () =>
             <Link to="/tsunami" className="whiteText">
               <img className="blogImg" src="./images/tsunami.jpg" alt="tsunami" />
               <br />
-              Tsunami
             </Link>
+            <h3 className="eventTitle">Tsunami</h3>
           </div>
         </Col>
         <Col size="md-4">
@@ -61,8 +61,8 @@ const Blog = () =>
             <Link to="/fire" className="whiteText">
               <img className="blogImg" src="./images/fire.jpg" alt="wild fire" />
               <br />
-              Wild Fire
             </Link>
+            <h3 className="eventTitle">Wild Fire</h3>
           </div>
         </Col>
         <Col size="md-4">
@@ -70,8 +70,8 @@ const Blog = () =>
             <Link to="volcano" className="whiteText">
               <img className="blogImg" src="./images/volcano.jpg" alt="volcano" />
               <br />
-              Volcanic Eruption
             </Link>
+            <h3 className="eventTitle">Volcanic Eruption</h3>
           </div>
         </Col>
 

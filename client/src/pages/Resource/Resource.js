@@ -11,7 +11,7 @@ const Resource = () =>
         <Container fluid>
             <Row>
                 <Col size="md-1" />
-                <Col size="md-4">
+                <Col size="md-3">
                     <h1 className="pageHeader">Resources</h1>
                 </Col>
                 <Col size="md-7" />
@@ -22,8 +22,8 @@ const Resource = () =>
                         <Link to="/drone" className="whiteText">
                             <img className="resourceImg" src="./images/drone.jpg" alt="drone" />
                             <br />
-                            Drones
                          </Link>
+                         <h3 className="resourceLink">Drones</h3>
                     </div>
                 </Col>
                 <Col size="md-4">
@@ -31,8 +31,8 @@ const Resource = () =>
                         <Link to="./firstaid" className="whiteText">
                             <img className="resourceImg" src="./images/firstAid.png" alt="First Aid" />
                             <br />
-                            First Aid
                         </Link>
+                        <h3 className="resourceLink">First Aid</h3>
                     </div>
                 </Col>
                 <Col size="md-4">
@@ -40,8 +40,8 @@ const Resource = () =>
                         <Link to="/raft" className="whiteText">
                             <img className="resourceImg" src="./images/boats.jpg" alt="Rafts" />
                             <br />
-                            Rafts
                         </Link>
+                        <h3 className="resourceLink">Rafts</h3>
                     </div>
                 </Col>
 
@@ -52,8 +52,8 @@ const Resource = () =>
                         <Link to="/foodwater" className="whiteText">
                             <img className="resourceImg" src="./images/foodAndWater.svg" alt="Food/Water" />
                             <br />
-                            Food/Water
                         </Link>
+                        <h3 className="resourceLink">Food/Water</h3>
                     </div>
                 </Col>
                 <Col size="md-4">
@@ -61,8 +61,8 @@ const Resource = () =>
                         <Link to="/generator" className="whiteText">
                             <img className="resourceImg" src="./images/generator.jpg" alt="Generator" />
                             <br />
-                            Generator
                         </Link>
+                        <h3 className="resourceLink">Generator</h3>
                     </div>
                 </Col>
                 <Col size="md-4">
@@ -70,8 +70,8 @@ const Resource = () =>
                         <Link to="/misc" className="whiteText">
                             <img className="resourceImg" src="./images/general.ico" alt="General" />
                             <br />
-                            Miscellaneous
                         </Link>
+                        <h3 className="resourceLink">Miscellaneous</h3>
                     </div>
                 </Col>
             </Row>
